@@ -36,12 +36,18 @@ function RouteFallback() {
 }
 
 export default function App() {
-  if (
-    typeof window !== 'undefined' &&
-    window.location.hostname.startsWith('admin.') &&
-    window.location.pathname === '/'
-  ) {
-    return <Navigate to="/admin/login" replace />;
+  if (typeof window !== 'undefined') {
+    const host = window.location.hostname;
+    const isAdminHost = host.startsWith('admin.');
+    if (!isAdminHost && window.location.pathname.startsWith('/admin')) {
+      window.location.replace(
+        'https://admin.moduproinnovations.com' + window.location.pathname + window.location.search
+      );
+      return null;
+    }
+    if (isAdminHost && window.location.pathname === '/') {
+      return <Navigate to="/admin/login" replace />;
+    }
   }
   return (
     <Suspense fallback={<RouteFallback />}>
