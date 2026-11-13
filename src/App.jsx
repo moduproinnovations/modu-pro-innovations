@@ -36,6 +36,13 @@ function RouteFallback() {
 }
 
 export default function App() {
+  if (
+    typeof window !== 'undefined' &&
+    window.location.hostname.startsWith('admin.') &&
+    window.location.pathname === '/'
+  ) {
+    return <Navigate to="/admin/login" replace />;
+  }
   return (
     <Suspense fallback={<RouteFallback />}>
       <Routes>
