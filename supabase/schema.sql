@@ -509,8 +509,44 @@ begin
     body := jsonb_build_object(
       'from', v_from,
       'to', jsonb_build_array(v_recipient),
-      'subject', '[Modu Pro Enquiry ' || new.reference || '] ' || new."divisionName" || ' — ' || new."companyName",
-      'text', v_body
+      'subject', '[Modu Pro Enquiry ' || new.reference || '] ' || new."divisionName" || ' - ' || new."companyName",
+      'text', v_body,
+      'html', format(
+        '<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head><body style="margin:0;padding:0;background:#0A1428;font-family:Arial,Helvetica,sans-serif;color:#F4EEDF;">'
+        || '<table role="presentation" width="100%%" cellpadding="0" cellspacing="0" style="background:#0A1428;padding:24px 0;"><tr><td align="center">'
+        || '<table role="presentation" width="600" cellpadding="0" cellspacing="0" style="background:#16294D;border:1px solid #D9C08B;max-width:600px;width:100%%;">'
+        || '<tr><td style="padding:24px 32px;border-bottom:1px solid #D9C08B;background:#0A1428;">'
+        || '<span style="font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:#D9C08B;font-weight:700;">Modu Pro Innovation Pvt. Ltd.</span><br>'
+        || '<span style="font-family:Georgia,serif;font-size:22px;color:#F4EEDF;font-weight:500;">New B2B Enquiry Received</span>'
+        || '</td></tr>'
+        || '<tr><td style="padding:24px 32px;">'
+        || '<p style="margin:0 0 16px;font-size:13px;color:#D9C08B;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;">Reference %s</p>'
+        || '<table role="presentation" width="100%%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;">'
+        || '<tr><td style="padding:8px 0;border-bottom:1px solid #3F5E8C;color:#D9C08B;font-size:11px;text-transform:uppercase;letter-spacing:0.12em;width:38%%;">Full Name</td><td style="padding:8px 0;border-bottom:1px solid #3F5E8C;color:#F4EEDF;font-size:14px;">%s</td></tr>'
+        || '<tr><td style="padding:8px 0;border-bottom:1px solid #3F5E8C;color:#D9C08B;font-size:11px;text-transform:uppercase;letter-spacing:0.12em;">Company</td><td style="padding:8px 0;border-bottom:1px solid #3F5E8C;color:#F4EEDF;font-size:14px;">%s</td></tr>'
+        || '<tr><td style="padding:8px 0;border-bottom:1px solid #3F5E8C;color:#D9C08B;font-size:11px;text-transform:uppercase;letter-spacing:0.12em;">Phone</td><td style="padding:8px 0;border-bottom:1px solid #3F5E8C;color:#F4EEDF;font-size:14px;">%s</td></tr>'
+        || '<tr><td style="padding:8px 0;border-bottom:1px solid #3F5E8C;color:#D9C08B;font-size:11px;text-transform:uppercase;letter-spacing:0.12em;">Email</td><td style="padding:8px 0;border-bottom:1px solid #3F5E8C;color:#F4EEDF;font-size:14px;">%s</td></tr>'
+        || '<tr><td style="padding:8px 0;border-bottom:1px solid #3F5E8C;color:#D9C08B;font-size:11px;text-transform:uppercase;letter-spacing:0.12em;">Division</td><td style="padding:8px 0;border-bottom:1px solid #3F5E8C;color:#F4EEDF;font-size:14px;">%s</td></tr>'
+        || '<tr><td style="padding:8px 0;border-bottom:1px solid #3F5E8C;color:#D9C08B;font-size:11px;text-transform:uppercase;letter-spacing:0.12em;">Service Category</td><td style="padding:8px 0;border-bottom:1px solid #3F5E8C;color:#F4EEDF;font-size:14px;">%s</td></tr>'
+        || '<tr><td style="padding:8px 0;border-bottom:1px solid #3F5E8C;color:#D9C08B;font-size:11px;text-transform:uppercase;letter-spacing:0.12em;">Machine / Product</td><td style="padding:8px 0;border-bottom:1px solid #3F5E8C;color:#F4EEDF;font-size:14px;">%s</td></tr>'
+        || '<tr><td style="padding:8px 0;border-bottom:1px solid #3F5E8C;color:#D9C08B;font-size:11px;text-transform:uppercase;letter-spacing:0.12em;">Source Page</td><td style="padding:8px 0;border-bottom:1px solid #3F5E8C;color:#F4EEDF;font-size:14px;">%s</td></tr>'
+        || '</table>'
+        || '<p style="margin:16px 0 6px;color:#D9C08B;font-size:11px;text-transform:uppercase;letter-spacing:0.12em;font-weight:700;">Requirement / Message</p>'
+        || '<div style="background:#0A1428;border:1px solid #3F5E8C;padding:16px;color:#F4EEDF;font-size:14px;line-height:1.6;white-space:pre-wrap;">%s</div>'
+        || '</td></tr>'
+        || '<tr><td style="padding:16px 32px;background:#0A1428;border-top:1px solid #D9C08B;font-size:11px;color:#F4EEDF/70;text-align:center;">Modu Pro Innovation Pvt. Ltd. &middot; Nagpur, India</td></tr>'
+        || '</table></td></tr></table></body></html>',
+        new.reference,
+        coalesce(new."fullName",''),
+        coalesce(new."companyName",''),
+        coalesce(new.phone,''),
+        coalesce(new.email,''),
+        coalesce(new."divisionName",''),
+        coalesce(nullif(new."serviceCategory",''),'—'),
+        coalesce(nullif(new."machineOrProductDetails",''),'—'),
+        coalesce(new."sourcePage",''),
+        coalesce(new.message,'')
+      )
     )
   );
 
@@ -524,7 +560,7 @@ begin
       body := jsonb_build_object(
         'from', v_from,
         'to', jsonb_build_array(new.email),
-        'subject', 'Enquiry Received (' || new.reference || ') — Modu Pro Innovation Pvt. Ltd.',
+        'subject', 'Enquiry Received (' || new.reference || ') - Modu Pro Innovation Pvt. Ltd.',
         'text', concat_ws(E'\n',
           'Dear ' || new."fullName" || ',',
           '',
@@ -538,7 +574,33 @@ begin
           '',
           'Warm regards,',
           'Modu Pro Innovation Pvt. Ltd.',
-          'Plot No. 27, Hanuman Daal Mill Road, opposite Royal Touch, Nagpur – 440008'
+          'Plot No. 27, Hanuman Daal Mill Road, opposite Royal Touch, Nagpur - 440008'
+        ),
+        'html', format(
+          '<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head><body style="margin:0;padding:0;background:#0A1428;font-family:Arial,Helvetica,sans-serif;color:#F4EEDF;">'
+          || '<table role="presentation" width="100%%" cellpadding="0" cellspacing="0" style="background:#0A1428;padding:24px 0;"><tr><td align="center">'
+          || '<table role="presentation" width="600" cellpadding="0" cellspacing="0" style="background:#16294D;border:1px solid #D9C08B;max-width:600px;width:100%%;">'
+          || '<tr><td style="padding:24px 32px;border-bottom:1px solid #D9C08B;background:#0A1428;">'
+          || '<span style="font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:#D9C08B;font-weight:700;">Modu Pro Innovation Pvt. Ltd.</span><br>'
+          || '<span style="font-family:Georgia,serif;font-size:22px;color:#F4EEDF;font-weight:500;">Thank you for your enquiry</span>'
+          || '</td></tr>'
+          || '<tr><td style="padding:24px 32px;">'
+          || '<p style="margin:0 0 16px;font-size:15px;color:#F4EEDF;line-height:1.6;">Dear %s,</p>'
+          || '<p style="margin:0 0 16px;font-size:15px;color:#F4EEDF;line-height:1.6;">Thank you for contacting Modu Pro Innovation Pvt. Ltd. Your enquiry has been recorded under reference <strong style="color:#D9C08B;">%s</strong> and routed to our %s team.</p>'
+          || '<table role="presentation" width="100%%" cellpadding="0" cellspacing="0" style="border-collapse:collapse;margin:16px 0;">'
+          || '<tr><td style="padding:8px 0;border-bottom:1px solid #3F5E8C;color:#D9C08B;font-size:11px;text-transform:uppercase;letter-spacing:0.12em;width:38%%;">Company</td><td style="padding:8px 0;border-bottom:1px solid #3F5E8C;color:#F4EEDF;font-size:14px;">%s</td></tr>'
+          || '<tr><td style="padding:8px 0;border-bottom:1px solid #3F5E8C;color:#D9C08B;font-size:11px;text-transform:uppercase;letter-spacing:0.12em;">Division</td><td style="padding:8px 0;border-bottom:1px solid #3F5E8C;color:#F4EEDF;font-size:14px;">%s</td></tr>'
+          || '</table>'
+          || '<p style="margin:16px 0;font-size:14px;color:#F4EEDF;line-height:1.6;">Our team will review your requirement and get back to you shortly.</p>'
+          || '<p style="margin:0;font-size:14px;color:#F4EEDF;line-height:1.6;">Warm regards,<br><strong>Modu Pro Innovation Pvt. Ltd.</strong><br><span style="font-size:12px;color:#F4EEDF/80;">Plot No. 27, Hanuman Daal Mill Road, opposite Royal Touch, Nagpur - 440008</span></p>'
+          || '</td></tr>'
+          || '<tr><td style="padding:16px 32px;background:#0A1428;border-top:1px solid #D9C08B;font-size:11px;color:#F4EEDF/70;text-align:center;">Modu Pro Innovation Pvt. Ltd. &middot; Nagpur, India</td></tr>'
+          || '</table></td></tr></table></body></html>',
+          coalesce(new."fullName",''),
+          new.reference,
+          coalesce(new."divisionName",''),
+          coalesce(new."companyName",''),
+          coalesce(new."divisionName",'')
         )
       )
     );
