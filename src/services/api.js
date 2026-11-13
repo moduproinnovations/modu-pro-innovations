@@ -750,6 +750,19 @@ export const adminApi = {
     return { success: true, message: 'Media asset uploaded successfully.', data: alias(row) };
   },
 
+  uploadProductImage: async (file) => {
+    if (!file) fail('Please select a valid image file to upload.');
+    const user = await currentUser();
+    const path = `${Date.now()}-${file.name.replace(/[^a-zA-Z0-9._-]/g, '-')}`;
+    const uploaded = await supabase.storage
+      .from('product')
+      .upload(path, file, { contentType: file.type || 'image/png', upsert: false });
+    if (uploaded.error) fail(uploaded.error.message);
+    const { data: publicUrl } = supabase.storage.from('product').getPublicUrl(path);
+    await audit('UPLOAD_PRODUCT_IMAGE', 'Product', null, `Uploaded product image "${file.name}"`);
+    return { success: true, message: 'Image uploaded.', url: publicUrl.publicUrl };
+  },
+
   deleteMedia: async (id) => {
     const row = unwrap(await supabase.from('media').select('*').eq('id', id).maybeSingle());
     if (!row) fail('Media asset not found.');

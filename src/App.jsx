@@ -38,18 +38,39 @@ function RouteFallback() {
 export default function App() {
   if (typeof window !== 'undefined') {
     const host = window.location.hostname;
+    const isDev = import.meta.env.DEV || host === 'localhost' || host === '127.0.0.1';
     const isAdminHost = host.startsWith('admin.');
-    if (!isAdminHost && window.location.pathname.startsWith('/admin')) {
+
+    if (!isAdminHost && !isDev && window.location.pathname.startsWith('/admin')) {
       window.location.replace('/');
       return null;
     }
-    if (isAdminHost) {
+
+    if (
+      isAdminHost ||
+      (isDev &&
+        (window.location.pathname.startsWith('/admin') ||
+          window.location.pathname === '/login' ||
+          window.location.pathname === '/dashboard'))
+    ) {
       return (
         <Suspense fallback={<RouteFallback />}>
           <Routes>
             <Route path="/login" element={<AdminLogin />} />
+            <Route path="/admin/login" element={<AdminLogin />} />
             <Route path="/" element={<AdminLayout />}>
               <Route index element={<Navigate to="/dashboard" replace />} />
+              <Route path="dashboard" element={<AdminDashboard />} />
+              <Route path="divisions" element={<AdminDivisions />} />
+              <Route path="products" element={<AdminProducts />} />
+              <Route path="services" element={<AdminServices />} />
+              <Route path="industries" element={<AdminIndustries />} />
+              <Route path="enquiries" element={<AdminEnquiries />} />
+              <Route path="media" element={<AdminMedia />} />
+              <Route path="settings" element={<AdminSettings />} />
+            </Route>
+            <Route path="/admin" element={<AdminLayout />}>
+              <Route index element={<Navigate to="/admin/dashboard" replace />} />
               <Route path="dashboard" element={<AdminDashboard />} />
               <Route path="divisions" element={<AdminDivisions />} />
               <Route path="products" element={<AdminProducts />} />

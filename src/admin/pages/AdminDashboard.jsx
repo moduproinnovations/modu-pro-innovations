@@ -91,9 +91,9 @@ export default function AdminDashboard() {
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-5 border-b border-[#3F5E8C]/40">
         <div>
           <p className="font-mono-code text-xs uppercase tracking-[0.2em] text-[#D9C08B]">
-            Real-Time MongoDB Telemetry
+            Live Enterprise Telemetry
           </p>
-          <h1 className="font-display text-3xl font-semibold text-[#F4EEDF] mt-1">
+          <h1 className="font-display text-2xl sm:text-3xl font-semibold text-[#F4EEDF] mt-1">
             Executive Dashboard
           </h1>
         </div>
@@ -101,7 +101,7 @@ export default function AdminDashboard() {
         <button
           type="button"
           onClick={loadDashboard}
-          className="inline-flex items-center gap-2 px-4 py-2.5 bg-[#16294D] border border-[#D9C08B]/40 text-xs uppercase tracking-widest text-[#F4EEDF] hover:border-[#D9C08B] hover:text-[#D9C08B] cursor-pointer"
+          className="inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-[#16294D] border border-[#D9C08B]/40 text-xs uppercase tracking-widest text-[#F4EEDF] hover:border-[#D9C08B] hover:text-[#D9C08B] cursor-pointer rounded-lg sm:rounded-none"
         >
           <RefreshCw aria-hidden="true" className={`w-3.5 h-3.5 ${loading ? 'animate-spin' : ''}`} />
           <span>Refresh Data</span>
@@ -109,12 +109,12 @@ export default function AdminDashboard() {
       </div>
 
       {/* KPI Metrics Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-5">
         {kpiCards.map(({ label, value, sub, Icon, link }) => (
           <Link
             key={label}
             to={link}
-            className="bg-[#16294D] border border-[#3F5E8C]/50 hover:border-[#D9C08B] p-6 transition-colors flex flex-col justify-between"
+            className="bg-[#16294D] border border-[#3F5E8C]/50 hover:border-[#D9C08B] p-4 sm:p-6 transition-colors flex flex-col justify-between rounded-xl sm:rounded-none"
           >
             <div className="flex items-center justify-between">
               <span className="text-xs font-mono-code uppercase tracking-wider text-[#F4EEDF]/75">
@@ -122,28 +122,28 @@ export default function AdminDashboard() {
               </span>
               <Icon aria-hidden="true" className="w-4 h-4 text-[#D9C08B]" />
             </div>
-            <div className="my-4">
-              <span className="font-display text-4xl font-semibold text-[#F4EEDF]">{value}</span>
+            <div className="my-3 sm:my-4">
+              <span className="font-display text-3xl sm:text-4xl font-semibold text-[#F4EEDF]">{value}</span>
             </div>
             <div className="flex items-center justify-between text-xs text-[#D9C08B]">
-              <span>{sub}</span>
-              <ArrowUpRight aria-hidden="true" className="w-3.5 h-3.5" />
+              <span className="truncate pr-2">{sub}</span>
+              <ArrowUpRight aria-hidden="true" className="w-3.5 h-3.5 shrink-0" />
             </div>
           </Link>
         ))}
       </div>
 
       {/* Charts & Recent Activity */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-6">
         {/* Enquiries by Division Chart */}
-        <div className="lg:col-span-7 bg-[#16294D] border border-[#3F5E8C]/45 p-6">
-          <div className="flex items-center justify-between mb-6">
+        <div className="lg:col-span-7 bg-[#16294D] border border-[#3F5E8C]/45 p-4 sm:p-6 rounded-xl sm:rounded-none">
+          <div className="flex items-center justify-between mb-4 sm:mb-6">
             <div>
               <p className="font-mono-code text-xs uppercase tracking-widest text-[#D9C08B]">
-                Division Demand
+                Division Analysis
               </p>
-              <h2 className="font-display text-2xl font-semibold text-[#F4EEDF]">
-                Enquiries by Business Division
+              <h2 className="font-display text-xl sm:text-2xl font-semibold text-[#F4EEDF]">
+                Enquiry Distribution by Division
               </h2>
             </div>
           </div>

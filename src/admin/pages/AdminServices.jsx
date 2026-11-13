@@ -3,6 +3,7 @@ import { Plus, Edit3, Trash2, Save, X } from 'lucide-react';
 import { adminApi } from '../../services/api';
 import { useToast } from '../../context/ToastContext';
 import SeoHead from '../../components/SeoHead';
+import CustomDropdown from '../../components/CustomDropdown';
 
 const EMPTY_SERVICE = {
   name: '',
@@ -177,37 +178,39 @@ export default function AdminServices() {
             </div>
 
             <div>
-              <label className="block text-xs uppercase tracking-wider text-[#F4EEDF] mb-1">
-                Client Confirmation Status
-              </label>
-              <select
+              <CustomDropdown
+                label="Client Confirmation Status"
+                size="sm"
                 value={form.confirmationStatus}
-                onChange={(e) => setForm({ ...form, confirmationStatus: e.target.value })}
-                className="w-full px-3 py-2.5 bg-[#0A1428] border border-[#3F5E8C]/60 text-xs text-[#F4EEDF]"
-              >
-                <option value="pending_confirmation">Pending Client Confirmation</option>
-                <option value="confirmed">Confirmed Active Offering</option>
-              </select>
+                onChange={(val) => setForm({ ...form, confirmationStatus: val })}
+                options={[
+                  { value: 'pending_confirmation', label: 'Pending Client Confirmation' },
+                  { value: 'confirmed', label: 'Confirmed Active Offering' },
+                ]}
+              />
             </div>
 
             <div>
               <label className="block text-xs uppercase tracking-wider text-[#F4EEDF] mb-1">
                 Publication Status &amp; Order
               </label>
-              <div className="grid grid-cols-2 gap-2">
-                <select
+              <div className="grid grid-cols-2 gap-2 items-center">
+                <CustomDropdown
+                  size="sm"
                   value={form.publicationStatus}
-                  onChange={(e) => setForm({ ...form, publicationStatus: e.target.value })}
-                  className="px-2 py-2.5 bg-[#0A1428] border border-[#3F5E8C]/60 text-xs text-[#F4EEDF]"
-                >
-                  <option value="published">Published</option>
-                  <option value="draft">Draft</option>
-                </select>
+                  onChange={(val) => setForm({ ...form, publicationStatus: val })}
+                  options={[
+                    { value: 'published', label: 'Published' },
+                    { value: 'draft', label: 'Draft' },
+                  ]}
+                />
                 <input
                   type="number"
+                  aria-label="Display Order"
+                  placeholder="Order"
                   value={form.displayOrder}
                   onChange={(e) => setForm({ ...form, displayOrder: e.target.value })}
-                  className="px-3 py-2.5 bg-[#0A1428] border border-[#3F5E8C]/60 text-xs text-[#F4EEDF]"
+                  className="px-3 py-2 bg-[#0A1428] border border-[#3F5E8C]/60 text-xs text-[#F4EEDF] rounded-lg"
                 />
               </div>
             </div>

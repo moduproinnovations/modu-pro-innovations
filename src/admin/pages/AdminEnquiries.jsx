@@ -13,6 +13,7 @@ import { adminApi } from '../../services/api';
 import { useSite } from '../../context/SiteContext';
 import { useToast } from '../../context/ToastContext';
 import SeoHead from '../../components/SeoHead';
+import CustomDropdown from '../../components/CustomDropdown';
 
 const STATUS_OPTIONS = ['New', 'In Progress', 'Responded', 'Closed'];
 
@@ -273,7 +274,7 @@ export default function AdminEnquiries() {
       </div>
 
       {/* Filters Bar */}
-      <div className="bg-[#16294D] border border-[#3F5E8C]/45 p-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3">
+      <div className="bg-[#16294D] border border-[#3F5E8C]/45 p-3.5 sm:p-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 items-center">
         <div className="relative lg:col-span-2">
           <Search
             aria-hidden="true"
@@ -287,44 +288,42 @@ export default function AdminEnquiries() {
               setPage(1);
             }}
             placeholder="Search reference, name, company, email, phone..."
-            className="w-full pl-10 pr-3 py-2 bg-[#0A1428] border border-[#3F5E8C]/60 text-xs text-[#F4EEDF]"
+            className="w-full pl-10 pr-3 py-2 bg-[#0A1428] border border-[#3F5E8C]/60 focus:border-[#D9C08B] rounded-lg text-xs text-[#F4EEDF] outline-none"
           />
         </div>
 
-        <select
-          aria-label="Filter by status"
+        <CustomDropdown
+          size="sm"
           value={statusFilter}
-          onChange={(e) => {
-            setStatusFilter(e.target.value);
+          onChange={(val) => {
+            setStatusFilter(val);
             setPage(1);
           }}
-          className="px-3 py-2 bg-[#0A1428] border border-[#3F5E8C]/60 text-xs text-[#F4EEDF]"
-        >
-          <option value="all">All Statuses</option>
-          {STATUS_OPTIONS.map((st) => (
-            <option key={st} value={st}>
-              {st}
-            </option>
-          ))}
-        </select>
+          options={[
+            { value: 'all', label: 'All Statuses' },
+            ...STATUS_OPTIONS.map((st) => ({ value: st, label: st })),
+          ]}
+          placeholder="Filter status..."
+        />
 
-        <select
-          aria-label="Filter by division"
+        <CustomDropdown
+          size="sm"
           value={divisionFilter}
-          onChange={(e) => {
-            setDivisionFilter(e.target.value);
+          onChange={(val) => {
+            setDivisionFilter(val);
             setPage(1);
           }}
-          className="px-3 py-2 bg-[#0A1428] border border-[#3F5E8C]/60 text-xs text-[#F4EEDF]"
-        >
-          <option value="all">All Divisions</option>
-          <option value="General / Multi-Division">General / Multi-Division</option>
-          {(divisions || []).map((d) => (
-            <option key={d.slug} value={d.name}>
-              {d.name}
-            </option>
-          ))}
-        </select>
+          options={[
+            { value: 'all', label: 'All Divisions' },
+            { value: 'General / Multi-Division', label: 'General / Multi-Division', badge: 'ALL' },
+            ...(divisions || []).map((d) => ({
+              value: d.name,
+              label: d.name,
+              badge: d.code,
+            })),
+          ]}
+          placeholder="Filter division..."
+        />
 
         <div className="flex items-center gap-2">
           <input

@@ -3,6 +3,7 @@ import { Plus, Edit3, Trash2, Save, X, Search, Star } from 'lucide-react';
 import { adminApi } from '../../services/api';
 import { useToast } from '../../context/ToastContext';
 import SeoHead from '../../components/SeoHead';
+import CustomDropdown from '../../components/CustomDropdown';
 
 const EMPTY_PRODUCT = {
   name: '',
@@ -34,6 +35,7 @@ export default function AdminProducts() {
 
   const [showForm, setShowForm] = useState(false);
   const [editingId, setEditingId] = useState(null);
+  const [uploadingImage, setUploadingImage] = useState(false);
   const [form, setForm] = useState(EMPTY_PRODUCT);
   const [saving, setSaving] = useState(false);
 
@@ -117,6 +119,22 @@ export default function AdminProducts() {
       ...prev,
       specifications: prev.specifications.filter((_, i) => i !== idx),
     }));
+  };
+
+  const handleImageUpload = async (e) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    setUploadingImage(true);
+    try {
+      const res = await adminApi.uploadProductImage(file);
+      if (res?.url) setForm((f) => ({ ...f, imageUrl: res.url }));
+      else alert(res?.message || 'Upload failed.');
+    } catch (err) {
+      alert(err?.message || 'Upload failed.');
+    } finally {
+      setUploadingImage(false);
+      e.target.value = '';
+    }
   };
 
   const handleSave = async (e) => {
@@ -220,35 +238,37 @@ export default function AdminProducts() {
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Search products..."
-            className="w-full pl-10 pr-3 py-2 bg-[#0A1428] border border-[#3F5E8C]/60 text-xs text-[#F4EEDF]"
+            className="w-full pl-10 pr-3 py-2 bg-[#0A1428] border border-[#3F5E8C]/60 focus:border-[#D9C08B] rounded-lg text-xs text-[#F4EEDF] outline-none"
           />
         </div>
 
-        <select
-          aria-label="Filter by division"
+        <CustomDropdown
+          size="sm"
           value={divisionFilter}
-          onChange={(e) => setDivisionFilter(e.target.value)}
-          className="px-3 py-2 bg-[#0A1428] border border-[#3F5E8C]/60 text-xs text-[#F4EEDF]"
-        >
-          <option value="all">All Divisions</option>
-          {divisions.map((d) => (
-            <option key={d._id} value={d._id}>
-              {d.name}
-            </option>
-          ))}
-        </select>
+          onChange={(val) => setDivisionFilter(val)}
+          options={[
+            { value: 'all', label: 'All Divisions' },
+            ...divisions.map((d) => ({
+              value: d._id,
+              label: d.name,
+              badge: d.code,
+            })),
+          ]}
+          placeholder="Filter division..."
+        />
 
-        <select
-          aria-label="Filter by publication status"
+        <CustomDropdown
+          size="sm"
           value={statusFilter}
-          onChange={(e) => setStatusFilter(e.target.value)}
-          className="px-3 py-2 bg-[#0A1428] border border-[#3F5E8C]/60 text-xs text-[#F4EEDF]"
-        >
-          <option value="all">All Statuses</option>
-          <option value="published">Published</option>
-          <option value="draft">Draft</option>
-          <option value="pending_review">Pending Client Confirmation</option>
-        </select>
+          onChange={(val) => setStatusFilter(val)}
+          options={[
+            { value: 'all', label: 'All Statuses' },
+            { value: 'published', label: 'Published' },
+            { value: 'draft', label: 'Draft' },
+            { value: 'pending_review', label: 'Pending Client Confirmation' },
+          ]}
+          placeholder="Filter status..."
+        />
       </div>
 
       {/* Product Create/Edit Modal Form */}
@@ -285,22 +305,19 @@ export default function AdminProducts() {
             </div>
 
             <div>
-              <label className="block text-xs uppercase tracking-wider text-[#F4EEDF] mb-1">
-                Division *
-              </label>
-              <select
-                required
+              <CustomDropdown
+                label="Division *"
+                size="sm"
                 value={form.division}
-                onChange={(e) => setForm({ ...form, division: e.target.value })}
-                className="w-full px-3 py-2.5 bg-[#0A1428] border border-[#3F5E8C]/60 text-sm text-[#F4EEDF]"
-              >
-                <option value="">Select Division</option>
-                {divisions.map((d) => (
-                  <option key={d._id} value={d._id}>
-                    {d.name}
-                  </option>
-                ))}
-              </select>
+                onChange={(val) => setForm({ ...form, division: val })}
+                options={divisions.map((d) => ({
+                  value: d._id,
+                  label: d.name,
+                  badge: d.code,
+                }))}
+                placeholder="Select Division"
+                searchable
+              />
             </div>
 
             <div>
@@ -318,18 +335,17 @@ export default function AdminProducts() {
             </div>
 
             <div>
-              <label className="block text-xs uppercase tracking-wider text-[#F4EEDF] mb-1">
-                Publication Status
-              </label>
-              <select
+              <CustomDropdown
+                label="Publication Status"
+                size="sm"
                 value={form.publicationStatus}
-                onChange={(e) => setForm({ ...form, publicationStatus: e.target.value })}
-                className="w-full px-3 py-2.5 bg-[#0A1428] border border-[#3F5E8C]/60 text-sm text-[#F4EEDF]"
-              >
-                <option value="published">Published (Live on Website)</option>
-                <option value="draft">Draft (Hidden from Public)</option>
-                <option value="pending_review">Pending Client Confirmation</option>
-              </select>
+                onChange={(val) => setForm({ ...form, publicationStatus: val })}
+                options={[
+                  { value: 'published', label: 'Published (Live on Website)' },
+                  { value: 'draft', label: 'Draft (Hidden from Public)' },
+                  { value: 'pending_review', label: 'Pending Client Confirmation' },
+                ]}
+              />
             </div>
 
             <div className="flex items-center gap-3 pt-6">
@@ -356,26 +372,33 @@ export default function AdminProducts() {
                 onChange={(e) => setForm({ ...form, imageUrl: e.target.value })}
                 className="w-full px-3 py-2.5 bg-[#0A1428] border border-[#3F5E8C]/60 text-xs text-[#F4EEDF]"
               />
+              <label className="mt-2 inline-flex items-center gap-2 cursor-pointer text-[11px] uppercase tracking-wider text-[#D9C08B] hover:underline">
+                <input
+                  type="file"
+                  accept="image/*"
+                  onChange={handleImageUpload}
+                  disabled={uploadingImage}
+                  className="hidden"
+                />
+                {uploadingImage ? 'Uploading...' : 'Or upload image directly'}
+              </label>
             </div>
 
             <div>
-              <label className="block text-xs uppercase tracking-wider text-[#F4EEDF] mb-1">
-                Or Pick From Media Library
-              </label>
-              <select
+              <CustomDropdown
+                label="Or Pick From Media Library"
+                size="sm"
                 value=""
-                onChange={(e) => {
-                  if (e.target.value) setForm({ ...form, imageUrl: e.target.value });
+                onChange={(val) => {
+                  if (val) setForm({ ...form, imageUrl: val });
                 }}
-                className="w-full px-3 py-2.5 bg-[#0A1428] border border-[#3F5E8C]/60 text-xs text-[#F4EEDF]"
-              >
-                <option value="">Select existing asset...</option>
-                {mediaList.map((m) => (
-                  <option key={m._id} value={m.url}>
-                    {m.title}
-                  </option>
-                ))}
-              </select>
+                options={mediaList.map((m) => ({
+                  value: m.url,
+                  label: m.title || m.originalName || m.url,
+                }))}
+                placeholder="Select existing asset..."
+                searchable
+              />
             </div>
 
             <div className="sm:col-span-3">

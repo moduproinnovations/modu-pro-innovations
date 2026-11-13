@@ -24,6 +24,7 @@ export default function CustomDropdown({
   disabled = false,
   searchable = false,
   isClearable = false,
+  size = 'md',
   className = '',
   buttonClassName = '',
   menuClassName = '',
@@ -210,7 +211,11 @@ export default function CustomDropdown({
         aria-controls={listboxId}
         onClick={() => !disabled && setIsOpen((prev) => !prev)}
         onKeyDown={handleKeyDown}
-        className={`group relative flex items-center justify-between w-full px-4 py-3 bg-[#0A1428] border rounded-[1.25rem] text-left text-sm transition-all duration-200 outline-none ${
+        className={`group relative flex items-center justify-between w-full bg-[#0A1428] border text-left transition-all duration-200 outline-none ${
+          size === 'sm'
+            ? 'px-3 py-2 text-xs rounded-lg'
+            : 'px-4 py-3 text-sm rounded-[1.25rem]'
+        } ${
           disabled
             ? 'opacity-50 cursor-not-allowed border-[#D9C08B]/15 bg-[#0A1428]/40 text-[#F4EEDF]/40'
             : isOpen

@@ -3,6 +3,7 @@ import { Upload, Copy, Trash2, Check } from 'lucide-react';
 import { adminApi } from '../../services/api';
 import { useToast } from '../../context/ToastContext';
 import SeoHead from '../../components/SeoHead';
+import CustomDropdown from '../../components/CustomDropdown';
 
 export default function AdminMedia() {
   const { addToast } = useToast();
@@ -114,19 +115,22 @@ export default function AdminMedia() {
           </h1>
         </div>
 
-        <select
-          aria-label="Filter media by category"
-          value={categoryFilter}
-          onChange={(e) => setCategoryFilter(e.target.value)}
-          className="px-4 py-2.5 bg-[#16294D] border border-[#3F5E8C]/60 text-xs uppercase tracking-wider text-[#F4EEDF]"
-        >
-          <option value="all">All Categories</option>
-          <option value="logo">Logo Assets</option>
-          <option value="product">Product Assets</option>
-          <option value="division">Division Assets</option>
-          <option value="service">Service Assets</option>
-          <option value="industry">Industry Assets</option>
-        </select>
+        <div className="w-full sm:w-48">
+          <CustomDropdown
+            size="sm"
+            value={categoryFilter}
+            onChange={(val) => setCategoryFilter(val)}
+            options={[
+              { value: 'all', label: 'All Categories' },
+              { value: 'logo', label: 'Logo Assets' },
+              { value: 'product', label: 'Product Assets' },
+              { value: 'division', label: 'Division Assets' },
+              { value: 'service', label: 'Service Assets' },
+              { value: 'industry', label: 'Industry Assets' },
+            ]}
+            placeholder="Filter category..."
+          />
+        </div>
       </div>
 
       {/* Upload Form */}
@@ -173,20 +177,19 @@ export default function AdminMedia() {
         </div>
 
         <div>
-          <label className="block text-xs uppercase tracking-wider text-[#F4EEDF] mb-1">
-            Category
-          </label>
-          <select
+          <CustomDropdown
+            label="Category"
+            size="sm"
             value={category}
-            onChange={(e) => setCategory(e.target.value)}
-            className="w-full px-3 py-2.5 bg-[#0A1428] border border-[#3F5E8C]/60 text-xs text-[#F4EEDF]"
-          >
-            <option value="product">Product</option>
-            <option value="division">Division</option>
-            <option value="service">Service</option>
-            <option value="industry">Industry</option>
-            <option value="logo">Logo</option>
-          </select>
+            onChange={(val) => setCategory(val)}
+            options={[
+              { value: 'product', label: 'Product' },
+              { value: 'division', label: 'Division' },
+              { value: 'service', label: 'Service' },
+              { value: 'industry', label: 'Industry' },
+              { value: 'logo', label: 'Logo' },
+            ]}
+          />
         </div>
 
         <button

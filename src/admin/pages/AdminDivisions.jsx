@@ -4,6 +4,7 @@ import { adminApi } from '../../services/api';
 import { useSite } from '../../context/SiteContext';
 import { useToast } from '../../context/ToastContext';
 import SeoHead from '../../components/SeoHead';
+import CustomDropdown from '../../components/CustomDropdown';
 
 const EMPTY_FORM = {
   name: '',
@@ -260,18 +261,17 @@ export default function AdminDivisions() {
             </div>
 
             <div>
-              <label className="block text-xs uppercase tracking-wider text-[#F4EEDF] mb-1">
-                Publication Status
-              </label>
-              <select
+              <CustomDropdown
+                label="Publication Status"
+                size="sm"
                 value={form.publicationStatus}
-                onChange={(e) => setForm({ ...form, publicationStatus: e.target.value })}
-                className="w-full px-3 py-2.5 bg-[#0A1428] border border-[#3F5E8C]/60 text-sm text-[#F4EEDF]"
-              >
-                <option value="published">Published</option>
-                <option value="draft">Draft</option>
-                <option value="archived">Archived</option>
-              </select>
+                onChange={(val) => setForm({ ...form, publicationStatus: val })}
+                options={[
+                  { value: 'published', label: 'Published' },
+                  { value: 'draft', label: 'Draft' },
+                  { value: 'archived', label: 'Archived' },
+                ]}
+              />
             </div>
 
             <div className="sm:col-span-2">
