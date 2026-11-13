@@ -40,9 +40,7 @@ export default function App() {
     const host = window.location.hostname;
     const isAdminHost = host.startsWith('admin.');
     if (!isAdminHost && window.location.pathname.startsWith('/admin')) {
-      window.location.replace(
-        'https://admin.moduproinnovations.com' + window.location.pathname + window.location.search
-      );
+      window.location.replace('/');
       return null;
     }
     if (isAdminHost && window.location.pathname === '/') {
