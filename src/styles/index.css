@@ -1,0 +1,310 @@
+@import "tailwindcss";
+
+/* Safe-area insets & Mobile viewport optimization */
+:root {
+  /* Strict 5-Colour Brand Palette — Modu Pro Innovation Pvt. Ltd. */
+  --color-background: #0A1428;
+  --color-surface: #16294D;
+  --color-primary: #D9C08B;
+  --color-accent: #3F5E8C;
+  --color-text: #F4EEDF;
+
+  --font-display: 'Cormorant Garamond', Georgia, Cambria, 'Times New Roman', serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  color-scheme: dark;
+}
+
+@theme {
+  --color-brand-bg: #0A1428;
+  --color-brand-surface: #16294D;
+  --color-brand-primary: #D9C08B;
+  --color-brand-accent: #3F5E8C;
+  --color-brand-text: #F4EEDF;
+
+  --font-serif: var(--font-display);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+}
+
+html {
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  overflow-x: clip;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text);
+  min-height: 100svh;
+  overflow-x: clip;
+}
+
+/* Modern Web Guidance: improve-text-layout-and-legibility */
+/* Target specific short heading elements for balanced wrapping (up to 6-10 lines) */
+h1, h2, h3, h4, h5, h6, .heading-balance {
+  text-wrap: balance;
+}
+
+/* Prevent orphaned words ("runts") on multi-line body copy */
+p, blockquote, li, .pretty-text {
+  text-wrap: pretty;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-mono-code {
+  font-family: var(--font-mono);
+}
+
+/* Modern Web Guidance: dialog scroll containment without html/body overflow:hidden layout shift */
+dialog:modal {
+  overscroll-behavior: contain;
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  border: 1px solid rgba(217, 192, 139, 0.32);
+  border-radius: 2rem;
+  padding: 0;
+  max-width: min(56rem, 94vw);
+  max-height: 90svh;
+  margin: auto;
+}
+
+dialog::backdrop {
+  overflow: hidden;
+  overscroll-behavior: contain;
+  background-color: rgba(10, 20, 40, 0.84);
+  backdrop-filter: blur(4px);
+}
+
+/* Modern Web Guidance: forms — accessible focus, sizing, and Gestalt proximity */
+input,
+select,
+textarea {
+  font-size: 1rem;
+  min-height: 48px;
+  box-sizing: border-box;
+  accent-color: var(--color-primary);
+}
+
+@media (pointer: coarse) {
+  input,
+  select,
+  textarea {
+    min-height: 52px;
+  }
+}
+
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Canonical visually-hidden utility for screen-reader accessible controls */
+.visually-hidden {
+  position: absolute;
+  clip-path: inset(50%);
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  white-space: nowrap;
+}
+
+/* Fine architectural grid & luxury rule utilities */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.gold-hairline {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    rgba(217, 192, 139, 0) 0%,
+    rgba(217, 192, 139, 0.45) 50%,
+    rgba(217, 192, 139, 0) 100%
+  );
+}
+
+.industrial-blueprint-grid {
+  background-image:
+    linear-gradient(to right, rgba(63, 94, 140, 0.12) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(63, 94, 140, 0.12) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* Case-by-case reduced motion dampening (Modern Web Guidance: motion) */
+.ambient-pulse {
+  animation: pulseSubtle 4s ease-in-out infinite;
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+    opacity: 0.85;
+  }
+}
+
+@keyframes pulseSubtle {
+  0%, 100% { opacity: 0.55; }
+  50% { opacity: 0.95; }
+}
+
+/* Curved luxury frames — public site */
+.lux-curve {
+  border-radius: 2.25rem 2.25rem 5.75rem 2.25rem;
+}
+
+.lux-curve-alt {
+  border-radius: 5.25rem 2.25rem 2.25rem 4.5rem;
+}
+
+.lux-curve-soft {
+  border-radius: 2rem;
+}
+
+.lux-float {
+  animation: luxFloat 8s ease-in-out infinite;
+}
+
+@keyframes luxFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lux-float {
+    animation: none;
+  }
+}
+
+/* Luxury Sticky Division Showcase — preserve curated 5-colour surfaces over architectural banner */
+.lux-stack-card-ivory {
+  background: linear-gradient(135deg, #F4EEDF 0%, #EAE0C8 100%);
+  color: #0A1428;
+  border: 1px solid rgba(217, 192, 139, 0.6);
+  box-shadow: 0 32px 80px -20px rgba(10, 20, 40, 0.72);
+}
+
+.lux-stack-card-gold {
+  background: linear-gradient(135deg, #D9C08B 0%, #C7AC72 100%);
+  color: #0A1428;
+  border: 1px solid rgba(244, 238, 223, 0.5);
+  box-shadow: 0 32px 80px -20px rgba(10, 20, 40, 0.76);
+}
+
+.lux-stack-card-navy {
+  background: linear-gradient(135deg, #16294D 0%, #0A1428 100%);
+  color: #F4EEDF;
+  border: 1px solid rgba(217, 192, 139, 0.42);
+  box-shadow: 0 32px 80px -20px rgba(10, 20, 40, 0.85);
+}
+
+.lux-stack-card-blue {
+  background: linear-gradient(135deg, #3F5E8C 0%, #16294D 100%);
+  color: #F4EEDF;
+  border: 1px solid rgba(217, 192, 139, 0.45);
+  box-shadow: 0 32px 80px -20px rgba(10, 20, 40, 0.82);
+}
+
+/* Reinforce subtle architectural borders when the user requests higher contrast (Modern Web Guidance: color) */
+@media (prefers-contrast: more) {
+  dialog:modal,
+  .lux-catalog-card,
+  .lux-catalog-stage,
+  .lux-stack-card-ivory,
+  .lux-stack-card-gold,
+  .lux-stack-card-navy,
+  .lux-stack-card-blue {
+    border-color: var(--color-primary);
+  }
+}
+
+/* Luxury Featured Products Catalog Card over full-bleed studio banner */
+.lux-catalog-card {
+  background: linear-gradient(180deg, rgba(22, 41, 77, 0.84) 0%, rgba(10, 20, 40, 0.92) 100%);
+  color: #F4EEDF;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(217, 192, 139, 0.34);
+  box-shadow: 0 24px 60px -16px rgba(10, 20, 40, 0.82);
+}
+
+.lux-catalog-stage {
+  background: radial-gradient(circle at 50% 45%, rgba(63, 94, 140, 0.32) 0%, rgba(10, 20, 40, 0.88) 100%);
+  border: 1px solid rgba(217, 192, 139, 0.22);
+}
+
+
+
+
+
+
+/* Industrial-Chic Technical Editorial Utilities (About Section) */
+.font-editorial {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.font-inter {
+  font-family: 'Inter', sans-serif;
+}
+
+.stroke-text-gold {
+  -webkit-text-stroke: 1.5px #D9C08B;
+  color: transparent;
+}
+
+.stroke-text-ivory {
+  -webkit-text-stroke: 1.5px rgba(244, 238, 223, 0.45);
+  color: transparent;
+}
+
+.stroke-text-subtle {
+  -webkit-text-stroke: 1px rgba(217, 192, 139, 0.25);
+  color: transparent;
+}
+
+@keyframes pulseGreen {
+  0% {
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 7px rgba(34, 197, 94, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+  }
+}
+
+.status-pulse-dot {
+  width: 7px;
+  height: 7px;
+  background-color: #22c55e;
+  border-radius: 9999px;
+  display: inline-block;
+  animation: pulseGreen 2s infinite;
+}
+
+.noise-overlay {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.04'/%3E%3C/svg%3E");
+}
+
+.cubic-inertia {
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
