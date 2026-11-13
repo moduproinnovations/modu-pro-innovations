@@ -334,7 +334,8 @@ export default function AdminEnquiries() {
               setStartDate(e.target.value);
               setPage(1);
             }}
-            className="w-full px-2 py-2 bg-[#0A1428] border border-[#3F5E8C]/60 text-xs text-[#F4EEDF]"
+            style={{ colorScheme: 'dark' }}
+            className="w-full px-3 py-2.5 bg-[#0A1428] border border-[#3F5E8C]/60 focus:border-[#D9C08B] rounded-lg text-xs text-[#F4EEDF] outline-none transition-colors"
           />
           <input
             type="date"
@@ -344,7 +345,8 @@ export default function AdminEnquiries() {
               setEndDate(e.target.value);
               setPage(1);
             }}
-            className="w-full px-2 py-2 bg-[#0A1428] border border-[#3F5E8C]/60 text-xs text-[#F4EEDF]"
+            style={{ colorScheme: 'dark' }}
+            className="w-full px-3 py-2.5 bg-[#0A1428] border border-[#3F5E8C]/60 focus:border-[#D9C08B] rounded-lg text-xs text-[#F4EEDF] outline-none transition-colors"
           />
         </div>
       </div>
