@@ -708,7 +708,49 @@ export const adminApi = {
     if (params.category && params.category !== 'all') {
       query = query.eq('category', params.category);
     }
-    return alias(unwrap(await query.order('createdAt', DESC)));
+    const media = alias(unwrap(await query.order('createdAt', DESC))) || [];
+
+    // Also surface product-bucket images so admins can copy their URLs
+    if (!params.category || params.category === 'all' || params.category === 'product') {
+      try {
+        const { data: folders } = await supabase.storage.from('product').list('', { limit: 1000 });
+        const bucketItems = [];
+        for (const folder of folders || []) {
+          if (folder.id) {
+            // file at root
+            const { data: pub } = supabase.storage.from('product').getPublicUrl(folder.name);
+            bucketItems.push({
+              _id: `bucket-${folder.name}`,
+              title: folder.name,
+              altText: folder.name,
+              url: pub.publicUrl,
+              category: 'product',
+              storageProvider: 'supabase',
+            });
+          } else {
+            const { data: files } = await supabase.storage
+              .from('product')
+              .list(folder.name, { limit: 1000 });
+            for (const f of files || []) {
+              const storagePath = `${folder.name}/${f.name}`;
+              const { data: pub } = supabase.storage.from('product').getPublicUrl(storagePath);
+              bucketItems.push({
+                _id: `bucket-${storagePath}`,
+                title: f.name,
+                altText: f.name,
+                url: pub.publicUrl,
+                category: 'product',
+                storageProvider: 'supabase',
+              });
+            }
+          }
+        }
+        return [...media, ...bucketItems];
+      } catch (_) {
+        return media;
+      }
+    }
+    return media;
   },
 
   uploadMedia: async (formData) => {
