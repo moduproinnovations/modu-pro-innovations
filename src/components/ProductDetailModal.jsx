@@ -65,7 +65,7 @@ export default function ProductDetailModal({ product, onClose, onSelectForEnquir
       ? product.images
       : [
           {
-            url: '/assets/products/panel-processing/edge-banding-machine.png',
+            url: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/panel-processing/edge-banding-machine.png',
             alt: product?.name || 'Product Image',
           },
         ];

@@ -51,7 +51,7 @@ export default function About() {
             category: 'Industrial Woodworking & Modular Furniture Adhesives',
             shortDescription:
               'Adhesi Pro is the adhesive brand associated with Modu Pro Innovation Pvt. Ltd. The product range supports furniture, modular-kitchen, door and woodworking applications.',
-            heroImage: '/assets/products/adhesi-pro/lockpro-wr3-drum.png',
+            heroImage: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/adhesi-pro/lockpro-wr3-drum.png',
             tagline: 'Har Joint Mein Pro Strength • D3 & PUR Adhesives',
           },
           {
@@ -61,7 +61,7 @@ export default function About() {
             category: 'PCD Pre-Milling & Grooving Saw Blades',
             shortDescription:
               'Types of Tools: Brazed Tooling, Replaceable Tooling, CNC Router Bits, Saw Blades, PCD Tools, Multi-Boring Bits.',
-            heroImage: '/assets/products/pcd-blades/pre-milling-cutters.png',
+            heroImage: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/pcd-blades/pre-milling-cutters.png',
             tagline: 'PCD Diamond Tooling • Saw Blades & Pre-Milling',
           },
           {
@@ -71,7 +71,7 @@ export default function About() {
             category: 'Woodworking Machinery, Spare Parts & Technical Service Support',
             shortDescription:
               'Modu Pro Innovation Pvt. Ltd. supports woodworking operations with panel-processing machinery, related spare parts and service support.',
-            heroImage: '/assets/products/panel-processing/cnc-nesting-machine.png',
+            heroImage: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/panel-processing/cnc-nesting-machine.png',
             tagline: 'CNC Nesting, Edge Banding & Sizing Lines',
           },
           {
@@ -81,7 +81,7 @@ export default function About() {
             category: 'Edge-Banding Finishes & Modular Furniture Fittings',
             shortDescription:
               'This division brings together PVC edge-banding tapes and selected furniture fittings used in modular furniture and kitchen applications.',
-            heroImage: '/assets/products/edge-banding-hardware/pvc-woodgrain-tape.png',
+            heroImage: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/edge-banding-hardware/pvc-woodgrain-tape.png',
             tagline: 'PVC Edge Finishes & Architectural Cabinet Fittings',
           },
         ];

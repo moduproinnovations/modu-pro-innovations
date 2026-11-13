@@ -28,9 +28,9 @@ const DIVISION_BG_BANNERS = {
 
 const DIVISION_RIGHT_PRODUCT_IMAGE = {
   'adhesi-pro': null, // new adhesi bg banner already contains the product drum on the right
-  'pcd-blades': '/assets/products/pcd-blades/pre-milling-cutter-single.png',
-  'panel-processing': '/assets/products/panel-processing/cnc-nesting-machine.png',
-  'edge-banding-hardware': '/assets/products/edge-banding-hardware/pvc-woodgrain-tape.png',
+  'pcd-blades': 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/pcd-blades/pre-milling-cutter-single.png',
+  'panel-processing': 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/panel-processing/cnc-nesting-machine.png',
+  'edge-banding-hardware': 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/edge-banding-hardware/pvc-woodgrain-tape.png',
 };
 
 const HERO_LOOP_STEP_MS = 3000;
@@ -38,89 +38,89 @@ const HERO_LOOP_STEP_MS = 3000;
 const DIVISION_HERO_LOOP_PRODUCTS = {
   'adhesi-pro': [
     {
-      src: '/assets/products/adhesi-pro/lockpro-wr3-drum.png',
+      src: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/adhesi-pro/lockpro-wr3-drum.png',
       alt: 'Adhesi Pro Lockpro WR 3 D3 Water-Resistant Adhesive Drum',
     },
     {
-      src: '/assets/products/adhesi-pro/lockpro-808-drum.png',
+      src: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/adhesi-pro/lockpro-808-drum.png',
       alt: 'Adhesi Pro Lockpro 808 Woodworking Adhesive Drum',
     },
     {
-      src: '/assets/products/adhesi-pro/1k-pur-adhesive.png',
+      src: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/adhesi-pro/1k-pur-adhesive.png',
       alt: 'Adhesi Pro 1K PUR Moisture-Curing Polyurethane Adhesive',
     },
     {
-      src: '/assets/products/adhesi-pro/lockpro-707-drum.png',
+      src: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/adhesi-pro/lockpro-707-drum.png',
       alt: 'Adhesi Pro Lockpro 707 Industrial Adhesive Drum',
     },
     {
-      src: '/assets/products/adhesi-pro/lockpro-wr3-bucket.png',
+      src: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/adhesi-pro/lockpro-wr3-bucket.png',
       alt: 'Adhesi Pro Lockpro WR 3 Adhesive Bucket',
     },
     {
-      src: '/assets/products/adhesi-pro/lockpro-808-pr-bucket.png',
+      src: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/adhesi-pro/lockpro-808-pr-bucket.png',
       alt: 'Adhesi Pro Lockpro 808 PR Adhesive Bucket',
     },
   ],
   'pcd-blades': [
     {
-      src: '/assets/products/pcd-blades/pre-milling-cutter-single.png',
+      src: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/pcd-blades/pre-milling-cutter-single.png',
       alt: 'Wood Working PCD Pre-Milling Cutter Single',
     },
     {
-      src: '/assets/products/pcd-blades/pre-milling-cutters.png',
+      src: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/pcd-blades/pre-milling-cutters.png',
       alt: 'Wood Working PCD Pre-Milling & Spindle Moulder Cutters',
     },
     {
-      src: '/assets/products/pcd-blades/grooving-saw-blade.png',
+      src: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/pcd-blades/grooving-saw-blade.png',
       alt: 'Wood Working Grooving & Slot Cutter Saw Blade',
     },
   ],
   'panel-processing': [
     {
-      src: '/assets/products/panel-processing/cnc-nesting-machine.png',
+      src: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/panel-processing/cnc-nesting-machine.png',
       alt: 'CNC Nesting Router Machine',
     },
     {
-      src: '/assets/products/panel-processing/edge-banding-machine.png',
+      src: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/panel-processing/edge-banding-machine.png',
       alt: 'Automatic Edge Banding Machine',
     },
     {
-      src: '/assets/products/panel-processing/sliding-table-panel-saw.png',
+      src: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/panel-processing/sliding-table-panel-saw.png',
       alt: 'Precision Sliding Table Panel Saw',
     },
     {
-      src: '/assets/products/panel-processing/multi-boring-machine.png',
+      src: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/panel-processing/multi-boring-machine.png',
       alt: 'Multi-Boring & Drilling Machine',
     },
     {
-      src: '/assets/products/panel-processing/hydraulic-cold-press.png',
+      src: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/panel-processing/hydraulic-cold-press.png',
       alt: 'Hydraulic Cold Press Machine',
     },
   ],
   'edge-banding-hardware': [
     {
-      src: '/assets/products/edge-banding-hardware/pvc-woodgrain-tape.png',
+      src: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/edge-banding-hardware/pvc-woodgrain-tape.png',
       alt: 'Woodgrain PVC Edge Banding Tape Roll',
     },
     {
-      src: '/assets/products/edge-banding-hardware/pvc-solid-color-tapes.png',
+      src: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/edge-banding-hardware/pvc-solid-color-tapes.png',
       alt: 'Solid Colour PVC Edge Banding Tape Rolls',
     },
     {
-      src: '/assets/products/edge-banding-hardware/telescopic-drawer-channels.png',
+      src: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/edge-banding-hardware/telescopic-drawer-channels.png',
       alt: 'Telescopic Ball-Bearing Drawer Slides',
     },
     {
-      src: '/assets/products/edge-banding-hardware/concealed-cup-hinge.png',
+      src: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/edge-banding-hardware/concealed-cup-hinge.png',
       alt: 'Concealed Cabinet Auto Cup Hinge',
     },
     {
-      src: '/assets/products/edge-banding-hardware/spring-flap-hinge.png',
+      src: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/edge-banding-hardware/spring-flap-hinge.png',
       alt: 'Hydraulic Flap Stay Support Hinge',
     },
     {
-      src: '/assets/products/edge-banding-hardware/minifix-cam-fittings.jpg',
+      src: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/edge-banding-hardware/minifix-cam-fittings.jpg',
       alt: 'Mini Fix Cam & Bolt Furniture Connector Fittings',
     },
   ],
@@ -539,7 +539,7 @@ export default function DivisionDetail() {
                         src={
                           product.images?.[0]?.url ||
                           division.heroImage ||
-                          '/assets/products/panel-processing/edge-banding-machine.png'
+                          'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/panel-processing/edge-banding-machine.png'
                         }
                         alt={product.images?.[0]?.alt || product.name}
                         loading="lazy"

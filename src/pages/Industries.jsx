@@ -14,7 +14,7 @@ const DEFAULT_SECTORS = [
     tagline: 'Wardrobe, Cabinet Carcass & Workstation Production',
     description:
       'Modular furniture manufacturers rely on repeatable panel sizing, clean edge banding, dependable adhesive bonding, and accurate knock-down hardware assembly. Modu Pro Innovation Pvt. Ltd. connects all four requirements under one roof—helping manufacturers coordinate Adhesi Pro adhesives, TCT & PCD blades, panel-processing equipment, and PVC edge-banding tapes & fittings through a single point of contact.',
-    image: '/assets/products/panel-processing/edge-banding-machine.png',
+    image: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/panel-processing/edge-banding-machine.png',
     statusBadge: 'REPEATABLE SIZING & KD ASSEMBLY',
     cardFootnote: 'Complete line coordination: adhesives, tooling, machinery & KD fittings',
     keyApplications: [
@@ -37,7 +37,7 @@ const DEFAULT_SECTORS = [
     tagline: 'Moisture-Conscious Carcass, Shutter & Drawer Engineering',
     description:
       'Kitchen cabinetry and shutters demand moisture-conscious adhesive selection, chip-free panel cutting, sealed PVC edges, and smooth-operating hinges and drawer channels. Our four divisions support modular kitchen manufacturers with relevant products and technical guidance tailored to their production line.',
-    image: '/assets/products/edge-banding-hardware/telescopic-drawer-channels.png',
+    image: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/edge-banding-hardware/telescopic-drawer-channels.png',
     statusBadge: 'MOISTURE-CONSCIOUS PRODUCTION',
     cardFootnote: 'D3/PUR adhesives, chip-free pre-milling & soft-closing drawer channels',
     keyApplications: [
@@ -60,7 +60,7 @@ const DEFAULT_SECTORS = [
     tagline: 'Flush Door, Decorative Laminate & Skin Pressing Lines',
     description:
       'Door manufacturers require consistent platen pressing, reliable wood and skin bonding, and accurate perimeter sizing and surface routing. Modu Pro supports door production units with Adhesi Pro adhesives (including Lockpro WR 3, Lockpro 808, and 1K PUR), hydraulic cold/hot-press machines, dual-spindle CNC routers, and panel-saw blades.',
-    image: '/assets/products/panel-processing/hydraulic-cold-press.png',
+    image: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/panel-processing/hydraulic-cold-press.png',
     statusBadge: 'HYDRAULIC PRESSING & BONDING',
     cardFootnote: 'Platen cold/hot-press machines, 1K PUR structural bonding & CNC routers',
     keyApplications: [
@@ -82,7 +82,7 @@ const DEFAULT_SECTORS = [
     tagline: 'High-Volume Commercial Sizing, Nesting & Edge Banding',
     description:
       'For dedicated panel-processing centers and commercial woodworking businesses, machine uptime and tooling precision are paramount. Modu Pro provides sliding table panel saws, automatic edge banders, CNC nesting machines, multi-boring equipment, TCT/PCD saw blades, adhesives, and ongoing maintenance and spare-parts support.',
-    image: '/assets/products/panel-processing/cnc-nesting-machine.png',
+    image: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/panel-processing/cnc-nesting-machine.png',
     statusBadge: 'HIGH-UPTIME PROCESSING LINES',
     cardFootnote: 'Automated CNC nesting routers, panel saws, PCD saw blades & technical service',
     keyApplications: [

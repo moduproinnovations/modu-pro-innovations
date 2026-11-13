@@ -12,7 +12,7 @@ const EMPTY_PRODUCT = {
   category: '',
   shortDescription: '',
   fullDescription: '',
-  imageUrl: '/assets/products/adhesi-pro/lockpro-wr3-drum.png',
+  imageUrl: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/adhesi-pro/lockpro-wr3-drum.png',
   highlightsText: '',
   applicationsText: '',
   specifications: [],
@@ -591,7 +591,7 @@ export default function AdminProducts() {
                         <img
                           src={
                             prod.images?.[0]?.url ||
-                            '/assets/products/panel-processing/edge-banding-machine.png'
+                            'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/panel-processing/edge-banding-machine.png'
                           }
                           alt={prod.name}
                           className="max-h-10 w-auto object-contain"

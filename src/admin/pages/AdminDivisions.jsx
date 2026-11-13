@@ -13,7 +13,7 @@ const EMPTY_FORM = {
   subtitle: '',
   shortDescription: '',
   fullDescription: '',
-  heroImage: '/assets/products/panel-processing/edge-banding-machine.png',
+  heroImage: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/panel-processing/edge-banding-machine.png',
   categoriesText: '',
   applicationsText: '',
   serviceHighlightsText: '',

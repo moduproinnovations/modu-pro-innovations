@@ -41,79 +41,79 @@ const HERO_LOOP_STEP_MS = 3000; // Switch product image every 3 seconds in an in
 
 const HERO_LOOP_PRODUCTS = [
   {
-    src: '/assets/products/adhesi-pro/lockpro-wr3-drum.png',
+    src: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/adhesi-pro/lockpro-wr3-drum.png',
     alt: 'Adhesi Pro Lockpro WR 3 D3 Water-Resistant Adhesive Drum',
   },
   {
-    src: '/assets/products/panel-processing/edge-banding-machine.png',
+    src: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/panel-processing/edge-banding-machine.png',
     alt: 'Automatic Industrial Edge-Banding Machine',
   },
   {
-    src: '/assets/products/pcd-blades/pre-milling-cutters.png',
+    src: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/pcd-blades/pre-milling-cutters.png',
     alt: 'PCD Pre-Milling & Spindle Moulder Cutters',
   },
   {
-    src: '/assets/products/edge-banding-hardware/pvc-woodgrain-tape.png',
+    src: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/edge-banding-hardware/pvc-woodgrain-tape.png',
     alt: 'Woodgrain PVC Edge-Banding Tape Roll',
   },
   {
-    src: '/assets/products/panel-processing/cnc-nesting-machine.png',
+    src: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/panel-processing/cnc-nesting-machine.png',
     alt: 'Dual-Spindle CNC Router & Nesting Machine',
   },
   {
-    src: '/assets/products/adhesi-pro/lockpro-808-drum.png',
+    src: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/adhesi-pro/lockpro-808-drum.png',
     alt: 'Adhesi Pro Lockpro 808 Woodworking Adhesive Drum',
   },
   {
-    src: '/assets/products/pcd-blades/grooving-saw-blade.png',
+    src: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/pcd-blades/grooving-saw-blade.png',
     alt: 'Industrial Grooving & Slot Cutter Saw Blade',
   },
   {
-    src: '/assets/products/edge-banding-hardware/concealed-cup-hinge.png',
+    src: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/edge-banding-hardware/concealed-cup-hinge.png',
     alt: 'Concealed Cup Hinge for Modular Cabinetry',
   },
   {
-    src: '/assets/products/panel-processing/sliding-table-panel-saw.png',
+    src: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/panel-processing/sliding-table-panel-saw.png',
     alt: 'Sliding Table Panel-Saw Machine',
   },
   {
-    src: '/assets/products/adhesi-pro/1k-pur-adhesive.png',
+    src: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/adhesi-pro/1k-pur-adhesive.png',
     alt: 'Adhesi Pro 1K PUR Moisture-Curing Polyurethane Adhesive',
   },
   {
-    src: '/assets/products/edge-banding-hardware/pvc-solid-color-tapes.png',
+    src: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/edge-banding-hardware/pvc-solid-color-tapes.png',
     alt: 'Solid-Colour PVC Edge-Banding Tapes',
   },
   {
-    src: '/assets/products/panel-processing/hydraulic-cold-press.png',
+    src: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/panel-processing/hydraulic-cold-press.png',
     alt: 'Hydraulic Cold-Press Machine',
   },
   {
-    src: '/assets/products/adhesi-pro/lockpro-707-drum.png',
+    src: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/adhesi-pro/lockpro-707-drum.png',
     alt: 'Adhesi Pro Lockpro 707 Industrial Adhesive Drum',
   },
   {
-    src: '/assets/products/edge-banding-hardware/telescopic-drawer-channels.png',
+    src: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/edge-banding-hardware/telescopic-drawer-channels.png',
     alt: 'Heavy-Duty Telescopic Drawer Channels',
   },
   {
-    src: '/assets/products/pcd-blades/pre-milling-cutter-single.png',
+    src: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/pcd-blades/pre-milling-cutter-single.png',
     alt: 'Diamond PCD Pre-Milling Cutter',
   },
   {
-    src: '/assets/products/panel-processing/multi-boring-machine.png',
+    src: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/panel-processing/multi-boring-machine.png',
     alt: 'Multi-Boring Woodworking Machine',
   },
   {
-    src: '/assets/products/adhesi-pro/lockpro-wr3-bucket.png',
+    src: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/adhesi-pro/lockpro-wr3-bucket.png',
     alt: 'Adhesi Pro Lockpro WR 3 Adhesive Bucket',
   },
   {
-    src: '/assets/products/edge-banding-hardware/spring-flap-hinge.png',
+    src: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/edge-banding-hardware/spring-flap-hinge.png',
     alt: 'Modular Cabinet Spring Flap Hinge',
   },
   {
-    src: '/assets/products/adhesi-pro/lockpro-808-pr-bucket.png',
+    src: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/adhesi-pro/lockpro-808-pr-bucket.png',
     alt: 'Adhesi Pro Lockpro 808 PR Adhesive Bucket',
   },
 ];
@@ -128,7 +128,7 @@ const SPOTLIGHT_PRODUCTS = [
     division: { slug: 'pcd-blades' },
     images: [
       {
-        url: '/assets/products/pcd-blades/pre-milling-cutters.png',
+        url: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/pcd-blades/pre-milling-cutters.png',
         alt: 'YASH Industrial Woodworking Pre-Milling & Profile Cutters',
       },
     ],
@@ -142,7 +142,7 @@ const SPOTLIGHT_PRODUCTS = [
     division: { slug: 'panel-processing' },
     images: [
       {
-        url: '/assets/products/panel-processing/edge-banding-machine.png',
+        url: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/panel-processing/edge-banding-machine.png',
         alt: 'Automatic Industrial Edge-Banding Machine',
       },
     ],
@@ -156,7 +156,7 @@ const SPOTLIGHT_PRODUCTS = [
     division: { slug: 'edge-banding-hardware' },
     images: [
       {
-        url: '/assets/products/edge-banding-hardware/pvc-woodgrain-tape.png',
+        url: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/edge-banding-hardware/pvc-woodgrain-tape.png',
         alt: 'Woodgrain PVC Edge-Banding Tape Roll',
       },
     ],
@@ -170,7 +170,7 @@ const SPOTLIGHT_PRODUCTS = [
     division: { slug: 'adhesi-pro' },
     images: [
       {
-        url: '/assets/products/adhesi-pro/lockpro-wr3-drum.png',
+        url: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/adhesi-pro/lockpro-wr3-drum.png',
         alt: 'Adhesi Pro Lockpro WR 3 Drum Packaging',
       },
     ],
@@ -184,7 +184,7 @@ const SPOTLIGHT_PRODUCTS = [
     division: { slug: 'pcd-blades' },
     images: [
       {
-        url: '/assets/products/pcd-blades/grooving-saw-blade.png',
+        url: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/pcd-blades/grooving-saw-blade.png',
         alt: 'YASH Industrial Grooving Saw Blade',
       },
     ],
@@ -198,7 +198,7 @@ const SPOTLIGHT_PRODUCTS = [
     division: { slug: 'panel-processing' },
     images: [
       {
-        url: '/assets/products/panel-processing/cnc-nesting-machine.png',
+        url: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/panel-processing/cnc-nesting-machine.png',
         alt: 'Dual-Spindle CNC Router & Nesting Machine',
       },
     ],
@@ -212,7 +212,7 @@ const SPOTLIGHT_PRODUCTS = [
     division: { slug: 'panel-processing' },
     images: [
       {
-        url: '/assets/products/panel-processing/sliding-table-panel-saw.png',
+        url: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/panel-processing/sliding-table-panel-saw.png',
         alt: 'Sliding Table Panel-Saw Machine',
       },
     ],
@@ -357,8 +357,8 @@ export default function Home() {
         'PVC / Acrylic Adhesives',
         'PUR Adhesives',
       ],
-      heroImage: '/assets/products/adhesi-pro/lockpro-wr3-drum.png',
-      secondaryImage: '/assets/products/adhesi-pro/lockpro-808-drum.png',
+      heroImage: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/adhesi-pro/lockpro-wr3-drum.png',
+      secondaryImage: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/adhesi-pro/lockpro-808-drum.png',
     },
     'pcd-blades': {
       subtitle: 'Panel Processing and Solid Wood Machine',
@@ -369,8 +369,8 @@ export default function Home() {
         'TCT & PCD Circular Saw Blades',
         'Panel-Sizing & Scoring Blades',
       ],
-      heroImage: '/assets/products/pcd-blades/pre-milling-cutters.png',
-      secondaryImage: '/assets/products/pcd-blades/grooving-saw-blade.png',
+      heroImage: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/pcd-blades/pre-milling-cutters.png',
+      secondaryImage: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/pcd-blades/grooving-saw-blade.png',
     },
     'panel-processing': {
       subtitle: 'Industrial Woodworking Machinery, Spare Parts & Technical Service',
@@ -382,8 +382,8 @@ export default function Home() {
         'Hydraulic Cold/Hot Presses',
         'Multi-Boring Machines',
       ],
-      heroImage: '/assets/products/panel-processing/edge-banding-machine.png',
-      secondaryImage: '/assets/products/panel-processing/cnc-nesting-machine.png',
+      heroImage: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/panel-processing/edge-banding-machine.png',
+      secondaryImage: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/panel-processing/cnc-nesting-machine.png',
     },
     'edge-banding-hardware': {
       subtitle: 'Architectural PVC Edge-Banding Tapes & Furniture Fittings',
@@ -395,8 +395,8 @@ export default function Home() {
         'Concealed Cup Hinges',
         'Mini Fix KD Fittings',
       ],
-      heroImage: '/assets/products/edge-banding-hardware/pvc-woodgrain-tape.png',
-      secondaryImage: '/assets/products/edge-banding-hardware/telescopic-drawer-channels.png',
+      heroImage: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/edge-banding-hardware/pvc-woodgrain-tape.png',
+      secondaryImage: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/edge-banding-hardware/telescopic-drawer-channels.png',
     },
   };
 
@@ -417,7 +417,7 @@ export default function Home() {
             slug: 'adhesi-pro',
             shortDescription:
               'Adhesi Pro is the adhesive brand associated with Modu Pro Innovation Pvt. Ltd. The product range supports furniture, modular-kitchen, door and woodworking applications.',
-            heroImage: '/assets/products/adhesi-pro/lockpro-wr3-drum.png',
+            heroImage: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/adhesi-pro/lockpro-wr3-drum.png',
           },
           {
             code: '02',
@@ -425,7 +425,7 @@ export default function Home() {
             slug: 'pcd-blades',
             shortDescription:
               'Types of Tools: Brazed Tooling, Replaceable Tooling, CNC Router Bits, Saw Blades, PCD Tools, Multi-Boring Bits.',
-            heroImage: '/assets/products/pcd-blades/pre-milling-cutters.png',
+            heroImage: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/pcd-blades/pre-milling-cutters.png',
           },
           {
             code: '03',
@@ -433,7 +433,7 @@ export default function Home() {
             slug: 'panel-processing',
             shortDescription:
               'Modu Pro Innovation Pvt. Ltd. supports woodworking operations with panel-processing machinery, related spare parts and service support.',
-            heroImage: '/assets/products/panel-processing/edge-banding-machine.png',
+            heroImage: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/panel-processing/edge-banding-machine.png',
           },
           {
             code: '04',
@@ -441,7 +441,7 @@ export default function Home() {
             slug: 'edge-banding-hardware',
             shortDescription:
               'This division brings together PVC edge-banding tapes and selected furniture fittings used in modular furniture and kitchen applications.',
-            heroImage: '/assets/products/edge-banding-hardware/pvc-woodgrain-tape.png',
+            heroImage: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/edge-banding-hardware/pvc-woodgrain-tape.png',
           },
         ]
   ).map((d, idx) => {
@@ -469,28 +469,28 @@ export default function Home() {
             slug: 'modular-furniture-manufacturing',
             shortDescription:
               'Coordinated adhesives, panel sizing & edge-banding machinery, TCT/PCD blades, PVC edge tapes, and KD fittings.',
-            image: '/assets/products/panel-processing/edge-banding-machine.png',
+            image: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/panel-processing/edge-banding-machine.png',
           },
           {
             name: 'Modular Kitchen Manufacturers',
             slug: 'modular-kitchen-manufacturing',
             shortDescription:
               'Water-resistant D3 & PUR adhesives, pre-milling cutters, telescopic drawer channels, and 2D/3D concealed hinges.',
-            image: '/assets/products/edge-banding-hardware/telescopic-drawer-channels.png',
+            image: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/edge-banding-hardware/telescopic-drawer-channels.png',
           },
           {
             name: 'Door Manufacturers',
             slug: 'door-manufacturing',
             shortDescription:
               'Industrial lamination adhesives, hydraulic cold/hot-press machinery, dual-spindle CNC routers, and panel-saw blades.',
-            image: '/assets/products/panel-processing/hydraulic-cold-press.png',
+            image: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/panel-processing/hydraulic-cold-press.png',
           },
           {
             name: 'Woodworking and Panel-Processing Businesses',
             slug: 'woodworking-and-panel-processing',
             shortDescription:
               'Complete panel-processing equipment, spare parts, preventive maintenance, repairs, and industrial consumables.',
-            image: '/assets/products/panel-processing/cnc-nesting-machine.png',
+            image: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/panel-processing/cnc-nesting-machine.png',
           },
         ];
 
@@ -617,7 +617,7 @@ export default function Home() {
             <motion.div {...fadeUp} className="lg:col-span-6">
               <div className="lux-curve-alt bg-[#16294D] border border-[#D9C08B]/28 min-h-[380px] p-10 flex items-center justify-center overflow-hidden">
                 <img
-                  src="/assets/products/panel-processing/edge-banding-machine.png"
+                  src="https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/panel-processing/edge-banding-machine.png"
                   alt="Automatic industrial edge-banding machine"
                   loading="lazy"
                   width="560"
@@ -906,7 +906,7 @@ export default function Home() {
                     className={`${index % 2 ? 'lux-curve-alt mt-6' : 'lux-curve'} bg-[#F4EEDF] border border-[#0A1428]/15 h-40 sm:h-48 p-4 flex flex-col items-center justify-center text-center`}
                   >
                     <img
-                      src={ind.image || '/assets/products/panel-processing/edge-banding-machine.png'}
+                      src={ind.image || 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/panel-processing/edge-banding-machine.png'}
                       alt=""
                       loading="lazy"
                       className="max-h-24 w-auto object-contain"
@@ -926,7 +926,7 @@ export default function Home() {
             <motion.div {...fadeUp} className="lg:col-span-5">
               <div className="lux-curve bg-[#16294D] border border-[#D9C08B]/28 min-h-[420px] p-8 flex items-end overflow-hidden">
                 <img
-                  src="/assets/products/panel-processing/hydraulic-cold-press.png"
+                  src="https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/panel-processing/hydraulic-cold-press.png"
                   alt="Hydraulic press used in panel processing"
                   loading="lazy"
                   className="w-full max-h-[380px] object-contain"
@@ -1062,7 +1062,7 @@ export default function Home() {
                       <img
                         src={
                           product.images?.[0]?.url ||
-                          '/assets/products/panel-processing/edge-banding-machine.png'
+                          'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/panel-processing/edge-banding-machine.png'
                         }
                         alt={product.images?.[0]?.alt || product.name}
                         loading="lazy"
@@ -1125,7 +1125,7 @@ export default function Home() {
             <div className="lg:col-span-5">
               <div className="lux-curve bg-[#0A1428] border border-[#D9C08B]/22 h-64 sm:h-72 p-6 flex items-center justify-center overflow-hidden">
                 <img
-                  src="/assets/products/adhesi-pro/lockpro-wr3-drum.png"
+                  src="https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/adhesi-pro/lockpro-wr3-drum.png"
                   alt="Adhesi Pro adhesive drum"
                   loading="lazy"
                   className="max-h-52 w-auto object-contain"

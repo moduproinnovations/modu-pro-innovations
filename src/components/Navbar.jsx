@@ -23,28 +23,28 @@ const DEFAULT_DIVISION_LINKS = [
     name: 'Adhesi Pro',
     slug: 'adhesi-pro',
     subtitle: 'PVAC, D3/D2, PVC/Acrylic & PUR Adhesives',
-    heroImage: '/assets/products/adhesi-pro/lockpro-wr3-drum.png',
+    heroImage: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/adhesi-pro/lockpro-wr3-drum.png',
   },
   {
     code: '02',
     name: 'Wood Working & Modular Furniture Tools',
     slug: 'pcd-blades',
     subtitle: 'Panel Processing and Solid Wood Machine',
-    heroImage: '/assets/products/pcd-blades/pre-milling-cutters.png',
+    heroImage: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/pcd-blades/pre-milling-cutters.png',
   },
   {
     code: '03',
     name: 'Panel Processing Machines Division',
     slug: 'panel-processing',
     subtitle: 'Edge Banders, CNC, Panel Saws & Presses',
-    heroImage: '/assets/products/panel-processing/edge-banding-machine.png',
+    heroImage: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/panel-processing/edge-banding-machine.png',
   },
   {
     code: '04',
     name: 'PVC Edge-Banding Tapes & Hardware',
     slug: 'edge-banding-hardware',
     subtitle: 'PVC Edge Tapes, Hinges, Channels & KD Fittings',
-    heroImage: '/assets/products/edge-banding-hardware/pvc-woodgrain-tape.png',
+    heroImage: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/edge-banding-hardware/pvc-woodgrain-tape.png',
   },
 ];
 
@@ -73,7 +73,7 @@ export default function Navbar() {
               : d.name,
           slug: d.slug,
           subtitle: d.subtitle || d.shortDescription,
-          heroImage: d.heroImage || '/assets/products/panel-processing/edge-banding-machine.png',
+          heroImage: d.heroImage || 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/panel-processing/edge-banding-machine.png',
         }))
       : DEFAULT_DIVISION_LINKS;
 

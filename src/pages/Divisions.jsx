@@ -48,7 +48,7 @@ export default function Divisions() {
             slug: 'adhesi-pro',
             shortDescription:
               'Adhesi Pro is the adhesive brand associated with Modu Pro Innovation Pvt. Ltd. The product range supports furniture, modular-kitchen, door and woodworking applications.',
-            heroImage: '/assets/products/adhesi-pro/lockpro-wr3-drum.png',
+            heroImage: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/adhesi-pro/lockpro-wr3-drum.png',
           },
           {
             code: '02',
@@ -56,7 +56,7 @@ export default function Divisions() {
             slug: 'pcd-blades',
             shortDescription:
               'Types of Tools: Brazed Tooling, Replaceable Tooling, CNC Router Bits, Saw Blades, PCD Tools, Multi-Boring Bits.',
-            heroImage: '/assets/products/pcd-blades/pre-milling-cutters.png',
+            heroImage: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/pcd-blades/pre-milling-cutters.png',
           },
           {
             code: '03',
@@ -64,7 +64,7 @@ export default function Divisions() {
             slug: 'panel-processing',
             shortDescription:
               'Modu Pro Innovation Pvt. Ltd. supports woodworking operations with panel-processing machinery, related spare parts and service support.',
-            heroImage: '/assets/products/panel-processing/edge-banding-machine.png',
+            heroImage: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/panel-processing/edge-banding-machine.png',
           },
           {
             code: '04',
@@ -72,7 +72,7 @@ export default function Divisions() {
             slug: 'edge-banding-hardware',
             shortDescription:
               'This division brings together PVC edge-banding tapes and selected furniture fittings used in modular furniture and kitchen applications.',
-            heroImage: '/assets/products/edge-banding-hardware/pvc-woodgrain-tape.png',
+            heroImage: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/edge-banding-hardware/pvc-woodgrain-tape.png',
           },
         ];
 

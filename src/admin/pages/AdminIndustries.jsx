@@ -10,7 +10,7 @@ const EMPTY_INDUSTRY = {
   slug: '',
   shortDescription: '',
   description: '',
-  image: '/assets/products/panel-processing/edge-banding-machine.png',
+  image: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/panel-processing/edge-banding-machine.png',
   keyApplicationsText: '',
   relatedDivisions: [],
   publicationStatus: 'published',

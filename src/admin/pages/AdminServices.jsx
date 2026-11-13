@@ -11,7 +11,7 @@ const EMPTY_SERVICE = {
   category: 'Machinery & Technical Support',
   shortDescription: '',
   description: '',
-  image: '/assets/products/panel-processing/edge-banding-machine.png',
+  image: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/panel-processing/edge-banding-machine.png',
   scopeItemsText: '',
   confirmationStatus: 'pending_confirmation',
   publicationStatus: 'published',
