@@ -274,7 +274,7 @@ export default function AdminEnquiries() {
       </div>
 
       {/* Filters Bar */}
-      <div className="bg-[#16294D] border border-[#3F5E8C]/45 p-3.5 sm:p-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 items-center">
+      <div className="bg-[#16294D] border border-[#3F5E8C]/45 p-4 rounded-xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 items-center">
         <div className="relative lg:col-span-2">
           <Search
             aria-hidden="true"
@@ -288,7 +288,7 @@ export default function AdminEnquiries() {
               setPage(1);
             }}
             placeholder="Search reference, name, company, email, phone..."
-            className="w-full pl-10 pr-3 py-2 bg-[#0A1428] border border-[#3F5E8C]/60 focus:border-[#D9C08B] rounded-lg text-xs text-[#F4EEDF] outline-none"
+            className="w-full pl-10 pr-3 py-2.5 bg-[#0A1428] border border-[#3F5E8C]/60 focus:border-[#D9C08B] rounded-lg text-xs text-[#F4EEDF] outline-none transition-colors"
           />
         </div>
 
