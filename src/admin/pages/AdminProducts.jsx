@@ -416,6 +416,15 @@ export default function AdminProducts() {
                 />
                 {uploadingImage ? 'Uploading...' : 'Or upload image directly'}
               </label>
+              {form.imageUrl && (
+                <div className="mt-3">
+                  <img
+                    src={form.imageUrl}
+                    alt="Product preview"
+                    className="max-h-40 w-auto object-contain border border-[#3F5E8C]/50 bg-[#0A1428] p-2"
+                  />
+                </div>
+              )}
             </div>
 
             <div>
