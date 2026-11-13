@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useCallback } from 'react';
-import { Plus, Edit3, Trash2, Save, X, Search, Star } from 'lucide-react';
+import { Plus, Edit3, Trash2, Save, X, Search, Star, Upload, Image as ImageIcon, FileText, CheckCircle2 } from 'lucide-react';
 import { adminApi } from '../../services/api';
 import { useToast } from '../../context/ToastContext';
 import SeoHead from '../../components/SeoHead';
@@ -127,10 +127,22 @@ export default function AdminProducts() {
     setUploadingImage(true);
     try {
       const res = await adminApi.uploadProductImage(file);
-      if (res?.url) setForm((f) => ({ ...f, imageUrl: res.url }));
-      else alert(res?.message || 'Upload failed.');
+      if (res?.url) {
+        setForm((f) => ({ ...f, imageUrl: res.url }));
+        addToast({
+          type: 'success',
+          title: 'Image Uploaded',
+          message: 'Product image uploaded to Cloud Storage successfully.',
+        });
+      } else {
+        throw new Error(res?.message || 'Upload failed.');
+      }
     } catch (err) {
-      alert(err?.message || 'Upload failed.');
+      addToast({
+        type: 'error',
+        title: 'Upload Failed',
+        message: err?.message || 'Unable to upload image.',
+      });
     } finally {
       setUploadingImage(false);
       e.target.value = '';
@@ -225,7 +237,7 @@ export default function AdminProducts() {
         <button
           type="button"
           onClick={startCreate}
-          className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#D9C08B] text-[#0A1428] text-xs font-semibold uppercase tracking-wider cursor-pointer"
+          className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#D9C08B] hover:bg-[#E5CC9A] text-[#0A1428] text-xs font-semibold uppercase tracking-wider rounded-xl transition-all shadow-md cursor-pointer"
         >
           <Plus aria-hidden="true" className="w-4 h-4" />
           <span>Add Product</span>
@@ -233,7 +245,7 @@ export default function AdminProducts() {
       </div>
 
       {/* Filters */}
-      <div className="bg-[#16294D] border border-[#3F5E8C]/45 p-4 grid grid-cols-1 sm:grid-cols-3 gap-3">
+      <div className="bg-[#16294D] border border-[#3F5E8C]/45 rounded-xl p-4 grid grid-cols-1 sm:grid-cols-3 gap-3 shadow-md">
         <div className="relative">
           <Search
             aria-hidden="true"
@@ -280,285 +292,393 @@ export default function AdminProducts() {
       {/* Product Create/Edit Modal Form */}
       {showForm && (
         <div
-          className="fixed inset-0 z-50 flex items-start justify-center bg-black/70 backdrop-blur-sm overflow-y-auto p-4 sm:p-8"
+          className="fixed inset-0 z-50 flex items-start justify-center bg-[#0A1428]/80 backdrop-blur-md overflow-y-auto p-3 sm:p-6 lg:p-8"
           onClick={() => setShowForm(false)}
         >
           <form
             onSubmit={handleSave}
             onClick={(e) => e.stopPropagation()}
-            className="bg-[#16294D] border border-[#D9C08B]/40 rounded-2xl p-6 sm:p-8 space-y-6 shadow-2xl w-full max-w-6xl my-8"
+            className="relative bg-[#16294D] border border-[#D9C08B]/40 rounded-2xl shadow-2xl shadow-black/80 w-full max-w-5xl my-4 sm:my-8 overflow-hidden flex flex-col"
           >
-          <div className="flex items-center justify-between pb-4 border-b border-[#3F5E8C]/40">
-            <h2 className="font-display text-2xl font-semibold text-[#F4EEDF]">
-              {editingId ? 'Edit Product' : 'Add New Product'}
-            </h2>
-            <button
-              type="button"
-              onClick={() => setShowForm(false)}
-              className="p-1.5 text-[#F4EEDF]/70 hover:text-[#D9C08B]"
-            >
-              <X aria-hidden="true" className="w-5 h-5" />
-            </button>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            <div className="sm:col-span-2">
-              <label className="block text-xs uppercase tracking-wider text-[#F4EEDF] mb-1">
-                Product Name *
-              </label>
-              <input
-                type="text"
-                required
-                value={form.name}
-                onChange={(e) => setForm({ ...form, name: e.target.value })}
-                onBlur={(e) => {
-                  if (!form.slug.trim() && e.target.value.trim()) {
-                    const s = e.target.value
-                      .toLowerCase()
-                      .trim()
-                      .replace(/[^a-z0-9]+/g, '-')
-                      .replace(/^-|-$/g, '');
-                    setForm((f) => ({ ...f, slug: s }));
-                  }
-                }}
-                className="w-full px-3 py-2.5 bg-[#0A1428] border border-[#3F5E8C]/60 text-sm text-[#F4EEDF]"
-              />
-            </div>
-
-            <div className="sm:col-span-2">
-              <label className="block text-xs uppercase tracking-wider text-[#F4EEDF] mb-1">
-                Slug (auto-generated, editable)
-              </label>
-              <input
-                type="text"
-                value={form.slug}
-                onChange={(e) => setForm({ ...form, slug: e.target.value })}
-                placeholder="auto-from-name"
-                className="w-full px-3 py-2.5 bg-[#0A1428] border border-[#3F5E8C]/60 text-xs text-[#F4EEDF] font-mono-code"
-              />
-            </div>
-
-            <div>
-              <CustomDropdown
-                label="Division *"
-                size="sm"
-                value={form.division}
-                onChange={(val) => setForm({ ...form, division: val })}
-                options={divisions.map((d) => ({
-                  value: d._id,
-                  label: d.name,
-                  badge: d.code,
-                }))}
-                placeholder="Select Division"
-                searchable
-              />
-            </div>
-
-            <div>
-              <label className="block text-xs uppercase tracking-wider text-[#F4EEDF] mb-1">
-                Category *
-              </label>
-              <input
-                type="text"
-                required
-                value={form.category}
-                onChange={(e) => setForm({ ...form, category: e.target.value })}
-                placeholder="e.g., D3 and Commercial D3 Adhesives"
-                className="w-full px-3 py-2.5 bg-[#0A1428] border border-[#3F5E8C]/60 text-sm text-[#F4EEDF]"
-              />
-            </div>
-
-            <div>
-              <CustomDropdown
-                label="Publication Status"
-                size="sm"
-                value={form.publicationStatus}
-                onChange={(val) => setForm({ ...form, publicationStatus: val })}
-                options={[
-                  { value: 'published', label: 'Published (Live on Website)' },
-                  { value: 'draft', label: 'Draft (Hidden from Public)' },
-                  { value: 'pending_review', label: 'Pending Client Confirmation' },
-                ]}
-              />
-            </div>
-
-            <div className="flex items-center gap-3 pt-6">
-              <input
-                id="prod-featured"
-                type="checkbox"
-                checked={form.isFeatured}
-                onChange={(e) => setForm({ ...form, isFeatured: e.target.checked })}
-                className="w-4 h-4 min-h-0 accent-[#D9C08B]"
-              />
-              <label htmlFor="prod-featured" className="text-xs uppercase tracking-wider text-[#F4EEDF]">
-                Feature on Homepage
-              </label>
-            </div>
-
-            {/* Image URL + Quick Media Library Selector */}
-            <div className="sm:col-span-2">
-              <label className="block text-xs uppercase tracking-wider text-[#F4EEDF] mb-1">
-                Primary Image URL
-              </label>
-              <input
-                type="text"
-                value={form.imageUrl}
-                onChange={(e) => setForm({ ...form, imageUrl: e.target.value })}
-                className="w-full px-3 py-2.5 bg-[#0A1428] border border-[#3F5E8C]/60 text-xs text-[#F4EEDF]"
-              />
-              <label className="mt-2 inline-flex items-center gap-2 cursor-pointer text-[11px] uppercase tracking-wider text-[#D9C08B] hover:underline">
-                <input
-                  type="file"
-                  accept="image/*"
-                  onChange={handleImageUpload}
-                  disabled={uploadingImage}
-                  className="hidden"
-                />
-                {uploadingImage ? 'Uploading...' : 'Or upload image directly'}
-              </label>
-              {form.imageUrl && (
-                <div className="mt-3">
-                  <img
-                    src={form.imageUrl}
-                    alt="Product preview"
-                    className="max-h-40 w-auto object-contain border border-[#3F5E8C]/50 bg-[#0A1428] p-2"
-                  />
+            {/* Modal Header */}
+            <div className="px-5 sm:px-8 py-5 border-b border-[#3F5E8C]/40 bg-[#0A1428]/60 flex items-center justify-between gap-4">
+              <div className="min-w-0">
+                <div className="flex items-center gap-2 mb-1">
+                  <span className="px-2 py-0.5 rounded text-[10px] font-mono-code uppercase tracking-wider bg-[#D9C08B]/15 text-[#D9C08B] border border-[#D9C08B]/30">
+                    {editingId ? 'Edit Product' : 'New Product'}
+                  </span>
+                  <span className="text-xs font-mono-code text-[#F4EEDF]/50 truncate max-w-xs sm:max-w-md">
+                    {form.slug ? `/${form.slug}` : 'auto-generated slug'}
+                  </span>
                 </div>
-              )}
-            </div>
-
-            <div />
-
-            <div className="sm:col-span-3">
-              <label className="block text-xs uppercase tracking-wider text-[#F4EEDF] mb-1">
-                Short Description *
-              </label>
-              <textarea
-                rows={2}
-                required
-                value={form.shortDescription}
-                onChange={(e) => setForm({ ...form, shortDescription: e.target.value })}
-                className="w-full px-3 py-2 bg-[#0A1428] border border-[#3F5E8C]/60 text-sm text-[#F4EEDF]"
-              />
-            </div>
-
-            <div className="sm:col-span-3">
-              <label className="block text-xs uppercase tracking-wider text-[#F4EEDF] mb-1">
-                Full Description
-              </label>
-              <textarea
-                rows={3}
-                value={form.fullDescription}
-                onChange={(e) => setForm({ ...form, fullDescription: e.target.value })}
-                className="w-full px-3 py-2 bg-[#0A1428] border border-[#3F5E8C]/60 text-sm text-[#F4EEDF]"
-              />
-            </div>
-
-            <div className="sm:col-span-1">
-              <label className="block text-xs uppercase tracking-wider text-[#F4EEDF] mb-1">
-                Highlights (One per line, optional)
-              </label>
-              <textarea
-                rows={3}
-                value={form.highlightsText}
-                onChange={(e) => setForm({ ...form, highlightsText: e.target.value })}
-                className="w-full px-3 py-2 bg-[#0A1428] border border-[#3F5E8C]/60 text-xs text-[#F4EEDF]"
-              />
-            </div>
-
-            <div className="sm:col-span-2">
-              <label className="block text-xs uppercase tracking-wider text-[#F4EEDF] mb-1">
-                Applications (One per line, optional)
-              </label>
-              <textarea
-                rows={3}
-                value={form.applicationsText}
-                onChange={(e) => setForm({ ...form, applicationsText: e.target.value })}
-                className="w-full px-3 py-2 bg-[#0A1428] border border-[#3F5E8C]/60 text-xs text-[#F4EEDF]"
-              />
-            </div>
-          </div>
-
-          {/* Optional Technical Specifications with Client Verification Toggle */}
-          <div className="pt-4 border-t border-[#3F5E8C]/40 space-y-3">
-            <div className="flex items-center justify-between">
-              <div>
-                <h3 className="text-xs font-mono-code uppercase tracking-wider text-[#D9C08B]">
-                  Optional Technical Specifications
-                </h3>
-                <p className="text-[11px] text-[#F4EEDF]/65">
-                  Only specifications marked &ldquo;Verified&rdquo; are displayed on the public
-                  website.
-                </p>
+                <h2 className="font-display text-xl sm:text-2xl font-semibold text-[#F4EEDF] truncate">
+                  {editingId ? (form.name || 'Edit Product') : 'Add New Product'}
+                </h2>
               </div>
               <button
                 type="button"
-                onClick={addSpecRow}
-                className="px-3 py-1.5 bg-[#0A1428] border border-[#D9C08B]/50 text-xs text-[#D9C08B]"
+                onClick={() => setShowForm(false)}
+                className="p-2 rounded-xl bg-[#0A1428] border border-[#3F5E8C]/50 text-[#F4EEDF]/70 hover:text-[#D9C08B] hover:border-[#D9C08B] transition-colors cursor-pointer shrink-0"
+                aria-label="Close modal"
               >
-                + Add Specification Row
+                <X aria-hidden="true" className="w-5 h-5" />
               </button>
             </div>
 
-            {form.specifications.map((spec, idx) => (
-              <div key={idx} className="grid grid-cols-1 sm:grid-cols-12 gap-2 items-center">
-                <input
-                  type="text"
-                  placeholder="Specification Label (e.g., Packaging)"
-                  value={spec.label}
-                  onChange={(e) => updateSpecRow(idx, 'label', e.target.value)}
-                  className="sm:col-span-4 px-3 py-2 bg-[#0A1428] border border-[#3F5E8C]/60 text-xs text-[#F4EEDF]"
-                />
-                <input
-                  type="text"
-                  placeholder="Value (e.g., Industrial Drum)"
-                  value={spec.value}
-                  onChange={(e) => updateSpecRow(idx, 'value', e.target.value)}
-                  className="sm:col-span-5 px-3 py-2 bg-[#0A1428] border border-[#3F5E8C]/60 text-xs text-[#F4EEDF]"
-                />
-                <label className="sm:col-span-2 flex items-center gap-2 text-xs text-[#F4EEDF]">
-                  <input
-                    type="checkbox"
-                    checked={Boolean(spec.isVerified)}
-                    onChange={(e) => updateSpecRow(idx, 'isVerified', e.target.checked)}
-                    className="w-4 h-4 min-h-0 accent-[#D9C08B]"
-                  />
-                  <span>Verified</span>
-                </label>
+            {/* Modal Body */}
+            <div className="p-5 sm:p-8 space-y-6 overflow-y-auto max-h-[calc(85vh-130px)]">
+              {/* Card 1: Basic Information & Taxonomy */}
+              <div className="bg-[#0A1428]/50 border border-[#3F5E8C]/35 rounded-xl p-4 sm:p-6 space-y-4">
+                <div className="flex items-center gap-2 pb-2 border-b border-[#3F5E8C]/25 text-[#D9C08B]">
+                  <FileText className="w-4 h-4" />
+                  <h3 className="font-mono-code text-xs uppercase tracking-wider font-semibold">
+                    1. General Information &amp; Taxonomy
+                  </h3>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                  <div className="sm:col-span-2">
+                    <label className="block text-xs uppercase tracking-wider text-[#F4EEDF] mb-1.5 font-medium">
+                      Product Name <span className="text-[#D9C08B]">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      value={form.name}
+                      onChange={(e) => setForm({ ...form, name: e.target.value })}
+                      onBlur={(e) => {
+                        if (!form.slug.trim() && e.target.value.trim()) {
+                          const s = e.target.value
+                            .toLowerCase()
+                            .trim()
+                            .replace(/[^a-z0-9]+/g, '-')
+                            .replace(/^-|-$/g, '');
+                          setForm((f) => ({ ...f, slug: s }));
+                        }
+                      }}
+                      placeholder="e.g., Lockpro WR 3 (D3 Water-Resistant Adhesive)"
+                      className="w-full px-3.5 py-2.5 bg-[#0A1428] border border-[#3F5E8C]/60 focus:border-[#D9C08B] focus:ring-1 focus:ring-[#D9C08B]/30 rounded-xl text-sm text-[#F4EEDF] outline-none transition-colors"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-xs uppercase tracking-wider text-[#F4EEDF] mb-1.5 font-medium">
+                      URL Slug
+                    </label>
+                    <input
+                      type="text"
+                      value={form.slug}
+                      onChange={(e) => setForm({ ...form, slug: e.target.value })}
+                      placeholder="auto-generated-slug"
+                      className="w-full px-3.5 py-2.5 bg-[#0A1428] border border-[#3F5E8C]/60 focus:border-[#D9C08B] focus:ring-1 focus:ring-[#D9C08B]/30 rounded-xl text-xs text-[#F4EEDF] font-mono-code outline-none transition-colors"
+                    />
+                  </div>
+
+                  <div>
+                    <CustomDropdown
+                      label="Division *"
+                      size="sm"
+                      value={form.division}
+                      onChange={(val) => setForm({ ...form, division: val })}
+                      options={divisions.map((d) => ({
+                        value: d._id,
+                        label: d.name,
+                        badge: d.code,
+                      }))}
+                      placeholder="Select Division"
+                      searchable
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-xs uppercase tracking-wider text-[#F4EEDF] mb-1.5 font-medium">
+                      Category <span className="text-[#D9C08B]">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      value={form.category}
+                      onChange={(e) => setForm({ ...form, category: e.target.value })}
+                      placeholder="e.g., D3 and Commercial D3 Adhesives"
+                      className="w-full px-3.5 py-2.5 bg-[#0A1428] border border-[#3F5E8C]/60 focus:border-[#D9C08B] focus:ring-1 focus:ring-[#D9C08B]/30 rounded-xl text-sm text-[#F4EEDF] outline-none transition-colors"
+                    />
+                  </div>
+
+                  <div>
+                    <CustomDropdown
+                      label="Publication Status"
+                      size="sm"
+                      value={form.publicationStatus}
+                      onChange={(val) => setForm({ ...form, publicationStatus: val })}
+                      options={[
+                        { value: 'published', label: 'Published (Live on Website)' },
+                        { value: 'draft', label: 'Draft (Hidden from Public)' },
+                        { value: 'pending_review', label: 'Pending Client Confirmation' },
+                      ]}
+                    />
+                  </div>
+
+                  <div className="flex items-center gap-3 pt-2">
+                    <label className="relative inline-flex items-center cursor-pointer select-none">
+                      <input
+                        type="checkbox"
+                        checked={form.isFeatured}
+                        onChange={(e) => setForm({ ...form, isFeatured: e.target.checked })}
+                        className="sr-only peer"
+                      />
+                      <div className="w-10 h-6 bg-[#0A1428] peer-focus:outline-none border border-[#3F5E8C]/60 peer-checked:border-[#D9C08B] rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-[#D9C08B] after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#D9C08B]/20"></div>
+                      <span className="ml-3 text-xs uppercase tracking-wider text-[#F4EEDF] font-medium inline-flex items-center gap-1.5">
+                        <Star className={`w-3.5 h-3.5 ${form.isFeatured ? 'fill-[#D9C08B] text-[#D9C08B]' : 'text-[#F4EEDF]/40'}`} />
+                        Feature on Homepage
+                      </span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              {/* Card 2: Product Imagery & Cloud Storage Asset */}
+              <div className="bg-[#0A1428]/50 border border-[#3F5E8C]/35 rounded-xl p-4 sm:p-6 space-y-4">
+                <div className="flex items-center justify-between pb-2 border-b border-[#3F5E8C]/25 text-[#D9C08B]">
+                  <div className="flex items-center gap-2">
+                    <ImageIcon className="w-4 h-4" />
+                    <h3 className="font-mono-code text-xs uppercase tracking-wider font-semibold">
+                      2. Product Imagery &amp; Media Asset
+                    </h3>
+                  </div>
+                  <span className="text-[10px] font-mono-code text-[#F4EEDF]/60">
+                    Uploaded directly to Supabase Storage
+                  </span>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-5 items-center">
+                  {/* Left: Preview Pedestal */}
+                  <div className="md:col-span-4 flex flex-col items-center">
+                    <div className="relative w-36 h-36 sm:w-44 sm:h-44 rounded-2xl bg-[#0A1428] border-2 border-dashed border-[#D9C08B]/35 flex items-center justify-center p-3 overflow-hidden shadow-inner group">
+                      {form.imageUrl ? (
+                        <>
+                          <img
+                            src={form.imageUrl}
+                            alt="Product preview"
+                            className="max-h-full max-w-full object-contain transition-transform duration-300 group-hover:scale-105"
+                          />
+                          <button
+                            type="button"
+                            onClick={() => setForm((f) => ({ ...f, imageUrl: '' }))}
+                            className="absolute top-2 right-2 p-1.5 rounded-full bg-[#0A1428]/90 text-[#F4EEDF]/70 hover:text-red-400 opacity-0 group-hover:opacity-100 transition-opacity"
+                            title="Remove image"
+                          >
+                            <Trash2 className="w-3.5 h-3.5" />
+                          </button>
+                        </>
+                      ) : (
+                        <div className="text-center p-2 text-[#F4EEDF]/40 space-y-1">
+                          <ImageIcon className="w-8 h-8 mx-auto text-[#3F5E8C]" />
+                          <p className="text-[10px] uppercase font-mono-code">No Image Uploaded</p>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Right: Upload controls */}
+                  <div className="md:col-span-8 space-y-3">
+                    <label className="block p-4 sm:p-5 rounded-xl border border-[#D9C08B]/30 hover:border-[#D9C08B]/70 bg-[#0A1428]/60 text-center cursor-pointer transition-colors group">
+                      <input
+                        type="file"
+                        accept="image/*"
+                        onChange={handleImageUpload}
+                        disabled={uploadingImage}
+                        className="hidden"
+                      />
+                      <div className="flex flex-col items-center gap-2">
+                        <div className="p-2.5 rounded-full bg-[#16294D] border border-[#D9C08B]/40 text-[#D9C08B] group-hover:scale-110 transition-transform">
+                          <Upload className="w-5 h-5" />
+                        </div>
+                        <div>
+                          <p className="text-xs font-semibold uppercase tracking-wider text-[#F4EEDF]">
+                            {uploadingImage ? 'Uploading Image to Supabase...' : 'Click to Upload Product Image'}
+                          </p>
+                          <p className="text-[11px] text-[#F4EEDF]/50 mt-0.5">
+                            Supports PNG, WEBP, JPG or SVG (Transparent background recommended)
+                          </p>
+                        </div>
+                      </div>
+                    </label>
+
+                    <div>
+                      <label className="block text-[11px] uppercase tracking-wider text-[#F4EEDF]/70 mb-1">
+                        Or enter direct Image URL
+                      </label>
+                      <input
+                        type="url"
+                        value={form.imageUrl}
+                        onChange={(e) => setForm({ ...form, imageUrl: e.target.value })}
+                        placeholder="https://..."
+                        className="w-full px-3 py-2 bg-[#0A1428] border border-[#3F5E8C]/60 focus:border-[#D9C08B] rounded-lg text-xs text-[#F4EEDF] font-mono-code outline-none"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Card 3: Narrative & Copy */}
+              <div className="bg-[#0A1428]/50 border border-[#3F5E8C]/35 rounded-xl p-4 sm:p-6 space-y-4">
+                <div className="flex items-center gap-2 pb-2 border-b border-[#3F5E8C]/25 text-[#D9C08B]">
+                  <FileText className="w-4 h-4" />
+                  <h3 className="font-mono-code text-xs uppercase tracking-wider font-semibold">
+                    3. Narrative &amp; Application Copy
+                  </h3>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="sm:col-span-2">
+                    <label className="block text-xs uppercase tracking-wider text-[#F4EEDF] mb-1.5 font-medium">
+                      Short Description <span className="text-[#D9C08B]">*</span>
+                    </label>
+                    <textarea
+                      rows={2}
+                      required
+                      value={form.shortDescription}
+                      onChange={(e) => setForm({ ...form, shortDescription: e.target.value })}
+                      placeholder="One-to-two sentence overview of the product for listings and preview cards..."
+                      className="w-full px-3.5 py-2.5 bg-[#0A1428] border border-[#3F5E8C]/60 focus:border-[#D9C08B] focus:ring-1 focus:ring-[#D9C08B]/30 rounded-xl text-sm text-[#F4EEDF] outline-none transition-colors"
+                    />
+                  </div>
+
+                  <div className="sm:col-span-2">
+                    <label className="block text-xs uppercase tracking-wider text-[#F4EEDF] mb-1.5 font-medium">
+                      Full Description
+                    </label>
+                    <textarea
+                      rows={3}
+                      value={form.fullDescription}
+                      onChange={(e) => setForm({ ...form, fullDescription: e.target.value })}
+                      placeholder="Detailed manufacturing overview, formulation details, machine capabilities..."
+                      className="w-full px-3.5 py-2.5 bg-[#0A1428] border border-[#3F5E8C]/60 focus:border-[#D9C08B] focus:ring-1 focus:ring-[#D9C08B]/30 rounded-xl text-sm text-[#F4EEDF] outline-none transition-colors"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-xs uppercase tracking-wider text-[#F4EEDF] mb-1.5 font-medium">
+                      Highlights (One per line)
+                    </label>
+                    <textarea
+                      rows={3}
+                      value={form.highlightsText}
+                      onChange={(e) => setForm({ ...form, highlightsText: e.target.value })}
+                      placeholder="High initial tack&#10;D3 water resistance per DIN EN 204&#10;Heat resistant up to 100°C"
+                      className="w-full px-3.5 py-2.5 bg-[#0A1428] border border-[#3F5E8C]/60 focus:border-[#D9C08B] rounded-xl text-xs text-[#F4EEDF] outline-none transition-colors font-mono-code"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-xs uppercase tracking-wider text-[#F4EEDF] mb-1.5 font-medium">
+                      Applications (One per line)
+                    </label>
+                    <textarea
+                      rows={3}
+                      value={form.applicationsText}
+                      onChange={(e) => setForm({ ...form, applicationsText: e.target.value })}
+                      placeholder="Modular kitchen shutter bonding&#10;Cold press lamination&#10;Solid wood finger jointing"
+                      className="w-full px-3.5 py-2.5 bg-[#0A1428] border border-[#3F5E8C]/60 focus:border-[#D9C08B] rounded-xl text-xs text-[#F4EEDF] outline-none transition-colors font-mono-code"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              {/* Card 4: Technical Specifications */}
+              <div className="bg-[#0A1428]/50 border border-[#3F5E8C]/35 rounded-xl p-4 sm:p-6 space-y-4">
+                <div className="flex items-center justify-between pb-2 border-b border-[#3F5E8C]/25 text-[#D9C08B]">
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4" />
+                    <h3 className="font-mono-code text-xs uppercase tracking-wider font-semibold">
+                      4. Technical Specifications
+                    </h3>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={addSpecRow}
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#0A1428] border border-[#D9C08B]/50 hover:border-[#D9C08B] text-xs text-[#D9C08B] rounded-lg transition-colors cursor-pointer"
+                  >
+                    <Plus className="w-3.5 h-3.5" />
+                    <span>Add Specification Row</span>
+                  </button>
+                </div>
+
+                {form.specifications.length === 0 ? (
+                  <p className="text-xs text-[#F4EEDF]/50 text-center py-4">
+                    No technical specifications added yet. Click &quot;Add Specification Row&quot; above to add parameters like viscosity, blade kerf, press dimensions, etc.
+                  </p>
+                ) : (
+                  <div className="space-y-2.5">
+                    {form.specifications.map((spec, idx) => (
+                      <div key={idx} className="grid grid-cols-1 sm:grid-cols-12 gap-2.5 items-center bg-[#0A1428] p-2.5 rounded-lg border border-[#3F5E8C]/30">
+                        <input
+                          type="text"
+                          placeholder="Label (e.g., Packaging, Viscosity, RPM)"
+                          value={spec.label}
+                          onChange={(e) => updateSpecRow(idx, 'label', e.target.value)}
+                          className="sm:col-span-5 px-3 py-1.5 bg-[#16294D] border border-[#3F5E8C]/50 rounded text-xs text-[#F4EEDF] outline-none"
+                        />
+                        <input
+                          type="text"
+                          placeholder="Value (e.g., 50kg Drum, 12,000 RPM)"
+                          value={spec.value}
+                          onChange={(e) => updateSpecRow(idx, 'value', e.target.value)}
+                          className="sm:col-span-4 px-3 py-1.5 bg-[#16294D] border border-[#3F5E8C]/50 rounded text-xs text-[#F4EEDF] outline-none"
+                        />
+                        <label className="sm:col-span-2 flex items-center gap-2 text-xs text-[#F4EEDF] cursor-pointer">
+                          <input
+                            type="checkbox"
+                            checked={Boolean(spec.isVerified)}
+                            onChange={(e) => updateSpecRow(idx, 'isVerified', e.target.checked)}
+                            className="w-4 h-4 accent-[#D9C08B] rounded"
+                          />
+                          <span className="text-[11px] uppercase tracking-wider">Verified</span>
+                        </label>
+                        <button
+                          type="button"
+                          onClick={() => removeSpecRow(idx)}
+                          className="sm:col-span-1 p-1 text-[#F4EEDF]/60 hover:text-red-400 text-center transition-colors"
+                          title="Remove row"
+                        >
+                          <Trash2 className="w-4 h-4 mx-auto" />
+                        </button>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </div>
+
+            {/* Sticky Modal Footer */}
+            <div className="sticky bottom-0 px-6 sm:px-8 py-4 bg-[#16294D] border-t border-[#3F5E8C]/40 flex items-center justify-between gap-3 shadow-2xl">
+              <span className="hidden sm:inline text-xs text-[#F4EEDF]/50">
+                Fields marked with <span className="text-[#D9C08B]">*</span> are required.
+              </span>
+              <div className="flex items-center gap-3 w-full sm:w-auto justify-end">
                 <button
                   type="button"
-                  onClick={() => removeSpecRow(idx)}
-                  className="sm:col-span-1 text-xs text-[#D9C08B] hover:underline"
+                  onClick={() => setShowForm(false)}
+                  className="w-full sm:w-auto px-5 py-2.5 bg-[#0A1428] border border-[#3F5E8C]/60 rounded-xl text-xs uppercase tracking-wider text-[#F4EEDF] hover:border-[#D9C08B] transition-colors"
                 >
-                  Remove
+                  Cancel
+                </button>
+                <button
+                  type="submit"
+                  disabled={saving || uploadingImage}
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 bg-[#D9C08B] hover:bg-[#E5CC9A] text-[#0A1428] font-semibold rounded-xl text-xs uppercase tracking-wider cursor-pointer transition-all shadow-md"
+                >
+                  <Save aria-hidden="true" className="w-4 h-4" />
+                  <span>{saving ? 'Saving Product...' : 'Save Product'}</span>
                 </button>
               </div>
-            ))}
-          </div>
-
-          <div className="sticky bottom-0 -mx-6 sm:-mx-8 -mb-6 sm:-mb-8 px-6 sm:px-8 py-4 bg-[#16294D] border-t border-[#3F5E8C]/40 flex justify-end gap-3">
-            <button
-              type="button"
-              onClick={() => setShowForm(false)}
-              className="px-5 py-2.5 bg-[#0A1428] border border-[#3F5E8C]/60 rounded-lg text-xs uppercase tracking-wider text-[#F4EEDF] hover:border-[#D9C08B]"
-            >
-              Cancel
-            </button>
-            <button
-              type="submit"
-              disabled={saving}
-              className="inline-flex items-center gap-2 px-6 py-2.5 bg-[#D9C08B] text-[#0A1428] rounded-lg text-xs font-semibold uppercase tracking-wider cursor-pointer hover:bg-[#E5CC9A]"
-            >
-              <Save aria-hidden="true" className="w-3.5 h-3.5" />
-              <span>{saving ? 'Saving...' : 'Save Product'}</span>
-            </button>
-          </div>
-        </form>
+            </div>
+          </form>
         </div>
       )}
 
       {/* Products Table */}
-      <div className="bg-[#16294D] border border-[#3F5E8C]/45 overflow-hidden">
+      <div className="bg-[#16294D] border border-[#3F5E8C]/45 rounded-2xl overflow-hidden shadow-xl">
         <div className="overflow-x-auto">
           <table className="w-full text-left border-collapse text-sm">
             <thead>
@@ -567,7 +687,7 @@ export default function AdminProducts() {
                 <th className="py-3.5 px-4">Division &amp; Category</th>
                 <th className="py-3.5 px-4">Status</th>
                 <th className="py-3.5 px-4">Featured</th>
-                <th className="py-3.5 px-4">Actions</th>
+                <th className="py-3.5 px-4 text-right">Actions</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-[#3F5E8C]/30">
@@ -579,9 +699,9 @@ export default function AdminProducts() {
                 </tr>
               ) : (
                 products.map((prod) => (
-                  <tr key={prod._id} className="hover:bg-[#0A1428]/40">
+                  <tr key={prod._id} className="hover:bg-[#0A1428]/40 transition-colors">
                     <td className="py-3.5 px-4 flex items-center gap-3">
-                      <div className="w-12 h-12 bg-[#0A1428] border border-[#3F5E8C]/40 p-1 shrink-0 flex items-center justify-center">
+                      <div className="w-12 h-12 bg-[#0A1428] border border-[#3F5E8C]/40 rounded-xl p-1 shrink-0 flex items-center justify-center overflow-hidden">
                         <img
                           src={
                             prod.images?.[0]?.url ||
@@ -597,29 +717,29 @@ export default function AdminProducts() {
                       </div>
                     </td>
                     <td className="py-3.5 px-4">
-                      <p className="text-xs text-[#D9C08B]">{prod.division?.name}</p>
+                      <p className="text-xs text-[#D9C08B] font-medium">{prod.division?.name}</p>
                       <p className="text-xs text-[#F4EEDF]/75">{prod.category}</p>
                     </td>
                     <td className="py-3.5 px-4">
-                      <span className="px-2.5 py-1 text-[11px] font-mono-code uppercase bg-[#0A1428] border border-[#D9C08B]/40 text-[#D9C08B]">
+                      <span className="px-2.5 py-1 text-[11px] font-mono-code uppercase bg-[#0A1428] border border-[#D9C08B]/40 text-[#D9C08B] rounded-md">
                         {prod.publicationStatus}
                       </span>
                     </td>
                     <td className="py-3.5 px-4">
                       {prod.isFeatured ? (
-                        <span className="inline-flex items-center gap-1 text-xs text-[#D9C08B]">
-                          <Star aria-hidden="true" className="w-3.5 h-3.5 fill-[#D9C08B]" /> Featured
+                        <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs bg-[#D9C08B]/15 text-[#D9C08B] border border-[#D9C08B]/30 font-medium">
+                          <Star aria-hidden="true" className="w-3 h-3 fill-[#D9C08B]" /> Featured
                         </span>
                       ) : (
                         <span className="text-xs text-[#F4EEDF]/45">Standard</span>
                       )}
                     </td>
                     <td className="py-3.5 px-4">
-                      <div className="flex items-center gap-2">
+                      <div className="flex items-center justify-end gap-2">
                         <button
                           type="button"
                           onClick={() => startEdit(prod)}
-                          className="inline-flex items-center gap-1 px-3 py-1.5 bg-[#0A1428] border border-[#D9C08B]/40 hover:border-[#D9C08B] text-xs text-[#D9C08B] cursor-pointer"
+                          className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#0A1428] border border-[#D9C08B]/40 hover:border-[#D9C08B] text-xs text-[#D9C08B] rounded-lg transition-all cursor-pointer"
                         >
                           <Edit3 aria-hidden="true" className="w-3.5 h-3.5" />
                           <span>Edit</span>
@@ -627,7 +747,7 @@ export default function AdminProducts() {
                         <button
                           type="button"
                           onClick={() => handleDelete(prod)}
-                          className="inline-flex items-center gap-1 px-3 py-1.5 bg-[#0A1428] border border-[#3F5E8C]/50 hover:border-[#D9C08B] text-xs text-[#F4EEDF]/75 hover:text-[#D9C08B] cursor-pointer"
+                          className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#0A1428] border border-[#3F5E8C]/50 hover:border-red-400/60 text-xs text-[#F4EEDF]/75 hover:text-red-400 rounded-lg transition-all cursor-pointer"
                         >
                           <Trash2 aria-hidden="true" className="w-3.5 h-3.5" />
                           <span>Delete</span>

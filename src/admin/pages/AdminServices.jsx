@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Plus, Edit3, Trash2, Save, X } from 'lucide-react';
+import { Plus, Edit3, Trash2, Save, X, Wrench, Layers, CheckCircle2, Image as ImageIcon } from 'lucide-react';
 import { adminApi } from '../../services/api';
 import { useToast } from '../../context/ToastContext';
 import SeoHead from '../../components/SeoHead';
@@ -138,184 +138,305 @@ export default function AdminServices() {
         <button
           type="button"
           onClick={startCreate}
-          className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#D9C08B] text-[#0A1428] text-xs font-semibold uppercase tracking-wider cursor-pointer"
+          className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#D9C08B] hover:bg-[#E5CC9A] text-[#0A1428] text-xs font-semibold uppercase tracking-wider rounded-xl transition-all shadow-md cursor-pointer"
         >
           <Plus aria-hidden="true" className="w-4 h-4" />
           <span>Add Service Category</span>
         </button>
       </div>
 
+      {/* Create / Edit Form Modal */}
       {showForm && (
         <div
-          className="fixed inset-0 z-50 flex items-start justify-center bg-black/70 backdrop-blur-sm overflow-y-auto p-4 sm:p-8"
+          className="fixed inset-0 z-50 flex items-start justify-center bg-[#0A1428]/80 backdrop-blur-md overflow-y-auto p-3 sm:p-6 lg:p-8"
           onClick={() => setShowForm(false)}
         >
           <form
             onSubmit={handleSave}
             onClick={(e) => e.stopPropagation()}
-            className="bg-[#16294D] border border-[#D9C08B]/50 p-6 sm:p-8 space-y-5 shadow-2xl w-full max-w-5xl my-8"
+            className="relative bg-[#16294D] border border-[#D9C08B]/40 rounded-2xl shadow-2xl shadow-black/80 w-full max-w-5xl my-4 sm:my-8 overflow-hidden flex flex-col"
           >
-          <div className="flex items-center justify-between pb-4 border-b border-[#3F5E8C]/40">
-            <h2 className="font-display text-2xl font-semibold text-[#F4EEDF]">
-              {editingId ? 'Edit Service Category' : 'Add Service Category'}
-            </h2>
-            <button
-              type="button"
-              onClick={() => setShowForm(false)}
-              className="p-1.5 text-[#F4EEDF]/70 hover:text-[#D9C08B]"
-            >
-              <X aria-hidden="true" className="w-5 h-5" />
-            </button>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            <div className="sm:col-span-2">
-              <label className="block text-xs uppercase tracking-wider text-[#F4EEDF] mb-1">
-                Service Name *
-              </label>
-              <input
-                type="text"
-                required
-                value={form.name}
-                onChange={(e) => setForm({ ...form, name: e.target.value })}
-                className="w-full px-3 py-2.5 bg-[#0A1428] border border-[#3F5E8C]/60 text-sm text-[#F4EEDF]"
-              />
+            {/* Modal Header */}
+            <div className="px-5 sm:px-8 py-5 border-b border-[#3F5E8C]/40 bg-[#0A1428]/60 flex items-center justify-between gap-4">
+              <div className="min-w-0">
+                <div className="flex items-center gap-2 mb-1">
+                  <span className="px-2 py-0.5 rounded text-[10px] font-mono-code uppercase tracking-wider bg-[#D9C08B]/15 text-[#D9C08B] border border-[#D9C08B]/30">
+                    {editingId ? 'Edit Service' : 'New Service'}
+                  </span>
+                  <span className="text-xs font-mono-code text-[#F4EEDF]/50">
+                    Order #{form.displayOrder}
+                  </span>
+                </div>
+                <h2 className="font-display text-xl sm:text-2xl font-semibold text-[#F4EEDF] truncate">
+                  {editingId ? (form.name || 'Edit Service Category') : 'Add Service Category'}
+                </h2>
+              </div>
+              <button
+                type="button"
+                onClick={() => setShowForm(false)}
+                className="p-2 rounded-xl bg-[#0A1428] border border-[#3F5E8C]/50 text-[#F4EEDF]/70 hover:text-[#D9C08B] hover:border-[#D9C08B] transition-colors cursor-pointer shrink-0"
+                aria-label="Close modal"
+              >
+                <X aria-hidden="true" className="w-5 h-5" />
+              </button>
             </div>
 
-            <div>
-              <CustomDropdown
-                label="Client Confirmation Status"
-                size="sm"
-                value={form.confirmationStatus}
-                onChange={(val) => setForm({ ...form, confirmationStatus: val })}
-                options={[
-                  { value: 'pending_confirmation', label: 'Pending Client Confirmation' },
-                  { value: 'confirmed', label: 'Confirmed Active Offering' },
-                ]}
-              />
-            </div>
+            {/* Modal Body */}
+            <div className="p-5 sm:p-8 space-y-6 overflow-y-auto max-h-[calc(85vh-130px)]">
+              {/* Card 1: Core Details */}
+              <div className="bg-[#0A1428]/50 border border-[#3F5E8C]/35 rounded-xl p-4 sm:p-6 space-y-4">
+                <div className="flex items-center gap-2 pb-2 border-b border-[#3F5E8C]/25 text-[#D9C08B]">
+                  <Wrench className="w-4 h-4" />
+                  <h3 className="font-mono-code text-xs uppercase tracking-wider font-semibold">
+                    1. Service Offering &amp; Governance
+                  </h3>
+                </div>
 
-            <div>
-              <label className="block text-xs uppercase tracking-wider text-[#F4EEDF] mb-1">
-                Publication Status &amp; Order
-              </label>
-              <div className="grid grid-cols-2 gap-2 items-center">
-                <CustomDropdown
-                  size="sm"
-                  value={form.publicationStatus}
-                  onChange={(val) => setForm({ ...form, publicationStatus: val })}
-                  options={[
-                    { value: 'published', label: 'Published' },
-                    { value: 'draft', label: 'Draft' },
-                  ]}
-                />
-                <input
-                  type="number"
-                  aria-label="Display Order"
-                  placeholder="Order"
-                  value={form.displayOrder}
-                  onChange={(e) => setForm({ ...form, displayOrder: e.target.value })}
-                  className="px-3 py-2 bg-[#0A1428] border border-[#3F5E8C]/60 text-xs text-[#F4EEDF] rounded-lg"
-                />
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                  <div className="sm:col-span-2">
+                    <label className="block text-xs uppercase tracking-wider text-[#F4EEDF]/90 mb-1.5 font-medium">
+                      Service Name <span className="text-[#D9C08B]">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      required
+                      value={form.name}
+                      onChange={(e) => setForm({ ...form, name: e.target.value })}
+                      placeholder="e.g., Turnkey Installation &amp; Commissioning"
+                      className="w-full rounded-xl px-4 py-2.5 bg-[#0A1428] border border-[#3F5E8C]/60 text-sm text-[#F4EEDF] focus:border-[#D9C08B] focus:outline-none transition-all placeholder:text-[#F4EEDF]/30"
+                    />
+                  </div>
+
+                  <div className="sm:col-span-2">
+                    <label className="block text-xs uppercase tracking-wider text-[#F4EEDF]/90 mb-1.5 font-medium">
+                      Service Category
+                    </label>
+                    <input
+                      type="text"
+                      value={form.category}
+                      onChange={(e) => setForm({ ...form, category: e.target.value })}
+                      placeholder="Machinery &amp; Technical Support"
+                      className="w-full rounded-xl px-4 py-2.5 bg-[#0A1428] border border-[#3F5E8C]/60 text-sm text-[#F4EEDF] focus:border-[#D9C08B] focus:outline-none transition-all placeholder:text-[#F4EEDF]/30"
+                    />
+                  </div>
+
+                  <div className="sm:col-span-2">
+                    <CustomDropdown
+                      label="Client Confirmation Status"
+                      size="md"
+                      value={form.confirmationStatus}
+                      onChange={(val) => setForm({ ...form, confirmationStatus: val })}
+                      options={[
+                        { value: 'pending_confirmation', label: 'Pending Client Confirmation' },
+                        { value: 'confirmed', label: 'Confirmed Active Offering' },
+                      ]}
+                    />
+                  </div>
+
+                  <div>
+                    <CustomDropdown
+                      label="Publication Status"
+                      size="md"
+                      value={form.publicationStatus}
+                      onChange={(val) => setForm({ ...form, publicationStatus: val })}
+                      options={[
+                        { value: 'published', label: 'Published (Live)' },
+                        { value: 'draft', label: 'Draft' },
+                      ]}
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-xs uppercase tracking-wider text-[#F4EEDF]/90 mb-1.5 font-medium">
+                      Display Order
+                    </label>
+                    <input
+                      type="number"
+                      value={form.displayOrder}
+                      onChange={(e) => setForm({ ...form, displayOrder: e.target.value })}
+                      className="w-full rounded-xl px-3 py-2.5 bg-[#0A1428] border border-[#3F5E8C]/60 text-sm text-[#F4EEDF] focus:border-[#D9C08B] focus:outline-none transition-all text-center"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              {/* Card 2: Visual Asset */}
+              <div className="bg-[#0A1428]/50 border border-[#3F5E8C]/35 rounded-xl p-4 sm:p-6 space-y-4">
+                <div className="flex items-center gap-2 pb-2 border-b border-[#3F5E8C]/25 text-[#D9C08B]">
+                  <ImageIcon className="w-4 h-4" />
+                  <h3 className="font-mono-code text-xs uppercase tracking-wider font-semibold">
+                    2. Service Visual Asset
+                  </h3>
+                </div>
+
+                <div className="flex flex-col sm:flex-row items-center gap-5">
+                  <div className="w-24 h-24 rounded-xl bg-[#0A1428] border border-[#3F5E8C]/60 p-2 shrink-0 flex items-center justify-center overflow-hidden">
+                    {form.image ? (
+                      <img
+                        src={form.image}
+                        alt="Preview"
+                        className="max-h-20 max-w-full object-contain"
+                      />
+                    ) : (
+                      <ImageIcon className="w-8 h-8 text-[#F4EEDF]/30" />
+                    )}
+                  </div>
+                  <div className="flex-1 w-full space-y-1.5">
+                    <label className="block text-xs uppercase tracking-wider text-[#F4EEDF]/90 font-medium">
+                      Service Image URL / Cloud CDN Link
+                    </label>
+                    <input
+                      type="text"
+                      value={form.image}
+                      onChange={(e) => setForm({ ...form, image: e.target.value })}
+                      placeholder="https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/..."
+                      className="w-full rounded-xl px-4 py-2.5 bg-[#0A1428] border border-[#3F5E8C]/60 text-xs text-[#F4EEDF] focus:border-[#D9C08B] focus:outline-none transition-all placeholder:text-[#F4EEDF]/30 font-mono-code"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              {/* Card 3: Descriptions & Scope */}
+              <div className="bg-[#0A1428]/50 border border-[#3F5E8C]/35 rounded-xl p-4 sm:p-6 space-y-4">
+                <div className="flex items-center gap-2 pb-2 border-b border-[#3F5E8C]/25 text-[#D9C08B]">
+                  <Layers className="w-4 h-4" />
+                  <h3 className="font-mono-code text-xs uppercase tracking-wider font-semibold">
+                    3. Scope of Work &amp; Technical Descriptions
+                  </h3>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-xs uppercase tracking-wider text-[#F4EEDF]/90 mb-1.5 font-medium">
+                      Short Description <span className="text-[#D9C08B]">*</span>
+                    </label>
+                    <textarea
+                      rows={3}
+                      required
+                      value={form.shortDescription}
+                      onChange={(e) => setForm({ ...form, shortDescription: e.target.value })}
+                      placeholder="Concise 1-2 sentence overview for service cards..."
+                      className="w-full rounded-xl p-3.5 bg-[#0A1428] border border-[#3F5E8C]/60 text-xs text-[#F4EEDF] focus:border-[#D9C08B] focus:outline-none transition-all placeholder:text-[#F4EEDF]/30"
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-xs uppercase tracking-wider text-[#F4EEDF]/90 mb-1.5 font-medium">
+                      Full Description <span className="text-[#D9C08B]">*</span>
+                    </label>
+                    <textarea
+                      rows={3}
+                      required
+                      value={form.description}
+                      onChange={(e) => setForm({ ...form, description: e.target.value })}
+                      placeholder="Comprehensive details on technical support, SLA, and parts provision..."
+                      className="w-full rounded-xl p-3.5 bg-[#0A1428] border border-[#3F5E8C]/60 text-xs text-[#F4EEDF] focus:border-[#D9C08B] focus:outline-none transition-all placeholder:text-[#F4EEDF]/30"
+                    />
+                  </div>
+
+                  <div className="sm:col-span-2">
+                    <label className="block text-xs uppercase tracking-wider text-[#F4EEDF]/90 mb-1.5 font-medium">
+                      Deliverable Scope Items (One per line)
+                    </label>
+                    <textarea
+                      rows={4}
+                      value={form.scopeItemsText}
+                      onChange={(e) => setForm({ ...form, scopeItemsText: e.target.value })}
+                      placeholder="On-site machine leveling and anchoring&#10;Operator calibration and tooling training&#10;Electrical load and air pressure verification&#10;30-day initial operational audit"
+                      className="w-full rounded-xl p-3.5 bg-[#0A1428] border border-[#3F5E8C]/60 text-xs text-[#F4EEDF] focus:border-[#D9C08B] focus:outline-none transition-all placeholder:text-[#F4EEDF]/30 font-mono-code"
+                    />
+                  </div>
+                </div>
               </div>
             </div>
 
-            <div className="sm:col-span-2">
-              <label className="block text-xs uppercase tracking-wider text-[#F4EEDF] mb-1">
-                Short Description *
-              </label>
-              <textarea
-                rows={2}
-                required
-                value={form.shortDescription}
-                onChange={(e) => setForm({ ...form, shortDescription: e.target.value })}
-                className="w-full px-3 py-2 bg-[#0A1428] border border-[#3F5E8C]/60 text-sm text-[#F4EEDF]"
-              />
+            {/* Sticky Modal Footer */}
+            <div className="sticky bottom-0 px-6 sm:px-8 py-4 bg-[#16294D] border-t border-[#3F5E8C]/40 flex items-center justify-between gap-3 shadow-2xl">
+              <span className="hidden sm:inline text-xs text-[#F4EEDF]/50">
+                Fields marked with <span className="text-[#D9C08B]">*</span> are required.
+              </span>
+              <div className="flex items-center gap-3 w-full sm:w-auto justify-end">
+                <button
+                  type="button"
+                  onClick={() => setShowForm(false)}
+                  className="w-full sm:w-auto px-5 py-2.5 bg-[#0A1428] border border-[#3F5E8C]/60 rounded-xl text-xs uppercase tracking-wider text-[#F4EEDF] hover:border-[#D9C08B] transition-colors"
+                >
+                  Cancel
+                </button>
+                <button
+                  type="submit"
+                  disabled={saving}
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 bg-[#D9C08B] hover:bg-[#E5CC9A] text-[#0A1428] font-semibold rounded-xl text-xs uppercase tracking-wider cursor-pointer transition-all shadow-md"
+                >
+                  <Save aria-hidden="true" className="w-4 h-4" />
+                  <span>{saving ? 'Saving...' : 'Save Service'}</span>
+                </button>
+              </div>
             </div>
-
-            <div className="sm:col-span-2">
-              <label className="block text-xs uppercase tracking-wider text-[#F4EEDF] mb-1">
-                Full Description *
-              </label>
-              <textarea
-                rows={2}
-                required
-                value={form.description}
-                onChange={(e) => setForm({ ...form, description: e.target.value })}
-                className="w-full px-3 py-2 bg-[#0A1428] border border-[#3F5E8C]/60 text-sm text-[#F4EEDF]"
-              />
-            </div>
-
-            <div className="sm:col-span-4">
-              <label className="block text-xs uppercase tracking-wider text-[#F4EEDF] mb-1">
-                Scope Items (One per line)
-              </label>
-              <textarea
-                rows={3}
-                value={form.scopeItemsText}
-                onChange={(e) => setForm({ ...form, scopeItemsText: e.target.value })}
-                className="w-full px-3 py-2 bg-[#0A1428] border border-[#3F5E8C]/60 text-xs text-[#F4EEDF]"
-              />
-            </div>
-          </div>
-
-          <div className="flex justify-end gap-3 pt-4 border-t border-[#3F5E8C]/40">
-            <button
-              type="button"
-              onClick={() => setShowForm(false)}
-              className="px-5 py-2.5 bg-[#0A1428] border border-[#3F5E8C]/60 text-xs uppercase tracking-wider text-[#F4EEDF]"
-            >
-              Cancel
-            </button>
-            <button
-              type="submit"
-              disabled={saving}
-              className="inline-flex items-center gap-2 px-6 py-2.5 bg-[#D9C08B] text-[#0A1428] text-xs font-semibold uppercase tracking-wider cursor-pointer"
-            >
-              <Save aria-hidden="true" className="w-3.5 h-3.5" />
-              <span>{saving ? 'Saving...' : 'Save Service'}</span>
-            </button>
-          </div>
-        </form>
+          </form>
         </div>
       )}
 
       {/* Services List */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {loading ? (
-          <div className="col-span-2 bg-[#16294D] border border-[#3F5E8C]/40 p-10 text-center text-xs text-[#F4EEDF]/70">
+          <div className="col-span-2 bg-[#16294D] border border-[#3F5E8C]/40 rounded-2xl p-10 text-center text-xs text-[#F4EEDF]/70">
             Loading services...
           </div>
         ) : (
           services.map((srv) => (
             <div
               key={srv._id}
-              className="bg-[#16294D] border border-[#3F5E8C]/50 p-6 flex flex-col justify-between gap-4"
+              className="bg-[#16294D] border border-[#3F5E8C]/50 hover:border-[#D9C08B]/60 rounded-2xl p-6 flex flex-col justify-between gap-5 transition-all shadow-xl hover:shadow-2xl"
             >
               <div>
                 <div className="flex items-center justify-between gap-2">
-                  <span className="font-mono-code text-xs text-[#D9C08B]">
+                  <span className="font-mono-code text-xs text-[#D9C08B] font-medium">
                     ORDER #{srv.displayOrder} • {srv.publicationStatus}
                   </span>
-                  <span className="px-2.5 py-0.5 text-[10px] font-mono-code uppercase bg-[#0A1428] border border-[#D9C08B]/40 text-[#D9C08B]">
+                  <span
+                    className={`px-2.5 py-0.5 text-[10px] font-mono-code uppercase border rounded-md ${
+                      srv.confirmationStatus === 'confirmed'
+                        ? 'bg-[#0A1428] border-[#D9C08B]/40 text-[#D9C08B]'
+                        : 'bg-[#0A1428] border-amber-400/40 text-amber-300'
+                    }`}
+                  >
                     {srv.confirmationStatus === 'confirmed'
                       ? 'Client Confirmed'
                       : 'Pending Confirmation'}
                   </span>
                 </div>
-                <h2 className="font-display text-2xl font-semibold text-[#F4EEDF] mt-2">
+                <h2 className="font-display text-xl sm:text-2xl font-semibold text-[#F4EEDF] mt-2">
                   {srv.name}
                 </h2>
-                <p className="text-xs text-[#F4EEDF]/75 mt-1.5 leading-relaxed">
+                <p className="text-xs text-[#F4EEDF]/75 mt-1.5 leading-relaxed line-clamp-3">
                   {srv.shortDescription}
                 </p>
+
+                {srv.scopeItems && srv.scopeItems.length > 0 && (
+                  <div className="mt-3 flex flex-wrap gap-1.5">
+                    {srv.scopeItems.slice(0, 3).map((item, i) => (
+                      <span
+                        key={i}
+                        className="px-2 py-0.5 rounded text-[10px] bg-[#0A1428] border border-[#3F5E8C]/40 text-[#F4EEDF]/70 truncate max-w-xs"
+                      >
+                        ✓ {item}
+                      </span>
+                    ))}
+                    {srv.scopeItems.length > 3 && (
+                      <span className="px-2 py-0.5 rounded text-[10px] bg-[#0A1428] text-[#D9C08B] font-mono-code">
+                        +{srv.scopeItems.length - 3} more
+                      </span>
+                    )}
+                  </div>
+                )}
               </div>
 
               <div className="pt-4 border-t border-[#3F5E8C]/35 flex items-center justify-end gap-2 text-xs">
                 <button
                   type="button"
                   onClick={() => startEdit(srv)}
-                  className="inline-flex items-center gap-1 px-3 py-1.5 bg-[#0A1428] border border-[#D9C08B]/40 hover:border-[#D9C08B] text-[#D9C08B] cursor-pointer"
+                  className="inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-[#0A1428] border border-[#D9C08B]/40 hover:border-[#D9C08B] text-[#D9C08B] rounded-lg transition-all text-xs cursor-pointer"
                 >
                   <Edit3 aria-hidden="true" className="w-3.5 h-3.5" />
                   <span>Edit</span>
@@ -323,7 +444,7 @@ export default function AdminServices() {
                 <button
                   type="button"
                   onClick={() => handleDelete(srv)}
-                  className="inline-flex items-center gap-1 px-3 py-1.5 bg-[#0A1428] border border-[#3F5E8C]/50 hover:border-[#D9C08B] text-[#F4EEDF]/75 hover:text-[#D9C08B] cursor-pointer"
+                  className="inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-[#0A1428] border border-[#3F5E8C]/50 hover:border-red-400/60 text-[#F4EEDF]/75 hover:text-red-400 rounded-lg transition-all text-xs cursor-pointer"
                 >
                   <Trash2 aria-hidden="true" className="w-3.5 h-3.5" />
                   <span>Delete</span>
