@@ -225,7 +225,7 @@ export default function AdminDivisions() {
                       required
                       value={form.name}
                       onChange={(e) => setForm({ ...form, name: e.target.value })}
-                      placeholder="e.g., Adhhesi Pro Adhesives"
+                      placeholder="e.g., Adhhesi Pro Adhhesives"
                       className="w-full rounded-xl px-4 py-2.5 bg-[#0A1428] border border-[#3F5E8C]/60 text-sm text-[#F4EEDF] focus:border-[#D9C08B] focus:outline-none transition-all placeholder:text-[#F4EEDF]/30"
                     />
                   </div>

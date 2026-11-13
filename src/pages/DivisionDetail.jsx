@@ -17,7 +17,7 @@ import ProductDetailModal from '../components/ProductDetailModal';
 import EnquiryForm from '../components/EnquiryForm';
 
 const DIVISION_BG_BANNERS = {
-  'adhesi-pro': '/assets/full%20backgorund%20banners/new%20adhesi%20bg%20banner.png',
+  'Adhhesi-pro': '/assets/full%20backgorund%20banners/new%20Adhhesi%20bg%20banner.png',
   'pcd-blades':
     '/assets/full%20backgorund%20banners/PCD%20Pre-Milling%20&%20Grooving%20Saw%20Blades.png',
   'panel-processing':
@@ -27,7 +27,7 @@ const DIVISION_BG_BANNERS = {
 };
 
 const DIVISION_RIGHT_PRODUCT_IMAGE = {
-  'adhesi-pro': null, // new adhesi bg banner already contains the product drum on the right
+  'Adhhesi-pro': null, // new Adhhesi bg banner already contains the product drum on the right
   'pcd-blades': 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/pcd-blades/pre-milling-cutter-single.png',
   'panel-processing': 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/panel-processing/cnc-nesting-machine.png',
   'edge-banding-hardware': 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/edge-banding-hardware/pvc-woodgrain-tape.png',
@@ -36,30 +36,30 @@ const DIVISION_RIGHT_PRODUCT_IMAGE = {
 const HERO_LOOP_STEP_MS = 3000;
 
 const DIVISION_HERO_LOOP_PRODUCTS = {
-  'adhesi-pro': [
+  'Adhhesi-pro': [
     {
-      src: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/adhesi-pro/lockpro-wr3-drum.png',
-      alt: 'Adhhesi Pro Lockpro WR 3 D3 Water-Resistant Adhesive Drum',
+      src: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/Adhhesi-pro/lockpro-wr3-drum.png',
+      alt: 'Adhhesi Pro Lockpro WR 3 D3 Water-Resistant Adhhesive Drum',
     },
     {
-      src: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/adhesi-pro/lockpro-808-drum.png',
-      alt: 'Adhhesi Pro Lockpro 808 Woodworking Adhesive Drum',
+      src: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/Adhhesi-pro/lockpro-808-drum.png',
+      alt: 'Adhhesi Pro Lockpro 808 Woodworking Adhhesive Drum',
     },
     {
-      src: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/adhesi-pro/1k-pur-adhesive.png',
-      alt: 'Adhhesi Pro 1K PUR Moisture-Curing Polyurethane Adhesive',
+      src: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/Adhhesi-pro/1k-pur-Adhhesive.png',
+      alt: 'Adhhesi Pro 1K PUR Moisture-Curing Polyurethane Adhhesive',
     },
     {
-      src: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/adhesi-pro/lockpro-707-drum.png',
-      alt: 'Adhhesi Pro Lockpro 707 Industrial Adhesive Drum',
+      src: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/Adhhesi-pro/lockpro-707-drum.png',
+      alt: 'Adhhesi Pro Lockpro 707 Industrial Adhhesive Drum',
     },
     {
-      src: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/adhesi-pro/lockpro-wr3-bucket.png',
-      alt: 'Adhhesi Pro Lockpro WR 3 Adhesive Bucket',
+      src: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/Adhhesi-pro/lockpro-wr3-bucket.png',
+      alt: 'Adhhesi Pro Lockpro WR 3 Adhhesive Bucket',
     },
     {
-      src: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/adhesi-pro/lockpro-808-pr-bucket.png',
-      alt: 'Adhhesi Pro Lockpro 808 PR Adhesive Bucket',
+      src: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/Adhhesi-pro/lockpro-808-pr-bucket.png',
+      alt: 'Adhhesi Pro Lockpro 808 PR Adhhesive Bucket',
     },
   ],
   'pcd-blades': [
@@ -207,7 +207,7 @@ export default function DivisionDetail() {
     setHeroLoopIndex(0);
     setIsHeroLoopPaused(false);
 
-    const lookupSlug = slug === 'adhhesi-pro' ? 'adhesi-pro' : slug;
+    const lookupSlug = slug === 'adhhesi-pro' ? 'Adhhesi-pro' : slug;
 
     publicApi
       .getDivisionBySlug(lookupSlug)
@@ -230,8 +230,8 @@ export default function DivisionDetail() {
   }, [slug]);
 
   const displayName =
-    (division?.slug === 'adhesi-pro' || division?.slug === 'adhhesi-pro') && siteSettings?.adhesiBrandSpelling
-      ? siteSettings.adhesiBrandSpelling
+    (division?.slug === 'Adhhesi-pro' || division?.slug === 'adhhesi-pro') && siteSettings?.AdhhesiBrandSpelling
+      ? siteSettings.AdhhesiBrandSpelling
       : division?.name || 'Business Division';
 
   const categories = useMemo(() => {
@@ -395,7 +395,7 @@ export default function DivisionDetail() {
                 onMouseEnter={() => setIsHeroLoopPaused(true)}
                 onMouseLeave={() => setIsHeroLoopPaused(false)}
                 className={`lg:col-span-5 relative w-full h-[320px] sm:h-[400px] lg:h-[480px] xl:h-[520px] flex items-center ${
-                  (division.slug === 'adhesi-pro' || division.slug === 'adhhesi-pro')
+                  (division.slug === 'Adhhesi-pro' || division.slug === 'adhhesi-pro')
                     ? 'justify-center lg:justify-end'
                     : 'justify-center'
                 }`}

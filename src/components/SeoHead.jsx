@@ -13,7 +13,7 @@ export default function SeoHead({ title, description, canonicalPath = '/', produ
     const metaDesc =
       description ||
       siteSettings?.seoDefaults?.defaultDescription ||
-      'Modu Pro Innovation Pvt. Ltd. brings together adhesive products, precision woodworking blades, panel-processing machinery and furniture hardware.';
+      'Modu Pro Innovation Pvt. Ltd. brings together Adhhesive products, precision woodworking blades, panel-processing machinery and furniture hardware.';
 
     document.title = fullTitle;
 

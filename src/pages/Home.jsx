@@ -12,7 +12,7 @@ const WHY_CHOOSE_THEMES = [
     code: '01',
     title: 'Four Focused Product & Service Divisions',
     description:
-      'Adhhesi Pro adhesives, PCD & TCT saw blades, panel-processing machinery, and PVC edge-banding tapes & furniture hardware structured under dedicated divisions.',
+      'Adhhesi Pro Adhhesives, PCD & TCT saw blades, panel-processing machinery, and PVC edge-banding tapes & furniture hardware structured under dedicated divisions.',
   },
   {
     code: '02',
@@ -30,7 +30,7 @@ const WHY_CHOOSE_THEMES = [
     code: '04',
     title: 'One Point of Contact for Related Requirements',
     description:
-      'Coordinate adhesives, blades, machinery, and furniture hardware through a single accountable team rather than fragmented vendors.',
+      'Coordinate Adhhesives, blades, machinery, and furniture hardware through a single accountable team rather than fragmented vendors.',
   },
 ];
 
@@ -41,8 +41,8 @@ const HERO_LOOP_STEP_MS = 3000; // Switch product image every 3 seconds in an in
 
 const HERO_LOOP_PRODUCTS = [
   {
-    src: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/adhesi-pro/lockpro-wr3-drum.png',
-    alt: 'ADHHESI PRO Lockpro WR 3 D3 Water-Resistant Adhesive Drum',
+    src: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/Adhhesi-pro/lockpro-wr3-drum.png',
+    alt: 'ADHHESI PRO Lockpro WR 3 D3 Water-Resistant Adhhesive Drum',
   },
   {
     src: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/panel-processing/edge-banding-machine.png',
@@ -61,8 +61,8 @@ const HERO_LOOP_PRODUCTS = [
     alt: 'Dual-Spindle CNC Router & Nesting Machine',
   },
   {
-    src: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/adhesi-pro/lockpro-808-drum.png',
-    alt: 'ADHHESI PRO Lockpro 808 Woodworking Adhesive Drum',
+    src: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/Adhhesi-pro/lockpro-808-drum.png',
+    alt: 'ADHHESI PRO Lockpro 808 Woodworking Adhhesive Drum',
   },
   {
     src: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/pcd-blades/grooving-saw-blade.png',
@@ -77,8 +77,8 @@ const HERO_LOOP_PRODUCTS = [
     alt: 'Sliding Table Panel-Saw Machine',
   },
   {
-    src: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/adhesi-pro/1k-pur-adhesive.png',
-    alt: 'ADHHESI PRO 1K PUR Moisture-Curing Polyurethane Adhesive',
+    src: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/Adhhesi-pro/1k-pur-Adhhesive.png',
+    alt: 'ADHHESI PRO 1K PUR Moisture-Curing Polyurethane Adhhesive',
   },
   {
     src: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/edge-banding-hardware/pvc-solid-color-tapes.png',
@@ -89,8 +89,8 @@ const HERO_LOOP_PRODUCTS = [
     alt: 'Hydraulic Cold-Press Machine',
   },
   {
-    src: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/adhesi-pro/lockpro-707-drum.png',
-    alt: 'ADHHESI PRO Lockpro 707 Industrial Adhesive Drum',
+    src: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/Adhhesi-pro/lockpro-707-drum.png',
+    alt: 'ADHHESI PRO Lockpro 707 Industrial Adhhesive Drum',
   },
   {
     src: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/edge-banding-hardware/telescopic-drawer-channels.png',
@@ -105,16 +105,16 @@ const HERO_LOOP_PRODUCTS = [
     alt: 'Multi-Boring Woodworking Machine',
   },
   {
-    src: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/adhesi-pro/lockpro-wr3-bucket.png',
-    alt: 'ADHHESI PRO Lockpro WR 3 Adhesive Bucket',
+    src: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/Adhhesi-pro/lockpro-wr3-bucket.png',
+    alt: 'ADHHESI PRO Lockpro WR 3 Adhhesive Bucket',
   },
   {
     src: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/edge-banding-hardware/spring-flap-hinge.png',
     alt: 'Modular Cabinet Spring Flap Hinge',
   },
   {
-    src: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/adhesi-pro/lockpro-808-pr-bucket.png',
-    alt: 'ADHHESI PRO Lockpro 808 PR Adhesive Bucket',
+    src: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/Adhhesi-pro/lockpro-808-pr-bucket.png',
+    alt: 'ADHHESI PRO Lockpro 808 PR Adhhesive Bucket',
   },
 ];
 
@@ -163,14 +163,14 @@ const SPOTLIGHT_PRODUCTS = [
   },
   {
     slug: 'lockpro-wr-3',
-    name: 'Lockpro WR 3 (D3 Water-Resistant Adhesive)',
-    category: 'D3 and Commercial D3 Adhesives',
+    name: 'Lockpro WR 3 (D3 Water-Resistant Adhhesive)',
+    category: 'D3 and Commercial D3 Adhhesives',
     shortDescription:
-      'Water-resistant woodworking adhesive formulated for modular kitchen, door, and furniture bonding applications.',
-    division: { slug: 'adhesi-pro' },
+      'Water-resistant woodworking Adhhesive formulated for modular kitchen, door, and furniture bonding applications.',
+    division: { slug: 'Adhhesi-pro' },
     images: [
       {
-        url: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/adhesi-pro/lockpro-wr3-drum.png',
+        url: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/Adhhesi-pro/lockpro-wr3-drum.png',
         alt: 'ADHHESI PRO Lockpro WR 3 Drum Packaging',
       },
     ],
@@ -347,18 +347,18 @@ export default function Home() {
       };
 
   const DIVISION_LUXURY_META = {
-    'adhesi-pro': {
-      subtitle: 'Industrial Woodworking & Modular Furniture Adhesives',
+    'Adhhesi-pro': {
+      subtitle: 'Industrial Woodworking & Modular Furniture Adhhesives',
       signatureLine: 'Lockpro WR 3 · Lockpro 808 · Lockpro 707 · 1K PUR',
       categories: [
         'PVAC White Glue',
-        'D3 & Commercial D3 Adhesives',
-        'D2 Adhesives',
-        'PVC / Acrylic Adhesives',
-        'PUR Adhesives',
+        'D3 & Commercial D3 Adhhesives',
+        'D2 Adhhesives',
+        'PVC / Acrylic Adhhesives',
+        'PUR Adhhesives',
       ],
-      heroImage: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/adhesi-pro/lockpro-wr3-drum.png',
-      secondaryImage: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/adhesi-pro/lockpro-808-drum.png',
+      heroImage: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/Adhhesi-pro/lockpro-wr3-drum.png',
+      secondaryImage: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/Adhhesi-pro/lockpro-808-drum.png',
     },
     'pcd-blades': {
       subtitle: 'Panel Processing and Solid Wood Machine',
@@ -406,18 +406,18 @@ export default function Home() {
           ...d,
           code: d.code || `0${idx + 1}`,
           displayName:
-            (d.slug === 'adhesi-pro' || d.slug === 'adhhesi-pro') && siteSettings?.adhesiBrandSpelling
-              ? siteSettings.adhesiBrandSpelling
+            (d.slug === 'Adhhesi-pro' || d.slug === 'adhhesi-pro') && siteSettings?.AdhhesiBrandSpelling
+              ? siteSettings.AdhhesiBrandSpelling
               : d.name,
         }))
       : [
           {
             code: '01',
-            displayName: siteSettings?.adhesiBrandSpelling || 'Adhhesi Pro',
-            slug: 'adhesi-pro',
+            displayName: siteSettings?.AdhhesiBrandSpelling || 'Adhhesi Pro',
+            slug: 'Adhhesi-pro',
             shortDescription:
-              'Adhhesi Pro is the adhesive brand associated with Modu Pro Innovation Pvt. Ltd. The product range supports furniture, modular-kitchen, door and woodworking applications.',
-            heroImage: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/adhesi-pro/lockpro-wr3-drum.png',
+              'Adhhesi Pro is the Adhhesive brand associated with Modu Pro Innovation Pvt. Ltd. The product range supports furniture, modular-kitchen, door and woodworking applications.',
+            heroImage: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/Adhhesi-pro/lockpro-wr3-drum.png',
           },
           {
             code: '02',
@@ -468,21 +468,21 @@ export default function Home() {
             name: 'Modular Furniture Manufacturers',
             slug: 'modular-furniture-manufacturing',
             shortDescription:
-              'Coordinated adhesives, panel sizing & edge-banding machinery, TCT/PCD blades, PVC edge tapes, and KD fittings.',
+              'Coordinated Adhhesives, panel sizing & edge-banding machinery, TCT/PCD blades, PVC edge tapes, and KD fittings.',
             image: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/panel-processing/edge-banding-machine.png',
           },
           {
             name: 'Modular Kitchen Manufacturers',
             slug: 'modular-kitchen-manufacturing',
             shortDescription:
-              'Water-resistant D3 & PUR adhesives, pre-milling cutters, telescopic drawer channels, and 2D/3D concealed hinges.',
+              'Water-resistant D3 & PUR Adhhesives, pre-milling cutters, telescopic drawer channels, and 2D/3D concealed hinges.',
             image: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/edge-banding-hardware/telescopic-drawer-channels.png',
           },
           {
             name: 'Door Manufacturers',
             slug: 'door-manufacturing',
             shortDescription:
-              'Industrial lamination adhesives, hydraulic cold/hot-press machinery, dual-spindle CNC routers, and panel-saw blades.',
+              'Industrial lamination Adhhesives, hydraulic cold/hot-press machinery, dual-spindle CNC routers, and panel-saw blades.',
             image: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/panel-processing/hydraulic-cold-press.png',
           },
           {
@@ -551,7 +551,7 @@ export default function Home() {
 
               <p className="text-base sm:text-lg text-[#F4EEDF]/85 leading-relaxed max-w-xl">
                 {siteSettings?.hero?.supportingText ||
-                  'Modu Pro Innovation Pvt. Ltd. brings together adhesive products, precision woodworking blades, panel-processing machinery and furniture hardware to support manufacturers across the woodworking and modular-furniture industry.'}
+                  'Modu Pro Innovation Pvt. Ltd. brings together Adhhesive products, precision woodworking blades, panel-processing machinery and furniture hardware to support manufacturers across the woodworking and modular-furniture industry.'}
               </p>
 
               <div className="flex flex-wrap items-center gap-3.5 pt-2">
@@ -635,7 +635,7 @@ export default function Home() {
               </h2>
               <p className="text-base text-[#F4EEDF]/75 leading-relaxed">
                 {siteSettings?.aboutContent?.overviewParagraphOne ||
-                  'Modu Pro Innovation Pvt. Ltd. serves the needs of modular furniture, kitchen, door and woodworking manufacturers through a focused range of products and industry solutions. The company brings together adhesive products, woodworking blades, panel-processing machinery and furniture hardware under one business, helping customers explore related products and services through a single point of contact.'}
+                  'Modu Pro Innovation Pvt. Ltd. serves the needs of modular furniture, kitchen, door and woodworking manufacturers through a focused range of products and industry solutions. The company brings together Adhhesive products, woodworking blades, panel-processing machinery and furniture hardware under one business, helping customers explore related products and services through a single point of contact.'}
               </p>
               <Link to="/about" className={`${pill} bg-[#D9C08B] text-[#0A1428]`}>
                 <span>Read about Modu Pro</span>
@@ -888,7 +888,7 @@ export default function Home() {
                   Built for the floors that make furniture, kitchens, and doors.
                 </h2>
                 <p className="text-[#0A1428]/80 leading-relaxed max-w-lg">
-                  Adhesives, blades, machinery, and hardware selected for modular furniture,
+                  Adhhesives, blades, machinery, and hardware selected for modular furniture,
                   modular kitchens, door manufacturing, and woodworking panel processing.
                 </p>
                 <Link
@@ -1125,8 +1125,8 @@ export default function Home() {
             <div className="lg:col-span-5">
               <div className="lux-curve bg-[#0A1428] border border-[#D9C08B]/22 h-64 sm:h-72 p-6 flex items-center justify-center overflow-hidden">
                 <img
-                  src="https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/adhesi-pro/lockpro-wr3-drum.png"
-                  alt="ADHHESI PRO adhesive drum"
+                  src="https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/Adhhesi-pro/lockpro-wr3-drum.png"
+                  alt="ADHHESI PRO Adhhesive drum"
                   loading="lazy"
                   className="max-h-52 w-auto object-contain"
                 />

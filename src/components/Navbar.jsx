@@ -21,9 +21,9 @@ const DEFAULT_DIVISION_LINKS = [
   {
     code: '01',
     name: 'Adhhesi Pro',
-    slug: 'adhesi-pro',
-    subtitle: 'PVAC, D3/D2, PVC/Acrylic & PUR Adhesives',
-    heroImage: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/adhesi-pro/lockpro-wr3-drum.png',
+    slug: 'Adhhesi-pro',
+    subtitle: 'PVAC, D3/D2, PVC/Acrylic & PUR Adhhesives',
+    heroImage: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/Adhhesi-pro/lockpro-wr3-drum.png',
   },
   {
     code: '02',
@@ -68,8 +68,8 @@ export default function Navbar() {
       ? divisions.map((d, idx) => ({
           code: d.code || `0${idx + 1}`,
           name:
-            (d.slug === 'adhesi-pro' || d.slug === 'adhhesi-pro') && siteSettings?.adhesiBrandSpelling
-              ? siteSettings.adhesiBrandSpelling
+            (d.slug === 'Adhhesi-pro' || d.slug === 'adhhesi-pro') && siteSettings?.AdhhesiBrandSpelling
+              ? siteSettings.AdhhesiBrandSpelling
               : d.name,
           slug: d.slug,
           subtitle: d.subtitle || d.shortDescription,

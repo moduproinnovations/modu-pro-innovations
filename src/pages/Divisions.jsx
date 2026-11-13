@@ -37,18 +37,18 @@ export default function Divisions() {
           ...d,
           code: d.code || `0${idx + 1}`,
           displayName:
-            (d.slug === 'adhesi-pro' || d.slug === 'adhhesi-pro') && siteSettings?.adhesiBrandSpelling
-              ? siteSettings.adhesiBrandSpelling
+            (d.slug === 'Adhhesi-pro' || d.slug === 'adhhesi-pro') && siteSettings?.AdhhesiBrandSpelling
+              ? siteSettings.AdhhesiBrandSpelling
               : d.name,
         }))
       : [
           {
             code: '01',
-            displayName: siteSettings?.adhesiBrandSpelling || 'Adhhesi Pro',
-            slug: 'adhesi-pro',
+            displayName: siteSettings?.AdhhesiBrandSpelling || 'Adhhesi Pro',
+            slug: 'Adhhesi-pro',
             shortDescription:
-              'Adhhesi Pro is the adhesive brand associated with Modu Pro Innovation Pvt. Ltd. The product range supports furniture, modular-kitchen, door and woodworking applications.',
-            heroImage: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/adhesi-pro/lockpro-wr3-drum.png',
+              'Adhhesi Pro is the Adhhesive brand associated with Modu Pro Innovation Pvt. Ltd. The product range supports furniture, modular-kitchen, door and woodworking applications.',
+            heroImage: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/Adhhesi-pro/lockpro-wr3-drum.png',
           },
           {
             code: '02',
@@ -80,7 +80,7 @@ export default function Divisions() {
     <>
       <SeoHead
         title="Our Divisions"
-        description="Explore Modu Pro Innovation Pvt. Ltd.’s four specialized business divisions: Adhesi Pro, Wood Working & Modular Furniture Tools, Panel Processing Machines Division, and PVC Edge-Banding Tapes & Hardware."
+        description="Explore Modu Pro Innovation Pvt. Ltd.’s four specialized business divisions: Adhhesi Pro, Wood Working & Modular Furniture Tools, Panel Processing Machines Division, and PVC Edge-Banding Tapes & Hardware."
         canonicalPath="/divisions"
       />
 

@@ -27,16 +27,16 @@ export default function About() {
       ? divisions.map((d, idx) => ({
           code: d.code || `0${idx + 1}`,
           name:
-            (d.slug === 'adhesi-pro' || d.slug === 'adhhesi-pro') && siteSettings?.adhesiBrandSpelling
-              ? siteSettings.adhesiBrandSpelling
+            (d.slug === 'Adhhesi-pro' || d.slug === 'adhhesi-pro') && siteSettings?.AdhhesiBrandSpelling
+              ? siteSettings.AdhhesiBrandSpelling
               : d.name,
           slug: d.slug,
           category: d.subtitle || 'Modu Pro Division',
           shortDescription: d.shortDescription,
           heroImage: d.heroImage,
           tagline:
-            (d.slug === 'adhesi-pro' || d.slug === 'adhhesi-pro')
-              ? 'Har Joint Mein Pro Strength • D3 & PUR Adhesives'
+            (d.slug === 'Adhhesi-pro' || d.slug === 'adhhesi-pro')
+              ? 'Har Joint Mein Pro Strength • D3 & PUR Adhhesives'
               : d.slug === 'pcd-blades'
               ? 'PCD Diamond Tooling • Saw Blades & Pre-Milling'
               : d.slug === 'panel-processing'
@@ -46,13 +46,13 @@ export default function About() {
       : [
           {
             code: '01',
-            name: siteSettings?.adhesiBrandSpelling || 'Adhhesi Pro',
-            slug: 'adhesi-pro',
-            category: 'Industrial Woodworking & Modular Furniture Adhesives',
+            name: siteSettings?.AdhhesiBrandSpelling || 'Adhhesi Pro',
+            slug: 'Adhhesi-pro',
+            category: 'Industrial Woodworking & Modular Furniture Adhhesives',
             shortDescription:
-              'Adhhesi Pro is the adhesive brand associated with Modu Pro Innovation Pvt. Ltd. The product range supports furniture, modular-kitchen, door and woodworking applications.',
-            heroImage: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/adhesi-pro/lockpro-wr3-drum.png',
-            tagline: 'Har Joint Mein Pro Strength • D3 & PUR Adhesives',
+              'Adhhesi Pro is the Adhhesive brand associated with Modu Pro Innovation Pvt. Ltd. The product range supports furniture, modular-kitchen, door and woodworking applications.',
+            heroImage: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/Adhhesi-pro/lockpro-wr3-drum.png',
+            tagline: 'Har Joint Mein Pro Strength • D3 & PUR Adhhesives',
           },
           {
             code: '02',
@@ -153,7 +153,7 @@ export default function About() {
                   {/* Editorial Body Text */}
                   <p className="text-base sm:text-lg text-[#F4EEDF]/85 leading-relaxed max-w-2xl font-inter">
                     {siteSettings?.aboutContent?.overviewParagraphOne ||
-                      'Modu Pro Innovation Pvt. Ltd. serves modular furniture, kitchen, door and woodworking manufacturers through a focused industrial range. The company brings together industrial adhesives, precision tooling, panel-processing machinery and architectural hardware under one single enterprise.'}
+                      'Modu Pro Innovation Pvt. Ltd. serves modular furniture, kitchen, door and woodworking manufacturers through a focused industrial range. The company brings together industrial Adhhesives, precision tooling, panel-processing machinery and architectural hardware under one single enterprise.'}
                   </p>
                 </div>
 
@@ -211,7 +211,7 @@ export default function About() {
                         {/* Status bar 1 */}
                         <div>
                           <div className="flex justify-between mb-1">
-                            <span>ADHESIVE BOND RETENTION</span>
+                            <span>AdhhesiVE BOND RETENTION</span>
                             <span className="text-[#D9C08B]">99.8%</span>
                           </div>
                           <div className="w-full h-1 bg-[#0A1428] overflow-hidden">
@@ -260,7 +260,7 @@ export default function About() {
             >
               <span className="text-[#D9C08B]">MODU PRO INNOVATION</span>
               <span className="text-[#D9C08B]/60 text-xl">✦</span>
-              <span>ADHHESI PRO™ Adhesives</span>
+              <span>ADHHESI PRO™ Adhhesives</span>
               <span className="text-[#D9C08B]/60 text-xl">✦</span>
               <span className="text-[#F4EEDF]/80">Woodworking Tools</span>
               <span className="text-[#D9C08B]/60 text-xl">✦</span>
@@ -274,7 +274,7 @@ export default function About() {
               {/* Second duplicate set for seamless infinite loop */}
               <span className="text-[#D9C08B]">MODU PRO INNOVATION</span>
               <span className="text-[#D9C08B]/60 text-xl">✦</span>
-              <span>ADHHESI PRO™ Adhesives</span>
+              <span>ADHHESI PRO™ Adhhesives</span>
               <span className="text-[#D9C08B]/60 text-xl">✦</span>
               <span className="text-[#F4EEDF]/80">Woodworking Tools</span>
               <span className="text-[#D9C08B]/60 text-xl">✦</span>
@@ -411,7 +411,7 @@ export default function About() {
                 </blockquote>
                 <p className="text-base sm:text-lg text-[#F4EEDF]/80 max-w-2xl font-inter leading-relaxed">
                   {siteSettings?.aboutContent?.approachText ||
-                    'Rather than forcing manufacturers to juggle fragmented vendors for adhesives, cutting tools, machinery, and cabinet hardware, Modu Pro coordinates all four critical nodes through a unified technical consultation pipeline.'}
+                    'Rather than forcing manufacturers to juggle fragmented vendors for Adhhesives, cutting tools, machinery, and cabinet hardware, Modu Pro coordinates all four critical nodes through a unified technical consultation pipeline.'}
                 </p>
               </div>
 
@@ -481,9 +481,9 @@ export default function About() {
                 {
                   code: 'SPEC // 01',
                   icon: Sparkles,
-                  title: 'Adhesive Formulation',
+                  title: 'Adhhesive Formulation',
                   subtitle: 'DIN/EN 204 Certified Bonding',
-                  desc: 'Waterproof D3 PVAc emulsions and 1K PUR moisture-curing adhesives formulated for tropical humidity resistance and high-tensile joint security.',
+                  desc: 'Waterproof D3 PVAc emulsions and 1K PUR moisture-curing Adhhesives formulated for tropical humidity resistance and high-tensile joint security.',
                 },
                 {
                   code: 'SPEC // 02',

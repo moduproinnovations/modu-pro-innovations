@@ -3,7 +3,7 @@
     "_id": "6aed9018672b0877d7048876",
     "companyName": "Modu Pro Innovation Pvt. Ltd.",
     "tagline": "Faithfully Delivering Excellence",
-    "adhesiBrandSpelling": "Adhesi Pro",
+    "AdhhesiBrandSpelling": "Adhhesi Pro",
     "logoUrl": "/assets/logo/modu-pro-logo.png",
     "contact": {
       "address": "Plot No. 27, Hanuman Daal Mill Road, opposite Royal Touch, Nagpur – 440008",
@@ -18,17 +18,17 @@
     },
     "hero": {
       "heading": "Complete Solutions for Woodworking and Modular Industries",
-      "supportingText": "Modu Pro Innovation Pvt. Ltd. brings together adhesive products, precision woodworking blades, panel-processing machinery and furniture hardware to support manufacturers across the woodworking and modular-furniture industry.",
+      "supportingText": "Modu Pro Innovation Pvt. Ltd. brings together Adhhesive products, precision woodworking blades, panel-processing machinery and furniture hardware to support manufacturers across the woodworking and modular-furniture industry.",
       "primaryCtaLabel": "Explore Our Divisions",
       "secondaryCtaLabel": "Discuss Your Requirement"
     },
     "aboutContent": {
-      "overviewParagraphOne": "Modu Pro Innovation Pvt. Ltd. serves the needs of modular furniture, kitchen, door and woodworking manufacturers through a focused range of products and industry solutions. The company brings together adhesive products, woodworking blades, panel-processing machinery and furniture hardware under one business, helping customers explore related products and services through a single point of contact.",
+      "overviewParagraphOne": "Modu Pro Innovation Pvt. Ltd. serves the needs of modular furniture, kitchen, door and woodworking manufacturers through a focused range of products and industry solutions. The company brings together Adhhesive products, woodworking blades, panel-processing machinery and furniture hardware under one business, helping customers explore related products and services through a single point of contact.",
       "overviewParagraphTwo": "Our goal is to support manufacturers with relevant products, dependable communication and practical assistance for their woodworking requirements.",
-      "approachText": "Every manufacturing floor operates with distinct panel substrates, production volumes, and machinery setups. Rather than offering generic off-the-shelf packages, our four divisions coordinate to help furniture, kitchen, and door manufacturers identify suitable adhesives, tooling, panel-processing equipment, spare parts, and hardware fittings through structured consultation."
+      "approachText": "Every manufacturing floor operates with distinct panel substrates, production volumes, and machinery setups. Rather than offering generic off-the-shelf packages, our four divisions coordinate to help furniture, kitchen, and door manufacturers identify suitable Adhhesives, tooling, panel-processing equipment, spare parts, and hardware fittings through structured consultation."
     },
     "footer": {
-      "summaryText": "Integrated industrial solutions across Adhesi Pro adhesives, PCD & TCT woodworking saw blades, panel-processing machinery, and PVC edge-banding tapes & furniture hardware.",
+      "summaryText": "Integrated industrial solutions across Adhhesi Pro Adhhesives, PCD & TCT woodworking saw blades, panel-processing machinery, and PVC edge-banding tapes & furniture hardware.",
       "copyrightText": "© Modu Pro Innovation Pvt. Ltd. All rights reserved."
     },
     "socialLinks": {
@@ -39,7 +39,7 @@
     },
     "seoDefaults": {
       "defaultTitle": "Modu Pro Innovation Pvt. Ltd. | Complete Solutions for Woodworking & Modular Industries",
-      "defaultDescription": "Modu Pro Innovation Pvt. Ltd. supplies industrial woodworking adhesives (Adhesi Pro), PCD pre-milling & grooving saw blades, panel-processing machinery, and PVC edge-banding tapes & furniture hardware in Nagpur, India.",
+      "defaultDescription": "Modu Pro Innovation Pvt. Ltd. supplies industrial woodworking Adhhesives (Adhhesi Pro), PCD pre-milling & grooving saw blades, panel-processing machinery, and PVC edge-banding tapes & furniture hardware in Nagpur, India.",
       "canonicalBaseUrl": "https://modupro.in"
     },
     "privacyNotice": "Information submitted through our enquiry forms is used solely by Modu Pro Innovation Pvt. Ltd. to review and respond to your business requirement and route your enquiry to the relevant division.",
@@ -49,21 +49,21 @@
   "divisions": [
     {
       "_id": "6aed9018672b0877d704887b",
-      "name": "Adhesi Pro",
-      "slug": "adhesi-pro",
+      "name": "Adhhesi Pro",
+      "slug": "Adhhesi-pro",
       "code": "01",
-      "subtitle": "Industrial Woodworking & Modular Furniture Adhesives",
-      "brandSpellingNote": "Configured provisionally as \"Adhesi Pro\" (brochure packaging also displays \"Adhhesi Pro\"). Editable via Site Settings.",
-      "shortDescription": "Adhesi Pro is the adhesive brand associated with Modu Pro Innovation Pvt. Ltd. The product range supports furniture, modular-kitchen, door and woodworking applications.",
-      "fullDescription": "Adhesi Pro is the adhesive brand associated with Modu Pro Innovation Pvt. Ltd. The product range supports furniture, modular-kitchen, door and woodworking applications. Formulated for reliable industrial bonding across wood-based panels, laminates, veneers, and edge treatments, the Adhesi Pro portfolio enables manufacturers to source their primary assembly and lamination adhesives through a single point of contact.",
-      "heroImage": "/assets/products/adhesi-pro/lockpro-wr3-drum.png",
-      "coverImage": "/assets/products/adhesi-pro/lockpro-808-drum.png",
+      "subtitle": "Industrial Woodworking & Modular Furniture Adhhesives",
+      "brandSpellingNote": "Configured provisionally as \"Adhhesi Pro\" (brochure packaging also displays \"Adhhesi Pro\"). Editable via Site Settings.",
+      "shortDescription": "Adhhesi Pro is the Adhhesive brand associated with Modu Pro Innovation Pvt. Ltd. The product range supports furniture, modular-kitchen, door and woodworking applications.",
+      "fullDescription": "Adhhesi Pro is the Adhhesive brand associated with Modu Pro Innovation Pvt. Ltd. The product range supports furniture, modular-kitchen, door and woodworking applications. Formulated for reliable industrial bonding across wood-based panels, laminates, veneers, and edge treatments, the Adhhesi Pro portfolio enables manufacturers to source their primary assembly and lamination Adhhesives through a single point of contact.",
+      "heroImage": "/assets/products/Adhhesi-pro/lockpro-wr3-drum.png",
+      "coverImage": "/assets/products/Adhhesi-pro/lockpro-808-drum.png",
       "categories": [
         "PVAC White Glue",
-        "D3 and Commercial D3 Adhesives",
-        "D2 Adhesives",
-        "PVC/Acrylic Adhesives",
-        "PUR Adhesives"
+        "D3 and Commercial D3 Adhhesives",
+        "D2 Adhhesives",
+        "PVC/Acrylic Adhhesives",
+        "PUR Adhhesives"
       ],
       "applications": [
         "Modular Furniture Carcass & Panel Lamination",
@@ -78,14 +78,14 @@
       ],
       "faqs": [
         {
-          "question": "Which adhesive categories are offered under the Adhesi Pro brand?",
-          "answer": "The Adhesi Pro range covers PVAC white glue, D3 and Commercial D3 adhesives, D2 adhesives, PVC/Acrylic adhesives, and moisture-curing PUR adhesives for furniture, modular kitchen, door, and woodworking applications.",
+          "question": "Which Adhhesive categories are offered under the Adhhesi Pro brand?",
+          "answer": "The Adhhesi Pro range covers PVAC white glue, D3 and Commercial D3 Adhhesives, D2 Adhhesives, PVC/Acrylic Adhhesives, and moisture-curing PUR Adhhesives for furniture, modular kitchen, door, and woodworking applications.",
           "isApproved": true,
           "_id": "6aed9018672b0877d704887c"
         },
         {
           "question": "How can manufacturers request product suitability details for a specific substrate?",
-          "answer": "Submit an enquiry specifying your panel material, laminate or edge finish, and pressing equipment (cold press, hot press, or manual assembly), and our Adhesi Pro division team will guide you to the appropriate product.",
+          "answer": "Submit an enquiry specifying your panel material, laminate or edge finish, and pressing equipment (cold press, hot press, or manual assembly), and our Adhhesi Pro division team will guide you to the appropriate product.",
           "isApproved": true,
           "_id": "6aed9018672b0877d704887d"
         }
@@ -94,8 +94,8 @@
       "publicationStatus": "published",
       "isArchived": false,
       "seo": {
-        "metaTitle": "Adhesi Pro Division | Industrial Woodworking & Modular Furniture Adhesives",
-        "metaDescription": "Explore Adhesi Pro adhesives from Modu Pro Innovation Pvt. Ltd., including PVAC white glue, D3/D2 adhesives, Lockpro WR 3, Lockpro 808, Lockpro 707, and PUR adhesives."
+        "metaTitle": "Adhhesi Pro Division | Industrial Woodworking & Modular Furniture Adhhesives",
+        "metaDescription": "Explore Adhhesi Pro Adhhesives from Modu Pro Innovation Pvt. Ltd., including PVAC white glue, D3/D2 Adhhesives, Lockpro WR 3, Lockpro 808, Lockpro 707, and PUR Adhhesives."
       },
       "__v": 0,
       "createdAt": "2026-11-06T08:30:16.405Z",
@@ -240,7 +240,7 @@
       ],
       "serviceHighlights": [
         "Woodgrain and solid-colour PVC edge-banding tape options",
-        "Coordinated supply with Adhesi Pro edge-banding adhesives and machines",
+        "Coordinated supply with Adhhesi Pro edge-banding Adhhesives and machines",
         "Consolidated hardware sourcing for modular furniture production lines"
       ],
       "faqs": [
@@ -433,27 +433,27 @@
     },
     {
       "_id": "6aed9018672b0877d7048889",
-      "name": "Lockpro WR 3 (D3 Water-Resistant Adhesive)",
+      "name": "Lockpro WR 3 (D3 Water-Resistant Adhhesive)",
       "slug": "lockpro-wr-3",
       "division": {
         "_id": "6aed9018672b0877d704887b",
-        "name": "Adhesi Pro",
-        "slug": "adhesi-pro",
+        "name": "Adhhesi Pro",
+        "slug": "Adhhesi-pro",
         "code": "01"
       },
-      "category": "D3 and Commercial D3 Adhesives",
-      "shortDescription": "Water-resistant woodworking adhesive formulated for modular kitchen, door, and furniture bonding applications.",
-      "fullDescription": "Lockpro WR 3 is a key D3 adhesive offering under the Adhesi Pro brand associated with Modu Pro Innovation Pvt. Ltd. Available in both industrial drum and bucket packaging, it supports furniture, modular-kitchen, door, and general woodworking assembly where dependable water-resistant bonding and coverage are required.",
+      "category": "D3 and Commercial D3 Adhhesives",
+      "shortDescription": "Water-resistant woodworking Adhhesive formulated for modular kitchen, door, and furniture bonding applications.",
+      "fullDescription": "Lockpro WR 3 is a key D3 Adhhesive offering under the Adhhesi Pro brand associated with Modu Pro Innovation Pvt. Ltd. Available in both industrial drum and bucket packaging, it supports furniture, modular-kitchen, door, and general woodworking assembly where dependable water-resistant bonding and coverage are required.",
       "images": [
         {
-          "url": "/assets/products/adhesi-pro/lockpro-wr3-drum.png",
-          "alt": "Adhesi Pro Lockpro WR 3 Drum Packaging",
+          "url": "/assets/products/Adhhesi-pro/lockpro-wr3-drum.png",
+          "alt": "Adhhesi Pro Lockpro WR 3 Drum Packaging",
           "isPrimary": true,
           "_id": "6aed9018672b0877d704888a"
         },
         {
-          "url": "/assets/products/adhesi-pro/lockpro-wr3-bucket.png",
-          "alt": "Adhesi Pro Lockpro WR 3 Bucket Packaging",
+          "url": "/assets/products/Adhhesi-pro/lockpro-wr3-bucket.png",
+          "alt": "Adhhesi Pro Lockpro WR 3 Bucket Packaging",
           "isPrimary": false,
           "_id": "6aed9018672b0877d704888b"
         }
@@ -461,12 +461,12 @@
       "specifications": [
         {
           "label": "Brand Line",
-          "value": "Adhesi Pro — Lockpro Series",
+          "value": "Adhhesi Pro — Lockpro Series",
           "isVerified": true
         },
         {
-          "label": "Adhesive Classification",
-          "value": "D3 Water-Resistant Adhesive",
+          "label": "Adhhesive Classification",
+          "value": "D3 Water-Resistant Adhhesive",
           "isVerified": true
         },
         {
@@ -666,21 +666,21 @@
     },
     {
       "_id": "6aed9018672b0877d704888c",
-      "name": "Lockpro 808 Industrial Woodworking Adhesive",
+      "name": "Lockpro 808 Industrial Woodworking Adhhesive",
       "slug": "lockpro-808",
       "division": {
         "_id": "6aed9018672b0877d704887b",
-        "name": "Adhesi Pro",
-        "slug": "adhesi-pro",
+        "name": "Adhhesi Pro",
+        "slug": "Adhhesi-pro",
         "code": "01"
       },
       "category": "PVAC White Glue",
-      "shortDescription": "High-strength industrial woodworking adhesive engineered for spreadability, durability, and reliable panel assembly.",
-      "fullDescription": "Lockpro 808 from Adhesi Pro is formulated for modular furniture, door, and woodworking manufacturers seeking dependable bond strength and consistent spreadability across panel and laminate joints.",
+      "shortDescription": "High-strength industrial woodworking Adhhesive engineered for spreadability, durability, and reliable panel assembly.",
+      "fullDescription": "Lockpro 808 from Adhhesi Pro is formulated for modular furniture, door, and woodworking manufacturers seeking dependable bond strength and consistent spreadability across panel and laminate joints.",
       "images": [
         {
-          "url": "/assets/products/adhesi-pro/lockpro-808-drum.png",
-          "alt": "Adhesi Pro Lockpro 808 Industrial Drum",
+          "url": "/assets/products/Adhhesi-pro/lockpro-808-drum.png",
+          "alt": "Adhhesi Pro Lockpro 808 Industrial Drum",
           "isPrimary": true,
           "_id": "6aed9018672b0877d704888d"
         }
@@ -688,7 +688,7 @@
       "specifications": [
         {
           "label": "Brand Line",
-          "value": "Adhesi Pro — Lockpro Series",
+          "value": "Adhhesi Pro — Lockpro Series",
           "isVerified": true
         },
         {
@@ -833,21 +833,21 @@
     },
     {
       "_id": "6aed9018672b0877d704888e",
-      "name": "Lockpro 808 PR Fast-Drying Adhesive",
+      "name": "Lockpro 808 PR Fast-Drying Adhhesive",
       "slug": "lockpro-808-pr",
       "division": {
         "_id": "6aed9018672b0877d704887b",
-        "name": "Adhesi Pro",
-        "slug": "adhesi-pro",
+        "name": "Adhhesi Pro",
+        "slug": "Adhhesi-pro",
         "code": "01"
       },
-      "category": "D3 and Commercial D3 Adhesives",
-      "shortDescription": "Fast-drying industrial adhesive with heat resistance and high spreadability for demanding production schedules.",
-      "fullDescription": "Lockpro 808 PR is part of the Adhesi Pro woodworking adhesive lineup, packaged in convenient handled industrial buckets and designed for woodworking operations requiring fast drying, heat resistance, and smooth spreadability.",
+      "category": "D3 and Commercial D3 Adhhesives",
+      "shortDescription": "Fast-drying industrial Adhhesive with heat resistance and high spreadability for demanding production schedules.",
+      "fullDescription": "Lockpro 808 PR is part of the Adhhesi Pro woodworking Adhhesive lineup, packaged in convenient handled industrial buckets and designed for woodworking operations requiring fast drying, heat resistance, and smooth spreadability.",
       "images": [
         {
-          "url": "/assets/products/adhesi-pro/lockpro-808-pr-bucket.png",
-          "alt": "Adhesi Pro Lockpro 808 PR Bucket",
+          "url": "/assets/products/Adhhesi-pro/lockpro-808-pr-bucket.png",
+          "alt": "Adhhesi Pro Lockpro 808 PR Bucket",
           "isPrimary": true,
           "_id": "6aed9018672b0877d704888f"
         }
@@ -855,7 +855,7 @@
       "specifications": [
         {
           "label": "Brand Line",
-          "value": "Adhesi Pro — Lockpro Series",
+          "value": "Adhhesi Pro — Lockpro Series",
           "isVerified": true
         },
         {
@@ -956,7 +956,7 @@
       },
       "category": "Cold/Hot-Press Machines",
       "shortDescription": "Heavy-duty hydraulic platen press for uniform laminate pressing, flush door manufacturing, and panel bonding.",
-      "fullDescription": "Supporting door manufacturers and panel laminators, our cold/hot-press machinery works seamlessly alongside Adhesi Pro lamination adhesives to deliver uniform pressing across full-size boards and doors.",
+      "fullDescription": "Supporting door manufacturers and panel laminators, our cold/hot-press machinery works seamlessly alongside Adhhesi Pro lamination Adhhesives to deliver uniform pressing across full-size boards and doors.",
       "images": [
         {
           "url": "/assets/products/panel-processing/hydraulic-cold-press.png",
@@ -999,21 +999,21 @@
     },
     {
       "_id": "6aed9018672b0877d7048890",
-      "name": "LockPro 707 Woodworking Adhesive",
+      "name": "LockPro 707 Woodworking Adhhesive",
       "slug": "lockpro-707",
       "division": {
         "_id": "6aed9018672b0877d704887b",
-        "name": "Adhesi Pro",
-        "slug": "adhesi-pro",
+        "name": "Adhhesi Pro",
+        "slug": "Adhhesi-pro",
         "code": "01"
       },
-      "category": "D2 Adhesives",
-      "shortDescription": "Dependable woodworking adhesive formulated for high spreadability and consistent interior furniture bonding.",
+      "category": "D2 Adhhesives",
+      "shortDescription": "Dependable woodworking Adhhesive formulated for high spreadability and consistent interior furniture bonding.",
       "fullDescription": "LockPro 707 supports interior modular furniture, panel lamination, and woodworking assembly requirements with balanced spreadability and dependable bond performance.",
       "images": [
         {
-          "url": "/assets/products/adhesi-pro/lockpro-707-drum.png",
-          "alt": "Adhesi Pro LockPro 707 Drum",
+          "url": "/assets/products/Adhhesi-pro/lockpro-707-drum.png",
+          "alt": "Adhhesi Pro LockPro 707 Drum",
           "isPrimary": true,
           "_id": "6aed9018672b0877d7048891"
         }
@@ -1021,7 +1021,7 @@
       "specifications": [
         {
           "label": "Brand Line",
-          "value": "Adhesi Pro — Lockpro Series",
+          "value": "Adhhesi Pro — Lockpro Series",
           "isVerified": true
         },
         {
@@ -1110,21 +1110,21 @@
     },
     {
       "_id": "6aed9018672b0877d7048892",
-      "name": "Adhesi Pro 1K PUR Moisture-Curing Polyurethane Adhesive",
-      "slug": "adhesi-pro-1k-pur",
+      "name": "Adhhesi Pro 1K PUR Moisture-Curing Polyurethane Adhhesive",
+      "slug": "Adhhesi-pro-1k-pur",
       "division": {
         "_id": "6aed9018672b0877d704887b",
-        "name": "Adhesi Pro",
-        "slug": "adhesi-pro",
+        "name": "Adhhesi Pro",
+        "slug": "Adhhesi-pro",
         "code": "01"
       },
-      "category": "PUR Adhesives",
-      "shortDescription": "Single-component moisture-curing polyurethane adhesive in an applicator nozzle bottle for waterproof, all-weather bonding.",
-      "fullDescription": "Adhesi Pro 1K PUR is a moisture-curing polyurethane adhesive designed for precision woodworking, door manufacturing, and water-exposed furniture joints.",
+      "category": "PUR Adhhesives",
+      "shortDescription": "Single-component moisture-curing polyurethane Adhhesive in an applicator nozzle bottle for waterproof, all-weather bonding.",
+      "fullDescription": "Adhhesi Pro 1K PUR is a moisture-curing polyurethane Adhhesive designed for precision woodworking, door manufacturing, and water-exposed furniture joints.",
       "images": [
         {
-          "url": "/assets/products/adhesi-pro/1k-pur-adhesive.png",
-          "alt": "Adhesi Pro 1K PUR Moisture Curing Polyurethane Adhesive Bottle",
+          "url": "/assets/products/Adhhesi-pro/1k-pur-Adhhesive.png",
+          "alt": "Adhhesi Pro 1K PUR Moisture Curing Polyurethane Adhhesive Bottle",
           "isPrimary": true,
           "_id": "6aed9018672b0877d7048893"
         }
@@ -1164,21 +1164,21 @@
     },
     {
       "_id": "6aed9018672b0877d7048894",
-      "name": "VUS Adhesive (PVC / Acrylic Bonding Solution)",
-      "slug": "vus-adhesive",
+      "name": "VUS Adhhesive (PVC / Acrylic Bonding Solution)",
+      "slug": "vus-Adhhesive",
       "division": {
         "_id": "6aed9018672b0877d704887b",
-        "name": "Adhesi Pro",
-        "slug": "adhesi-pro",
+        "name": "Adhhesi Pro",
+        "slug": "Adhhesi-pro",
         "code": "01"
       },
-      "category": "PVC/Acrylic Adhesives",
-      "shortDescription": "Specialized adhesive solution referenced in the Adhesi Pro portfolio for PVC, acrylic, and decorative surface bonding.",
-      "fullDescription": "VUS Adhesive is part of the Adhesi Pro range supporting PVC, acrylic, and decorative sheet bonding across modular kitchen shutters, wardrobe panels, and interior woodwork. Enquire with our team to confirm grade suitability for your specific substrate.",
+      "category": "PVC/Acrylic Adhhesives",
+      "shortDescription": "Specialized Adhhesive solution referenced in the Adhhesi Pro portfolio for PVC, acrylic, and decorative surface bonding.",
+      "fullDescription": "VUS Adhhesive is part of the Adhhesi Pro range supporting PVC, acrylic, and decorative sheet bonding across modular kitchen shutters, wardrobe panels, and interior woodwork. Enquire with our team to confirm grade suitability for your specific substrate.",
       "images": [
         {
-          "url": "/assets/products/adhesi-pro/lockpro-808-pr-bucket.png",
-          "alt": "Adhesi Pro VUS Adhesive Representative Packaging",
+          "url": "/assets/products/Adhhesi-pro/lockpro-808-pr-bucket.png",
+          "alt": "Adhhesi Pro VUS Adhhesive Representative Packaging",
           "isPrimary": true,
           "_id": "6aed9018672b0877d7048895"
         }
@@ -1186,12 +1186,12 @@
       "specifications": [
         {
           "label": "Brand Line",
-          "value": "Adhesi Pro",
+          "value": "Adhhesi Pro",
           "isVerified": true
         },
         {
           "label": "Category",
-          "value": "PVC/Acrylic & Specialty Adhesives",
+          "value": "PVC/Acrylic & Specialty Adhhesives",
           "isVerified": true
         }
       ],
@@ -1226,7 +1226,7 @@
       "image": "/assets/products/panel-processing/edge-banding-machine.png",
       "scopeItems": [
         "Requirement assessment across sizing, edge banding, CNC routing, and pressing",
-        "Coordinated tooling (TCT/PCD blades) and adhesive pairing",
+        "Coordinated tooling (TCT/PCD blades) and Adhhesive pairing",
         "Single point of contact for machinery and consumable enquiries"
       ],
       "relatedDivisions": [
@@ -1314,7 +1314,7 @@
       "image": "/assets/products/panel-processing/sliding-table-panel-saw.png",
       "scopeItems": [
         "Spindle, carriage, and feed-chain inspection",
-        "Adhesive application unit cleaning and calibration checks"
+        "Adhhesive application unit cleaning and calibration checks"
       ],
       "relatedDivisions": [
         {
@@ -1337,10 +1337,10 @@
       "slug": "troubleshooting-diagnostics",
       "category": "Troubleshooting",
       "shortDescription": "Enquiry-based technical troubleshooting for panel-processing accuracy, edge-banding defects, and machine faults.",
-      "description": "Practical diagnostic assistance when manufacturers encounter processing issues across panel sizing, edge-banding adhesion, boring alignment, or press operation.",
+      "description": "Practical diagnostic assistance when manufacturers encounter processing issues across panel sizing, edge-banding Adhhesion, boring alignment, or press operation.",
       "image": "/assets/products/panel-processing/hydraulic-cold-press.png",
       "scopeItems": [
-        "Root-cause assessment across machine, tooling, and adhesive variables",
+        "Root-cause assessment across machine, tooling, and Adhhesive variables",
         "Actionable remediation steps and technician scheduling where applicable"
       ],
       "relatedDivisions": [
@@ -1418,8 +1418,8 @@
       "_id": "6aed9018672b0877d70488b7",
       "name": "Modular Furniture Manufacturing",
       "slug": "modular-furniture-manufacturing",
-      "shortDescription": "Integrated adhesives, panel-processing machinery, precision blades, PVC edge tapes, and KD fittings for wardrobe, office, and residential furniture factories.",
-      "description": "Modular furniture manufacturers rely on repeatable panel sizing, clean edge banding, dependable adhesive bonding, and accurate knock-down hardware assembly. Modu Pro Innovation Pvt. Ltd. connects all four requirements under one roof—helping manufacturers coordinate Adhesi Pro adhesives, TCT & PCD blades, panel-processing equipment, and PVC edge-banding tapes & fittings through a single point of contact.",
+      "shortDescription": "Integrated Adhhesives, panel-processing machinery, precision blades, PVC edge tapes, and KD fittings for wardrobe, office, and residential furniture factories.",
+      "description": "Modular furniture manufacturers rely on repeatable panel sizing, clean edge banding, dependable Adhhesive bonding, and accurate knock-down hardware assembly. Modu Pro Innovation Pvt. Ltd. connects all four requirements under one roof—helping manufacturers coordinate Adhhesi Pro Adhhesives, TCT & PCD blades, panel-processing equipment, and PVC edge-banding tapes & fittings through a single point of contact.",
       "image": "/assets/products/panel-processing/edge-banding-machine.png",
       "keyApplications": [
         "Wardrobe, storage carcass, and office workstation production",
@@ -1429,10 +1429,10 @@
       "relatedDivisions": [
         {
           "_id": "6aed9018672b0877d704887b",
-          "name": "Adhesi Pro",
-          "slug": "adhesi-pro",
+          "name": "Adhhesi Pro",
+          "slug": "Adhhesi-pro",
           "code": "01",
-          "shortDescription": "Adhesi Pro is the adhesive brand associated with Modu Pro Innovation Pvt. Ltd. The product range supports furniture, modular-kitchen, door and woodworking applications."
+          "shortDescription": "Adhhesi Pro is the Adhhesive brand associated with Modu Pro Innovation Pvt. Ltd. The product range supports furniture, modular-kitchen, door and woodworking applications."
         },
         {
           "_id": "6aed9018672b0877d704887e",
@@ -1466,21 +1466,21 @@
       "_id": "6aed9018672b0877d70488b8",
       "name": "Modular Kitchen Manufacturing",
       "slug": "modular-kitchen-manufacturing",
-      "shortDescription": "Water-resistant D3 & PUR adhesives, precision grooving & pre-milling tooling, automated machinery, and cabinet hardware for modular kitchen producers.",
-      "description": "Kitchen cabinetry and shutters demand moisture-conscious adhesive selection, chip-free panel cutting, sealed PVC edges, and smooth-operating hinges and drawer channels. Our four divisions support modular kitchen manufacturers with relevant products and technical guidance tailored to their production line.",
+      "shortDescription": "Water-resistant D3 & PUR Adhhesives, precision grooving & pre-milling tooling, automated machinery, and cabinet hardware for modular kitchen producers.",
+      "description": "Kitchen cabinetry and shutters demand moisture-conscious Adhhesive selection, chip-free panel cutting, sealed PVC edges, and smooth-operating hinges and drawer channels. Our four divisions support modular kitchen manufacturers with relevant products and technical guidance tailored to their production line.",
       "image": "/assets/products/edge-banding-hardware/telescopic-drawer-channels.png",
       "keyApplications": [
-        "Carcass and shutter bonding with D3, Commercial D3, PVC/Acrylic, and PUR adhesives",
+        "Carcass and shutter bonding with D3, Commercial D3, PVC/Acrylic, and PUR Adhhesives",
         "Chip-free pre-milling and grooving on laminated kitchen boards",
         "Telescopic drawer channels, 2D/3D concealed hinges, and colour-matched PVC edge tapes"
       ],
       "relatedDivisions": [
         {
           "_id": "6aed9018672b0877d704887b",
-          "name": "Adhesi Pro",
-          "slug": "adhesi-pro",
+          "name": "Adhhesi Pro",
+          "slug": "Adhhesi-pro",
           "code": "01",
-          "shortDescription": "Adhesi Pro is the adhesive brand associated with Modu Pro Innovation Pvt. Ltd. The product range supports furniture, modular-kitchen, door and woodworking applications."
+          "shortDescription": "Adhhesi Pro is the Adhhesive brand associated with Modu Pro Innovation Pvt. Ltd. The product range supports furniture, modular-kitchen, door and woodworking applications."
         },
         {
           "_id": "6aed9018672b0877d704887e",
@@ -1514,21 +1514,21 @@
       "_id": "6aed9018672b0877d70488b9",
       "name": "Door Manufacturing",
       "slug": "door-manufacturing",
-      "shortDescription": "Industrial lamination adhesives, hydraulic cold/hot presses, CNC profiling machines, and sizing blades for flush and engineered door manufacturers.",
-      "description": "Door manufacturers require consistent platen pressing, reliable wood and skin bonding, and accurate perimeter sizing and surface routing. Modu Pro supports door production units with Adhesi Pro adhesives (including Lockpro WR 3, Lockpro 808, and 1K PUR), hydraulic cold/hot-press machines, dual-spindle CNC routers, and panel-saw blades.",
+      "shortDescription": "Industrial lamination Adhhesives, hydraulic cold/hot presses, CNC profiling machines, and sizing blades for flush and engineered door manufacturers.",
+      "description": "Door manufacturers require consistent platen pressing, reliable wood and skin bonding, and accurate perimeter sizing and surface routing. Modu Pro supports door production units with Adhhesi Pro Adhhesives (including Lockpro WR 3, Lockpro 808, and 1K PUR), hydraulic cold/hot-press machines, dual-spindle CNC routers, and panel-saw blades.",
       "image": "/assets/products/panel-processing/hydraulic-cold-press.png",
       "keyApplications": [
         "Flush door and decorative laminate door pressing on hydraulic presses",
-        "Structural core, frame, and skin bonding with Adhesi Pro adhesives",
+        "Structural core, frame, and skin bonding with Adhhesi Pro Adhhesives",
         "Automated CNC door surface routing and precision edge sizing"
       ],
       "relatedDivisions": [
         {
           "_id": "6aed9018672b0877d704887b",
-          "name": "Adhesi Pro",
-          "slug": "adhesi-pro",
+          "name": "Adhhesi Pro",
+          "slug": "Adhhesi-pro",
           "code": "01",
-          "shortDescription": "Adhesi Pro is the adhesive brand associated with Modu Pro Innovation Pvt. Ltd. The product range supports furniture, modular-kitchen, door and woodworking applications."
+          "shortDescription": "Adhhesi Pro is the Adhhesive brand associated with Modu Pro Innovation Pvt. Ltd. The product range supports furniture, modular-kitchen, door and woodworking applications."
         },
         {
           "_id": "6aed9018672b0877d704887e",
@@ -1555,8 +1555,8 @@
       "_id": "6aed9018672b0877d70488ba",
       "name": "Woodworking and Panel Processing",
       "slug": "woodworking-and-panel-processing",
-      "shortDescription": "Complete machinery, TCT/PCD tooling, spare parts, technical servicing, and industrial adhesives for commercial woodworking workshops and job-work hubs.",
-      "description": "For dedicated panel-processing centers and commercial woodworking businesses, machine uptime and tooling precision are paramount. Modu Pro provides sliding table panel saws, automatic edge banders, CNC nesting machines, multi-boring equipment, TCT/PCD saw blades, adhesives, and ongoing maintenance and spare-parts support.",
+      "shortDescription": "Complete machinery, TCT/PCD tooling, spare parts, technical servicing, and industrial Adhhesives for commercial woodworking workshops and job-work hubs.",
+      "description": "For dedicated panel-processing centers and commercial woodworking businesses, machine uptime and tooling precision are paramount. Modu Pro provides sliding table panel saws, automatic edge banders, CNC nesting machines, multi-boring equipment, TCT/PCD saw blades, Adhhesives, and ongoing maintenance and spare-parts support.",
       "image": "/assets/products/panel-processing/cnc-nesting-machine.png",
       "keyApplications": [
         "High-volume sheet cutting, nesting, grooving, and edge banding",
@@ -1580,10 +1580,10 @@
         },
         {
           "_id": "6aed9018672b0877d704887b",
-          "name": "Adhesi Pro",
-          "slug": "adhesi-pro",
+          "name": "Adhhesi Pro",
+          "slug": "Adhhesi-pro",
           "code": "01",
-          "shortDescription": "Adhesi Pro is the adhesive brand associated with Modu Pro Innovation Pvt. Ltd. The product range supports furniture, modular-kitchen, door and woodworking applications."
+          "shortDescription": "Adhhesi Pro is the Adhhesive brand associated with Modu Pro Innovation Pvt. Ltd. The product range supports furniture, modular-kitchen, door and woodworking applications."
         },
         {
           "_id": "6aed9018672b0877d7048884",

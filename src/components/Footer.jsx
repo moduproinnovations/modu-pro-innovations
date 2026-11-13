@@ -20,7 +20,7 @@ export default function Footer() {
     divisions && divisions.length > 0
       ? divisions
       : [
-          { name: siteSettings?.adhesiBrandSpelling || 'Adhhesi Pro', slug: 'adhesi-pro' },
+          { name: siteSettings?.AdhhesiBrandSpelling || 'Adhhesi Pro', slug: 'Adhhesi-pro' },
           { name: 'Wood Working & Modular Furniture Tools', slug: 'pcd-blades' },
           { name: 'Panel Processing Machines Division', slug: 'panel-processing' },
           { name: 'PVC Edge-Banding Tapes & Hardware', slug: 'edge-banding-hardware' },
@@ -35,7 +35,7 @@ export default function Footer() {
               Single Point of Industrial Coordination
             </p>
             <h2 className="font-display text-2xl sm:text-3xl font-semibold text-[#F4EEDF] mt-1">
-              Ready to source adhesives, blades, machinery, or furniture fittings?
+              Ready to source Adhhesives, blades, machinery, or furniture fittings?
             </h2>
           </div>
           <Link
@@ -68,7 +68,7 @@ export default function Footer() {
 
             <p className="text-sm text-[#F4EEDF]/75 leading-relaxed">
               {siteSettings?.footer?.summaryText ||
-                'Modu Pro Innovation Pvt. Ltd. brings together adhesive products, precision woodworking blades, panel-processing machinery and furniture hardware to support manufacturers across the woodworking and modular-furniture industry.'}
+                'Modu Pro Innovation Pvt. Ltd. brings together Adhhesive products, precision woodworking blades, panel-processing machinery and furniture hardware to support manufacturers across the woodworking and modular-furniture industry.'}
             </p>
           </div>
 

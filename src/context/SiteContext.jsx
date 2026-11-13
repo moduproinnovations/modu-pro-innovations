@@ -4,7 +4,7 @@ import { publicApi } from '../services/api';
 const DEFAULT_SETTINGS = {
   companyName: 'Modu Pro Innovation Pvt. Ltd.',
   tagline: 'Faithfully Delivering Excellence',
-  adhesiBrandSpelling: 'Adhhesi Pro',
+  AdhhesiBrandSpelling: 'Adhhesi Pro',
   logoUrl: '/assets/logo/modu-pro-logo.png',
   contact: {
     address: 'Plot No. 27, Hanuman Daal Mill Road, opposite Royal Touch, Nagpur – 440008',
@@ -17,21 +17,21 @@ const DEFAULT_SETTINGS = {
   hero: {
     heading: 'Complete Solutions for Woodworking and Modular Industries',
     supportingText:
-      'Modu Pro Innovation Pvt. Ltd. brings together adhesive products, precision woodworking blades, panel-processing machinery and furniture hardware to support manufacturers across the woodworking and modular-furniture industry.',
+      'Modu Pro Innovation Pvt. Ltd. brings together Adhhesive products, precision woodworking blades, panel-processing machinery and furniture hardware to support manufacturers across the woodworking and modular-furniture industry.',
     primaryCtaLabel: 'Explore Our Divisions',
     secondaryCtaLabel: 'Discuss Your Requirement',
   },
   aboutContent: {
     overviewParagraphOne:
-      'Modu Pro Innovation Pvt. Ltd. serves the needs of modular furniture, kitchen, door and woodworking manufacturers through a focused range of products and industry solutions. The company brings together adhesive products, woodworking blades, panel-processing machinery and furniture hardware under one business, helping customers explore related products and services through a single point of contact.',
+      'Modu Pro Innovation Pvt. Ltd. serves the needs of modular furniture, kitchen, door and woodworking manufacturers through a focused range of products and industry solutions. The company brings together Adhhesive products, woodworking blades, panel-processing machinery and furniture hardware under one business, helping customers explore related products and services through a single point of contact.',
     overviewParagraphTwo:
       'Our goal is to support manufacturers with relevant products, dependable communication and practical assistance for their woodworking requirements.',
     approachText:
-      'Every manufacturing floor operates with distinct panel substrates, production volumes, and machinery setups. Rather than offering generic off-the-shelf packages, our four divisions coordinate to help furniture, kitchen, and door manufacturers identify suitable adhesives, tooling, panel-processing equipment, spare parts, and hardware fittings through structured consultation.',
+      'Every manufacturing floor operates with distinct panel substrates, production volumes, and machinery setups. Rather than offering generic off-the-shelf packages, our four divisions coordinate to help furniture, kitchen, and door manufacturers identify suitable Adhhesives, tooling, panel-processing equipment, spare parts, and hardware fittings through structured consultation.',
   },
   footer: {
     summaryText:
-      'Integrated industrial solutions across Adhhesi Pro adhesives, PCD & TCT woodworking saw blades, panel-processing machinery, and PVC edge-banding tapes & furniture hardware.',
+      'Integrated industrial solutions across Adhhesi Pro Adhhesives, PCD & TCT woodworking saw blades, panel-processing machinery, and PVC edge-banding tapes & furniture hardware.',
     copyrightText: '© Modu Pro Innovation Pvt. Ltd. All rights reserved.',
   },
   privacyNotice:

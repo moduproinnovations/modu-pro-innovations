@@ -42,8 +42,8 @@ export default function EnquiryForm({
       email: '',
       divisionName:
         defaultDivisionName ||
-        ((defaultDivisionSlug === 'adhesi-pro' || defaultDivisionSlug === 'adhhesi-pro')
-          ? siteSettings?.adhesiBrandSpelling || 'Adhhesi Pro'
+        ((defaultDivisionSlug === 'Adhhesi-pro' || defaultDivisionSlug === 'adhhesi-pro')
+          ? siteSettings?.AdhhesiBrandSpelling || 'Adhhesi Pro'
           : defaultDivisionSlug === 'pcd-blades'
           ? 'Wood Working & Modular Furniture Tools'
           : defaultDivisionSlug === 'panel-processing'
@@ -84,8 +84,8 @@ export default function EnquiryForm({
     divisions && divisions.length > 0
       ? divisions.map((d, idx) => ({
           name:
-            (d.slug === 'adhesi-pro' || d.slug === 'adhhesi-pro') && siteSettings?.adhesiBrandSpelling
-              ? siteSettings.adhesiBrandSpelling
+            (d.slug === 'Adhhesi-pro' || d.slug === 'adhhesi-pro') && siteSettings?.AdhhesiBrandSpelling
+              ? siteSettings.AdhhesiBrandSpelling
               : d.name,
           slug: d.slug,
           code: d.code || `0${idx + 1}`,
@@ -93,10 +93,10 @@ export default function EnquiryForm({
         }))
       : [
           {
-            name: siteSettings?.adhesiBrandSpelling || 'Adhhesi Pro',
-            slug: 'adhesi-pro',
+            name: siteSettings?.AdhhesiBrandSpelling || 'Adhhesi Pro',
+            slug: 'Adhhesi-pro',
             code: '01',
-            subtitle: 'PVAC, D3/D2, PVC/Acrylic & PUR Adhesives',
+            subtitle: 'PVAC, D3/D2, PVC/Acrylic & PUR Adhhesives',
           },
           {
             name: 'Wood Working & Modular Furniture Tools',

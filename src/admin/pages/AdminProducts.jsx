@@ -12,7 +12,7 @@ const EMPTY_PRODUCT = {
   category: '',
   shortDescription: '',
   fullDescription: '',
-  imageUrl: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/adhesi-pro/lockpro-wr3-drum.png',
+  imageUrl: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/Adhhesi-pro/lockpro-wr3-drum.png',
   highlightsText: '',
   applicationsText: '',
   specifications: [],
@@ -358,7 +358,7 @@ export default function AdminProducts() {
                           setForm((f) => ({ ...f, slug: s }));
                         }
                       }}
-                      placeholder="e.g., Lockpro WR 3 (D3 Water-Resistant Adhesive)"
+                      placeholder="e.g., Lockpro WR 3 (D3 Water-Resistant Adhhesive)"
                       className="w-full px-3.5 py-2.5 bg-[#0A1428] border border-[#3F5E8C]/60 focus:border-[#D9C08B] focus:ring-1 focus:ring-[#D9C08B]/30 rounded-xl text-sm text-[#F4EEDF] outline-none transition-colors"
                     />
                   </div>
@@ -401,7 +401,7 @@ export default function AdminProducts() {
                       required
                       value={form.category}
                       onChange={(e) => setForm({ ...form, category: e.target.value })}
-                      placeholder="e.g., D3 and Commercial D3 Adhesives"
+                      placeholder="e.g., D3 and Commercial D3 Adhhesives"
                       className="w-full px-3.5 py-2.5 bg-[#0A1428] border border-[#3F5E8C]/60 focus:border-[#D9C08B] focus:ring-1 focus:ring-[#D9C08B]/30 rounded-xl text-sm text-[#F4EEDF] outline-none transition-colors"
                     />
                   </div>

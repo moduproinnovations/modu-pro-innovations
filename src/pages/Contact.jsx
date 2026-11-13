@@ -35,13 +35,13 @@ export default function Contact() {
       ? divisions.map((d) => ({
           slug: d.slug,
           name:
-            (d.slug === 'adhesi-pro' || d.slug === 'adhhesi-pro') && siteSettings?.adhesiBrandSpelling
-              ? siteSettings.adhesiBrandSpelling
+            (d.slug === 'Adhhesi-pro' || d.slug === 'adhhesi-pro') && siteSettings?.AdhhesiBrandSpelling
+              ? siteSettings.AdhhesiBrandSpelling
               : d.name,
           code: d.code,
         }))
       : [
-          { slug: 'adhesi-pro', name: siteSettings?.adhesiBrandSpelling || 'Adhhesi Pro', code: '01' },
+          { slug: 'Adhhesi-pro', name: siteSettings?.AdhhesiBrandSpelling || 'Adhhesi Pro', code: '01' },
           { slug: 'pcd-blades', name: 'Wood Working & Modular Furniture Tools', code: '02' },
           { slug: 'panel-processing', name: 'Panel Processing Machines Division', code: '03' },
           { slug: 'edge-banding-hardware', name: 'PVC Edge-Banding Tapes & Hardware', code: '04' },
@@ -53,7 +53,7 @@ export default function Contact() {
     <>
       <SeoHead
         title="Contact Us"
-        description={`Contact Modu Pro Innovation Pvt. Ltd. at ${address}. Submit an enquiry for Adhhesi Pro adhesives, PCD blades, panel-processing machinery, or PVC edge-banding tapes & hardware.`}
+        description={`Contact Modu Pro Innovation Pvt. Ltd. at ${address}. Submit an enquiry for Adhhesi Pro Adhhesives, PCD blades, panel-processing machinery, or PVC edge-banding tapes & hardware.`}
         canonicalPath="/contact"
       />
 
@@ -69,7 +69,7 @@ export default function Contact() {
             </h1>
             <div className="w-20 h-[1.5px] bg-[#D9C08B]" />
             <p className="text-base sm:text-lg text-[#F4EEDF]/85 leading-relaxed">
-              Whether you are sourcing industrial woodworking adhesives, TCT/PCD saw blades,
+              Whether you are sourcing industrial woodworking Adhhesives, TCT/PCD saw blades,
               panel-processing machinery, spare parts, or PVC edge-banding tapes and furniture
               hardware, our team can direct your enquiry to the right division.
             </p>
