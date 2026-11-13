@@ -17,7 +17,7 @@ import ProductDetailModal from '../components/ProductDetailModal';
 import EnquiryForm from '../components/EnquiryForm';
 
 const DIVISION_BG_BANNERS = {
-  'adhhesi-pro': '/assets/full%20backgorund%20banners/new%20Adhhesi%20bg%20banner.png',
+  'adhhesi-pro': '/assets/full%20backgorund%20banners/new%20adhesi%20bg%20banner.png',
   'pcd-blades':
     '/assets/full%20backgorund%20banners/PCD%20Pre-Milling%20&%20Grooving%20Saw%20Blades.png',
   'panel-processing':
