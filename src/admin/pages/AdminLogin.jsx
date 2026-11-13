@@ -57,13 +57,15 @@ export default function AdminLogin() {
       <SeoHead title="Administrator Sign In" />
 
       <div className="max-w-7xl w-full mx-auto flex items-center justify-between">
-        <Link
-          to="/"
+        <a
+          href="https://www.moduproinnovations.com"
+          target="_blank"
+          rel="noopener noreferrer"
           className="inline-flex items-center gap-2 text-xs font-mono-code uppercase tracking-widest text-[#D9C08B] hover:underline"
         >
           <ArrowLeft aria-hidden="true" className="w-4 h-4" />
           <span>Return to Public Website</span>
-        </Link>
+        </a>
       </div>
 
       <div className="max-w-md w-full mx-auto my-12 bg-[#16294D] border border-[#D9C08B]/40 p-8 sm:p-10 shadow-2xl">

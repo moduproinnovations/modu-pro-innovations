@@ -122,13 +122,15 @@ export default function AdminLayout() {
           </div>
 
           <div className="grid grid-cols-2 gap-2 pt-1">
-            <Link
-              to="/"
+            <a
+              href="https://www.moduproinnovations.com"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-1.5 px-3 py-2 bg-[#16294D] border border-[#3F5E8C]/50 hover:border-[#D9C08B] text-[11px] uppercase tracking-wider text-[#F4EEDF]"
             >
               <span>Public Site</span>
               <ExternalLink aria-hidden="true" className="w-3 h-3" />
-            </Link>
+            </a>
             <button
               type="button"
               onClick={handleLogout}
@@ -170,13 +172,15 @@ export default function AdminLayout() {
           </div>
 
           <div className="flex items-center gap-2 sm:gap-3 shrink-0">
-            <Link
-              to="/"
+            <a
+              href="https://www.moduproinnovations.com"
+              target="_blank"
+              rel="noopener noreferrer"
               className="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-2 bg-[#0A1428] border border-[#3F5E8C]/60 hover:border-[#D9C08B] text-xs uppercase tracking-wider text-[#F4EEDF]"
             >
               <span>View Live Website</span>
               <ExternalLink aria-hidden="true" className="w-3.5 h-3.5 text-[#D9C08B]" />
-            </Link>
+            </a>
           </div>
         </header>
 
