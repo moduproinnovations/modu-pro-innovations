@@ -146,10 +146,15 @@ export default function AdminServices() {
       </div>
 
       {showForm && (
-        <form
-          onSubmit={handleSave}
-          className="bg-[#16294D] border border-[#D9C08B]/50 p-6 sm:p-8 space-y-5 shadow-2xl"
+        <div
+          className="fixed inset-0 z-50 flex items-start justify-center bg-black/70 backdrop-blur-sm overflow-y-auto p-4 sm:p-8"
+          onClick={() => setShowForm(false)}
         >
+          <form
+            onSubmit={handleSave}
+            onClick={(e) => e.stopPropagation()}
+            className="bg-[#16294D] border border-[#D9C08B]/50 p-6 sm:p-8 space-y-5 shadow-2xl w-full max-w-5xl my-8"
+          >
           <div className="flex items-center justify-between pb-4 border-b border-[#3F5E8C]/40">
             <h2 className="font-display text-2xl font-semibold text-[#F4EEDF]">
               {editingId ? 'Edit Service Category' : 'Add Service Category'}
@@ -272,6 +277,7 @@ export default function AdminServices() {
             </button>
           </div>
         </form>
+        </div>
       )}
 
       {/* Services List */}
