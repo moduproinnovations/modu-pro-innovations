@@ -750,10 +750,14 @@ export const adminApi = {
     return { success: true, message: 'Media asset uploaded successfully.', data: alias(row) };
   },
 
-  uploadProductImage: async (file) => {
+  uploadProductImage: async (file, folder = 'general') => {
     if (!file) fail('Please select a valid image file to upload.');
     const user = await currentUser();
-    const path = `${Date.now()}-${file.name.replace(/[^a-zA-Z0-9._-]/g, '-')}`;
+    const safeFolder = String(folder || 'general')
+      .toLowerCase()
+      .replace(/[^a-z0-9-]/g, '-')
+      .replace(/^-|-$/g, '') || 'general';
+    const path = `${safeFolder}/${Date.now()}-${file.name.replace(/[^a-zA-Z0-9._-]/g, '-')}`;
     const uploaded = await supabase.storage
       .from('product')
       .upload(path, file, { contentType: file.type || 'image/png', upsert: false });

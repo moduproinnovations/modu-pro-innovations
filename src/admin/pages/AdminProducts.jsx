@@ -126,7 +126,9 @@ export default function AdminProducts() {
     if (!file) return;
     setUploadingImage(true);
     try {
-      const res = await adminApi.uploadProductImage(file);
+      const selectedDivision = divisions.find((d) => d._id === form.division);
+      const folder = selectedDivision?.slug || 'general';
+      const res = await adminApi.uploadProductImage(file, folder);
       if (res?.url) {
         setForm((f) => ({ ...f, imageUrl: res.url }));
         addToast({
