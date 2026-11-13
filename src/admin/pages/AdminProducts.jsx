@@ -427,21 +427,7 @@ export default function AdminProducts() {
               )}
             </div>
 
-            <div>
-              <CustomDropdown
-                label="Or Pick From Media Library"
-                size="sm"
-                value=""
-                onChange={(val) => {
-                  if (val) setForm({ ...form, imageUrl: val });
-                }}
-                options={mediaList.map((m) => ({
-                  value: m.url,
-                  label: m.title || m.originalName || m.url,
-                }))}
-                placeholder="Select existing asset..."
-              />
-            </div>
+            <div />
 
             <div className="sm:col-span-3">
               <label className="block text-xs uppercase tracking-wider text-[#F4EEDF] mb-1">
