@@ -17,7 +17,7 @@ import ProductDetailModal from '../components/ProductDetailModal';
 import EnquiryForm from '../components/EnquiryForm';
 
 const DIVISION_BG_BANNERS = {
-  'Adhhesi-pro': '/assets/full%20backgorund%20banners/new%20Adhhesi%20bg%20banner.png',
+  'adhhesi-pro': '/assets/full%20backgorund%20banners/new%20Adhhesi%20bg%20banner.png',
   'pcd-blades':
     '/assets/full%20backgorund%20banners/PCD%20Pre-Milling%20&%20Grooving%20Saw%20Blades.png',
   'panel-processing':
@@ -27,7 +27,7 @@ const DIVISION_BG_BANNERS = {
 };
 
 const DIVISION_RIGHT_PRODUCT_IMAGE = {
-  'Adhhesi-pro': null, // new Adhhesi bg banner already contains the product drum on the right
+  'adhhesi-pro': null, // new Adhhesi bg banner already contains the product drum on the right
   'pcd-blades': 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/pcd-blades/pre-milling-cutter-single.png',
   'panel-processing': 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/panel-processing/cnc-nesting-machine.png',
   'edge-banding-hardware': 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/edge-banding-hardware/pvc-woodgrain-tape.png',
