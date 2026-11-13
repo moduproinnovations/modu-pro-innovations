@@ -12,7 +12,7 @@ const Contact = lazy(() => import('./pages/Contact'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 
 const AdminLayout = lazy(() => import('./admin/layouts/AdminLayout'));
-const AdminLogin = lazy(() => import('./admin/pages/AdminLogin'));
+import AdminLogin from './admin/pages/AdminLogin';
 const AdminDashboard = lazy(() => import('./admin/pages/AdminDashboard'));
 const AdminDivisions = lazy(() => import('./admin/pages/AdminDivisions'));
 const AdminProducts = lazy(() => import('./admin/pages/AdminProducts'));
@@ -43,10 +43,28 @@ export default function App() {
       window.location.replace('/');
       return null;
     }
-    if (isAdminHost && window.location.pathname === '/') {
-      return <Navigate to="/admin/login" replace />;
+    if (isAdminHost) {
+      return (
+        <Suspense fallback={<RouteFallback />}>
+          <Routes>
+            <Route path="/login" element={<AdminLogin />} />
+            <Route path="/" element={<AdminLayout />}>
+              <Route index element={<Navigate to="/dashboard" replace />} />
+              <Route path="dashboard" element={<AdminDashboard />} />
+              <Route path="divisions" element={<AdminDivisions />} />
+              <Route path="products" element={<AdminProducts />} />
+              <Route path="services" element={<AdminServices />} />
+              <Route path="industries" element={<AdminIndustries />} />
+              <Route path="enquiries" element={<AdminEnquiries />} />
+              <Route path="media" element={<AdminMedia />} />
+              <Route path="settings" element={<AdminSettings />} />
+            </Route>
+          </Routes>
+        </Suspense>
+      );
     }
   }
+
   return (
     <Suspense fallback={<RouteFallback />}>
       <Routes>
@@ -60,20 +78,6 @@ export default function App() {
           <Route path="services" element={<Services />} />
           <Route path="contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
-        </Route>
-
-        {/* Protected Enterprise Admin Interface */}
-        <Route path="/admin/login" element={<AdminLogin />} />
-        <Route path="/admin" element={<AdminLayout />}>
-          <Route index element={<Navigate to="/admin/dashboard" replace />} />
-          <Route path="dashboard" element={<AdminDashboard />} />
-          <Route path="divisions" element={<AdminDivisions />} />
-          <Route path="products" element={<AdminProducts />} />
-          <Route path="services" element={<AdminServices />} />
-          <Route path="industries" element={<AdminIndustries />} />
-          <Route path="enquiries" element={<AdminEnquiries />} />
-          <Route path="media" element={<AdminMedia />} />
-          <Route path="settings" element={<AdminSettings />} />
         </Route>
       </Routes>
     </Suspense>
