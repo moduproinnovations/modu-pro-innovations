@@ -26,12 +26,35 @@ export default function DateRangePicker({
   onClear,
   size = 'sm',
   className = '',
+  align = 'right', // 'right' | 'left' | 'auto'
 }) {
   const [isOpen, setIsOpen] = useState(false);
   const [tempStart, setTempStart] = useState(startDate);
   const [tempEnd, setTempEnd] = useState(endDate);
   const [activePreset, setActivePreset] = useState(null);
+  const [effectiveAlign, setEffectiveAlign] = useState(align === 'auto' ? 'right' : align);
   const containerRef = useRef(null);
+
+  // Auto-detect best horizontal alignment when opened
+  useEffect(() => {
+    if (!isOpen) return;
+
+    if (align === 'auto') {
+      if (containerRef.current) {
+        const rect = containerRef.current.getBoundingClientRect();
+        const spaceRight = window.innerWidth - rect.right;
+        const spaceLeft = rect.left;
+        // If there's less than 350px on the right and more on the left, align to right
+        if (spaceRight < 350 && spaceLeft > 300) {
+          setEffectiveAlign('right');
+        } else {
+          setEffectiveAlign('left');
+        }
+      }
+    } else {
+      setEffectiveAlign(align);
+    }
+  }, [isOpen, align]);
 
   // Sync internal temp dates when props change
   useEffect(() => {
@@ -220,7 +243,11 @@ export default function DateRangePicker({
 
       {/* Popover Dropdown */}
       {isOpen && (
-        <div className="absolute right-0 sm:left-0 sm:right-auto mt-2 w-[310px] sm:w-[340px] z-50 bg-[#0e1d39] border border-[#3F5E8C]/60 rounded-2xl shadow-2xl shadow-black/80 p-4 space-y-4 animate-in fade-in-0 zoom-in-95">
+        <div
+          className={`absolute mt-2 w-[min(340px,calc(100vw-2.5rem))] z-50 bg-[#0e1d39] border border-[#3F5E8C]/60 rounded-2xl shadow-2xl shadow-black/80 p-4 space-y-4 animate-in fade-in-0 zoom-in-95 ${
+            effectiveAlign === 'right' ? 'right-0 left-auto' : 'left-0 right-auto'
+          }`}
+        >
           {/* Quick Presets */}
           <div>
             <span className="block text-[11px] font-mono-code uppercase tracking-wider text-[#D9C08B] mb-2 font-medium">

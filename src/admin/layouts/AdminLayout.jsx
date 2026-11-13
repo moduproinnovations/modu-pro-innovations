@@ -72,22 +72,17 @@ export default function AdminLayout() {
       <aside className="hidden lg:flex lg:flex-col lg:w-68 bg-[#16294D] border-r border-[#D9C08B]/25 shrink-0 justify-between sticky top-0 h-screen">
         <div>
           {/* Brand Header */}
-          <div className="p-6 border-b border-[#3F5E8C]/40 flex items-center gap-3">
-            <div className="bg-[#F4EEDF] px-2 py-1 border border-[#D9C08B]/50">
+          <div className="p-5 border-b border-[#3F5E8C]/40 space-y-2">
+            <div className="bg-[#F4EEDF] px-3 py-1.5 rounded-xl border border-[#D9C08B]/50 flex items-center justify-center shadow-sm">
               <img
                 src={siteSettings?.logoUrl || '/assets/logo/modu-pro-logo.png'}
-                alt="Modu Pro"
-                className="h-8 w-auto object-contain"
+                alt="Modu Pro Innovation Pvt. Ltd."
+                className="h-7 w-auto object-contain"
               />
             </div>
-            <div>
-              <p className="font-display text-lg font-semibold uppercase tracking-widest text-[#F4EEDF] leading-none">
-                Modu Pro
-              </p>
-              <p className="font-mono-code text-[10px] uppercase tracking-[0.18em] text-[#D9C08B] mt-1">
-                Admin Console
-              </p>
-            </div>
+            <p className="font-mono-code text-[10px] uppercase tracking-[0.2em] text-[#D9C08B] text-center">
+              Enterprise Admin Console
+            </p>
           </div>
 
           {/* Nav Links */}

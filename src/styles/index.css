@@ -9,8 +9,8 @@
   --color-accent: #3F5E8C;
   --color-text: #F4EEDF;
 
-  --font-display: 'Cormorant Garamond', Georgia, Cambria, 'Times New Roman', serif;
-  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
 
   color-scheme: dark;
@@ -23,6 +23,7 @@
   --color-brand-accent: #3F5E8C;
   --color-brand-text: #F4EEDF;
 
+  --font-display: var(--font-display);
   --font-serif: var(--font-display);
   --font-sans: var(--font-sans);
   --font-mono: var(--font-mono);
@@ -258,11 +259,11 @@ a:focus-visible {
 
 /* Industrial-Chic Technical Editorial Utilities (About Section) */
 .font-editorial {
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: var(--font-display);
 }
 
 .font-inter {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-sans);
 }
 
 .stroke-text-gold {

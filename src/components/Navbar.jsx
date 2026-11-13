@@ -167,28 +167,18 @@ export default function Navbar() {
       }`}
     >
       <div className="relative max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 flex items-center justify-between gap-2 sm:gap-4">
-        {/* Left: Original Company Logo Artwork Preserved Unchanged */}
+        {/* Left: Brand Logo Lockup */}
         <Link
           to="/"
-          className="flex items-center gap-2.5 sm:gap-3.5 group shrink-0 min-w-0"
+          className="flex items-center shrink-0 min-w-0 group"
           aria-label={`${siteSettings?.companyName || 'Modu Pro Innovation Pvt. Ltd.'} Home`}
         >
-          <div className="bg-[#F4EEDF] px-2 py-1 sm:px-2.5 sm:py-1.5 rounded-2xl flex items-center justify-center shrink-0">
+          <div className="bg-[#F4EEDF] px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-xl flex items-center justify-center shrink-0 border border-[#D9C08B]/40 group-hover:border-[#D9C08B] transition-all shadow-sm">
             <img
               src={siteSettings?.logoUrl || '/assets/logo/modu-pro-logo.png'}
               alt={siteSettings?.companyName || 'Modu Pro Innovation Pvt. Ltd.'}
-              width="52"
-              height="44"
-              className="h-8 sm:h-9 w-auto object-contain"
+              className="h-7 sm:h-8 lg:h-9 w-auto object-contain"
             />
-          </div>
-          <div className="flex flex-col min-w-0">
-            <span className="font-display text-base sm:text-xl font-semibold tracking-[0.12em] sm:tracking-[0.14em] text-[#F4EEDF] uppercase leading-none truncate">
-              Modu Pro
-            </span>
-            <span className="text-[9px] sm:text-[10px] tracking-[0.18em] sm:tracking-[0.22em] uppercase text-[#D9C08B] mt-0.5 sm:mt-1 font-medium truncate">
-              Innovation Pvt. Ltd.
-            </span>
           </div>
         </Link>
 

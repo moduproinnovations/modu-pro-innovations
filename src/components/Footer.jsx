@@ -53,24 +53,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12">
           {/* Column 1: Brand & Overview */}
           <div className="lg:col-span-4 space-y-5">
-            <Link to="/" className="inline-flex items-center gap-3.5">
-              <div className="bg-[#F4EEDF] px-2.5 py-1.5 rounded-2xl">
+            <Link to="/" className="inline-block group" aria-label={companyName}>
+              <div className="bg-[#F4EEDF] px-4 py-2 rounded-xl border border-[#D9C08B]/40 group-hover:border-[#D9C08B] transition-all inline-flex items-center justify-center shadow-sm">
                 <img
                   src={siteSettings?.logoUrl || '/assets/logo/modu-pro-logo.png'}
                   alt={companyName}
                   loading="lazy"
-                  width="52"
-                  height="44"
-                  className="h-10 w-auto object-contain"
+                  className="h-9 sm:h-10 w-auto object-contain"
                 />
-              </div>
-              <div>
-                <p className="font-display text-xl font-semibold uppercase tracking-[0.12em] text-[#F4EEDF]">
-                  Modu Pro
-                </p>
-                <p className="text-[10px] uppercase tracking-[0.2em] text-[#D9C08B]">
-                  Innovation Pvt. Ltd.
-                </p>
               </div>
             </Link>
 

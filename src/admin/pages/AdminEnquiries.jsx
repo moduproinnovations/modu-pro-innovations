@@ -470,6 +470,7 @@ export default function AdminEnquiries() {
           <div className="lg:col-span-2">
             <DateRangePicker
               size="sm"
+              align="right"
               startDate={startDate}
               endDate={endDate}
               onChange={({ startDate: s, endDate: e }) => {

@@ -502,7 +502,7 @@ export default function Home() {
         canonicalPath="/"
       />
 
-      <section className="hero-banner-dark relative -mt-[76px] pt-[76px] min-h-[86svh] lg:min-h-[92svh] flex items-center overflow-hidden">
+      <section className="hero-banner-dark relative -mt-[76px] pt-[76px] min-h-[80svh] lg:min-h-[86svh] flex items-center overflow-hidden">
         {/* Full-Width Background Banner */}
         <div className="absolute inset-0 z-0">
           <img
@@ -528,7 +528,7 @@ export default function Home() {
           />
         </div>
 
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 lg:py-28">
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 sm:pt-8 lg:pt-10 pb-12 sm:pb-18 lg:pb-20">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
             {/* Left Side: Hero Content */}
             <motion.div

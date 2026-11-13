@@ -132,17 +132,14 @@ export default function About() {
                     </span>
                   </div>
 
-                  {/* Massive 3-Line Heading */}
-                  <div className="space-y-1">
-                    <h1 className="text-4xl xs:text-5xl sm:text-7xl lg:text-8xl font-black uppercase tracking-[-0.04em] stroke-text-gold leading-[0.95] break-words">
-                      PRECISION
+                  {/* Modern Precision Hero Heading */}
+                  <div className="space-y-2">
+                    <h1 className="font-display text-4xl xs:text-5xl sm:text-6xl lg:text-[5.2rem] font-bold tracking-tight text-[#F4EEDF] leading-[1.02]">
+                      Precision Engineering &amp; Machinery{' '}
+                      <span className="text-[#D9C08B] block mt-1 sm:mt-2">
+                        at Industrial Scale.
+                      </span>
                     </h1>
-                    <div className="font-editorial italic text-3xl sm:text-6xl lg:text-7xl font-normal text-[#F4EEDF] leading-[1.05]">
-                      Engineering &amp; Machinery
-                    </div>
-                    <div className="font-inter text-2xl sm:text-5xl lg:text-6xl font-black uppercase tracking-[-0.03em] text-[#D9C08B] leading-[1]">
-                      AT INDUSTRIAL SCALE.
-                    </div>
                   </div>
 
                   {/* Technical Readout Labels (10px Mono) */}
@@ -258,35 +255,35 @@ export default function About() {
           <div className="flex whitespace-nowrap overflow-hidden select-none w-full">
             <motion.div
               animate={prefersReducedMotion ? {} : { x: ['0%', '-50%'] }}
-              transition={{ repeat: Infinity, ease: 'linear', duration: 22 }}
-              className="flex items-center gap-8 text-4xl sm:text-6xl font-black uppercase tracking-tight text-[#F4EEDF] shrink-0"
+              transition={{ repeat: Infinity, ease: 'linear', duration: 24 }}
+              className="flex items-center gap-8 font-display text-3xl sm:text-5xl font-semibold uppercase tracking-wider text-[#F4EEDF] shrink-0"
             >
-              <span className="stroke-text-gold">MODU PRO INNOVATION</span>
-              <span className="text-[#D9C08B] text-2xl">✦</span>
-              <span className="font-editorial italic font-normal text-[#F4EEDF]">Adhesi Pro™ Adhesives</span>
-              <span className="text-[#D9C08B] text-2xl">✦</span>
-              <span className="stroke-text-ivory">WOODWORKING TOOLS</span>
-              <span className="text-[#D9C08B] text-2xl">✦</span>
-              <span className="font-editorial italic font-normal text-[#D9C08B]">Panel Processing Machinery</span>
-              <span className="text-[#D9C08B] text-2xl">✦</span>
-              <span className="stroke-text-gold">PVC EDGE TAPES & HARDWARE</span>
-              <span className="text-[#D9C08B] text-2xl">✦</span>
-              <span className="font-editorial italic font-normal text-[#F4EEDF]">Faithfully Delivering Excellence</span>
-              <span className="text-[#D9C08B] text-2xl">✦</span>
+              <span className="text-[#D9C08B]">MODU PRO INNOVATION</span>
+              <span className="text-[#D9C08B]/60 text-xl">✦</span>
+              <span>Adhesi Pro™ Adhesives</span>
+              <span className="text-[#D9C08B]/60 text-xl">✦</span>
+              <span className="text-[#F4EEDF]/80">Woodworking Tools</span>
+              <span className="text-[#D9C08B]/60 text-xl">✦</span>
+              <span className="text-[#D9C08B]">Panel Processing Machinery</span>
+              <span className="text-[#D9C08B]/60 text-xl">✦</span>
+              <span>PVC Edge Tapes &amp; Hardware</span>
+              <span className="text-[#D9C08B]/60 text-xl">✦</span>
+              <span className="text-[#F4EEDF]/80">Industrial Woodworking Solutions</span>
+              <span className="text-[#D9C08B]/60 text-xl">✦</span>
 
               {/* Second duplicate set for seamless infinite loop */}
-              <span className="stroke-text-gold">MODU PRO INNOVATION</span>
-              <span className="text-[#D9C08B] text-2xl">✦</span>
-              <span className="font-editorial italic font-normal text-[#F4EEDF]">Adhesi Pro™ Adhesives</span>
-              <span className="text-[#D9C08B] text-2xl">✦</span>
-              <span className="stroke-text-ivory">WOODWORKING TOOLS</span>
-              <span className="text-[#D9C08B] text-2xl">✦</span>
-              <span className="font-editorial italic font-normal text-[#D9C08B]">Panel Processing Machinery</span>
-              <span className="text-[#D9C08B] text-2xl">✦</span>
-              <span className="stroke-text-gold">PVC EDGE TAPES & HARDWARE</span>
-              <span className="text-[#D9C08B] text-2xl">✦</span>
-              <span className="font-editorial italic font-normal text-[#F4EEDF]">Faithfully Delivering Excellence</span>
-              <span className="text-[#D9C08B] text-2xl">✦</span>
+              <span className="text-[#D9C08B]">MODU PRO INNOVATION</span>
+              <span className="text-[#D9C08B]/60 text-xl">✦</span>
+              <span>Adhesi Pro™ Adhesives</span>
+              <span className="text-[#D9C08B]/60 text-xl">✦</span>
+              <span className="text-[#F4EEDF]/80">Woodworking Tools</span>
+              <span className="text-[#D9C08B]/60 text-xl">✦</span>
+              <span className="text-[#D9C08B]">Panel Processing Machinery</span>
+              <span className="text-[#D9C08B]/60 text-xl">✦</span>
+              <span>PVC Edge Tapes &amp; Hardware</span>
+              <span className="text-[#D9C08B]/60 text-xl">✦</span>
+              <span className="text-[#F4EEDF]/80">Industrial Woodworking Solutions</span>
+              <span className="text-[#D9C08B]/60 text-xl">✦</span>
             </motion.div>
           </div>
         </section>
@@ -301,7 +298,7 @@ export default function About() {
                 <p className="font-mono-code text-[10px] font-bold uppercase tracking-[0.3em] text-[#D9C08B]">
                   OPERATIONAL DIRECTORY // 04 DIVISIONS
                 </p>
-                <h2 className="text-3xl sm:text-5xl font-black uppercase tracking-tight text-[#F4EEDF] mt-1 font-inter">
+                <h2 className="font-display text-3xl sm:text-5xl font-semibold tracking-tight text-[#F4EEDF] mt-1">
                   Core Business Divisions
                 </h2>
               </div>
@@ -332,7 +329,7 @@ export default function About() {
                           <span className="text-[#F4EEDF]/70">{div.category}</span>
                         </div>
 
-                        <h3 className="text-2xl sm:text-4xl lg:text-5xl font-black uppercase tracking-tight text-[#F4EEDF] group-hover:text-[#D9C08B] group-hover:font-editorial group-hover:italic group-hover:font-normal cubic-inertia duration-500">
+                        <h3 className="font-display text-2xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-[#F4EEDF] group-hover:text-[#D9C08B] transition-colors duration-300">
                           {div.name}
                         </h3>
 
@@ -409,8 +406,8 @@ export default function About() {
                 <p className="font-mono-code text-[10px] font-bold uppercase tracking-[0.3em] text-[#D9C08B]">
                   OPERATIONAL PHILOSOPHY // INTEGRATION
                 </p>
-                <blockquote className="font-editorial italic text-3xl sm:text-5xl lg:text-6xl text-[#F4EEDF] leading-[1.15]">
-                  &ldquo;Bringing related woodworking products & machinery under one single business enterprise.&rdquo;
+                <blockquote className="font-display text-3xl sm:text-5xl lg:text-5xl font-medium text-[#F4EEDF] leading-[1.18] tracking-tight">
+                  &ldquo;Bringing related woodworking products &amp; machinery under one single business enterprise.&rdquo;
                 </blockquote>
                 <p className="text-base sm:text-lg text-[#F4EEDF]/80 max-w-2xl font-inter leading-relaxed">
                   {siteSettings?.aboutContent?.approachText ||
@@ -470,7 +467,7 @@ export default function About() {
                 <p className="font-mono-code text-[10px] font-bold uppercase tracking-[0.3em] text-[#D9C08B]">
                   ENGINEERING RIGOR // TECHNICAL JOURNAL
                 </p>
-                <h2 className="text-3xl sm:text-4xl font-black uppercase tracking-tight text-[#F4EEDF] mt-1 font-inter">
+                <h2 className="font-display text-3xl sm:text-4xl font-semibold tracking-tight text-[#F4EEDF] mt-1">
                   Technical Specifications
                 </h2>
               </div>
@@ -526,7 +523,7 @@ export default function About() {
                         </div>
                       </div>
 
-                      <h3 className="text-xl font-bold uppercase tracking-tight text-[#F4EEDF] font-inter">
+                      <h3 className="font-display text-xl font-semibold tracking-tight text-[#F4EEDF]">
                         {card.title}
                       </h3>
 
@@ -554,12 +551,12 @@ export default function About() {
         {/* 8. MASSIVE EDITORIAL FOOTER & CTA SECTION WITH 18vw WATERMARK */}
         <section className="relative overflow-hidden pt-20 sm:pt-28 pb-12 bg-[#0A1428] border-b border-[#D9C08B]/20">
           
-          {/* Massive Background Marquee Watermark (18vw stroke text at 0.07 opacity) */}
+          {/* Massive Background Marquee Watermark */}
           <div
             aria-hidden="true"
-            className="absolute -bottom-8 left-0 right-0 whitespace-nowrap pointer-events-none select-none opacity-[0.06] overflow-hidden"
+            className="absolute -bottom-8 left-0 right-0 whitespace-nowrap pointer-events-none select-none overflow-hidden"
           >
-            <div className="text-[18vw] font-black uppercase tracking-[-0.05em] stroke-text-gold leading-none">
+            <div className="font-display text-[18vw] font-bold uppercase tracking-tight text-[#D9C08B]/[0.04] leading-none">
               MODU PRO INNOVATION
             </div>
           </div>
@@ -572,7 +569,7 @@ export default function About() {
                 FACILITY CONTACT // CONSULTATION
               </p>
               
-              <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black uppercase tracking-tight text-[#F4EEDF] font-inter leading-[1.05]">
+              <h2 className="font-display text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-[#F4EEDF] leading-[1.05]">
                 Ready to Equip Your Woodworking Line?
               </h2>
 
@@ -580,16 +577,16 @@ export default function About() {
                 Connect directly with our engineering and division specialists in Nagpur. We evaluate your substrate, tooling profile, and machine requirements to specify the exact industrial grade.
               </p>
 
-              {/* Large-scale Contact Link with Bottom-Border Hover Effect */}
+              {/* Large-scale Contact Link */}
               <div className="pt-4">
                 <Link
                   to="/contact"
-                  className="group inline-flex items-center gap-3 sm:gap-4 text-xl sm:text-3xl lg:text-5xl font-editorial italic text-[#D9C08B] hover:text-[#F4EEDF] transition-colors duration-300 border-b-2 border-[#D9C08B] pb-2 hover:border-[#F4EEDF]"
+                  className="group inline-flex items-center gap-3 sm:gap-4 text-xl sm:text-3xl lg:text-4xl font-display font-semibold text-[#D9C08B] hover:text-[#F4EEDF] transition-colors duration-300 border-b-2 border-[#D9C08B] pb-2 hover:border-[#F4EEDF]"
                 >
                   <span>Start a Technical Consultation</span>
                   <ArrowRight
                     aria-hidden="true"
-                    className="w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10 transform group-hover:translate-x-3 cubic-inertia duration-300"
+                    className="w-6 h-6 sm:w-8 sm:h-8 transform group-hover:translate-x-3 transition-transform duration-300"
                   />
                 </Link>
               </div>
