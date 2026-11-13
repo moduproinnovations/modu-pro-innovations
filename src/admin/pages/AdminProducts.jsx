@@ -142,7 +142,13 @@ export default function AdminProducts() {
     setSaving(true);
     const payload = {
       name: form.name.trim(),
-      slug: form.slug.trim(),
+      slug:
+        form.slug.trim() ||
+        form.name
+          .toLowerCase()
+          .trim()
+          .replace(/[^a-z0-9]+/g, '-')
+          .replace(/^-|-$/g, ''),
       division: form.division,
       category: form.category.trim(),
       shortDescription: form.shortDescription.trim(),
@@ -300,7 +306,30 @@ export default function AdminProducts() {
                 required
                 value={form.name}
                 onChange={(e) => setForm({ ...form, name: e.target.value })}
+                onBlur={(e) => {
+                  if (!form.slug.trim() && e.target.value.trim()) {
+                    const s = e.target.value
+                      .toLowerCase()
+                      .trim()
+                      .replace(/[^a-z0-9]+/g, '-')
+                      .replace(/^-|-$/g, '');
+                    setForm((f) => ({ ...f, slug: s }));
+                  }
+                }}
                 className="w-full px-3 py-2.5 bg-[#0A1428] border border-[#3F5E8C]/60 text-sm text-[#F4EEDF]"
+              />
+            </div>
+
+            <div className="sm:col-span-2">
+              <label className="block text-xs uppercase tracking-wider text-[#F4EEDF] mb-1">
+                Slug (auto-generated, editable)
+              </label>
+              <input
+                type="text"
+                value={form.slug}
+                onChange={(e) => setForm({ ...form, slug: e.target.value })}
+                placeholder="auto-from-name"
+                className="w-full px-3 py-2.5 bg-[#0A1428] border border-[#3F5E8C]/60 text-xs text-[#F4EEDF] font-mono-code"
               />
             </div>
 
