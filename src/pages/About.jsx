@@ -27,7 +27,7 @@ export default function About() {
       ? divisions.map((d, idx) => ({
           code: d.code || `0${idx + 1}`,
           name:
-            d.slug === 'adhesi-pro' && siteSettings?.adhesiBrandSpelling
+            (d.slug === 'adhesi-pro' || d.slug === 'adhhesi-pro') && siteSettings?.adhesiBrandSpelling
               ? siteSettings.adhesiBrandSpelling
               : d.name,
           slug: d.slug,
@@ -35,7 +35,7 @@ export default function About() {
           shortDescription: d.shortDescription,
           heroImage: d.heroImage,
           tagline:
-            d.slug === 'adhesi-pro'
+            (d.slug === 'adhesi-pro' || d.slug === 'adhhesi-pro')
               ? 'Har Joint Mein Pro Strength • D3 & PUR Adhesives'
               : d.slug === 'pcd-blades'
               ? 'PCD Diamond Tooling • Saw Blades & Pre-Milling'
@@ -46,11 +46,11 @@ export default function About() {
       : [
           {
             code: '01',
-            name: siteSettings?.adhesiBrandSpelling || 'Adhesi Pro',
+            name: siteSettings?.adhesiBrandSpelling || 'Adhhesi Pro',
             slug: 'adhesi-pro',
             category: 'Industrial Woodworking & Modular Furniture Adhesives',
             shortDescription:
-              'Adhesi Pro is the adhesive brand associated with Modu Pro Innovation Pvt. Ltd. The product range supports furniture, modular-kitchen, door and woodworking applications.',
+              'Adhhesi Pro is the adhesive brand associated with Modu Pro Innovation Pvt. Ltd. The product range supports furniture, modular-kitchen, door and woodworking applications.',
             heroImage: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/adhesi-pro/lockpro-wr3-drum.png',
             tagline: 'Har Joint Mein Pro Strength • D3 & PUR Adhesives',
           },
@@ -260,7 +260,7 @@ export default function About() {
             >
               <span className="text-[#D9C08B]">MODU PRO INNOVATION</span>
               <span className="text-[#D9C08B]/60 text-xl">✦</span>
-              <span>Adhesi Pro™ Adhesives</span>
+              <span>ADHHESI PRO™ Adhesives</span>
               <span className="text-[#D9C08B]/60 text-xl">✦</span>
               <span className="text-[#F4EEDF]/80">Woodworking Tools</span>
               <span className="text-[#D9C08B]/60 text-xl">✦</span>
@@ -274,7 +274,7 @@ export default function About() {
               {/* Second duplicate set for seamless infinite loop */}
               <span className="text-[#D9C08B]">MODU PRO INNOVATION</span>
               <span className="text-[#D9C08B]/60 text-xl">✦</span>
-              <span>Adhesi Pro™ Adhesives</span>
+              <span>ADHHESI PRO™ Adhesives</span>
               <span className="text-[#D9C08B]/60 text-xl">✦</span>
               <span className="text-[#F4EEDF]/80">Woodworking Tools</span>
               <span className="text-[#D9C08B]/60 text-xl">✦</span>

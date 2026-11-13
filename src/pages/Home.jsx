@@ -12,7 +12,7 @@ const WHY_CHOOSE_THEMES = [
     code: '01',
     title: 'Four Focused Product & Service Divisions',
     description:
-      'Adhesi Pro adhesives, PCD & TCT saw blades, panel-processing machinery, and PVC edge-banding tapes & furniture hardware structured under dedicated divisions.',
+      'Adhhesi Pro adhesives, PCD & TCT saw blades, panel-processing machinery, and PVC edge-banding tapes & furniture hardware structured under dedicated divisions.',
   },
   {
     code: '02',
@@ -42,7 +42,7 @@ const HERO_LOOP_STEP_MS = 3000; // Switch product image every 3 seconds in an in
 const HERO_LOOP_PRODUCTS = [
   {
     src: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/adhesi-pro/lockpro-wr3-drum.png',
-    alt: 'Adhesi Pro Lockpro WR 3 D3 Water-Resistant Adhesive Drum',
+    alt: 'ADHHESI PRO Lockpro WR 3 D3 Water-Resistant Adhesive Drum',
   },
   {
     src: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/panel-processing/edge-banding-machine.png',
@@ -62,7 +62,7 @@ const HERO_LOOP_PRODUCTS = [
   },
   {
     src: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/adhesi-pro/lockpro-808-drum.png',
-    alt: 'Adhesi Pro Lockpro 808 Woodworking Adhesive Drum',
+    alt: 'ADHHESI PRO Lockpro 808 Woodworking Adhesive Drum',
   },
   {
     src: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/pcd-blades/grooving-saw-blade.png',
@@ -78,7 +78,7 @@ const HERO_LOOP_PRODUCTS = [
   },
   {
     src: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/adhesi-pro/1k-pur-adhesive.png',
-    alt: 'Adhesi Pro 1K PUR Moisture-Curing Polyurethane Adhesive',
+    alt: 'ADHHESI PRO 1K PUR Moisture-Curing Polyurethane Adhesive',
   },
   {
     src: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/edge-banding-hardware/pvc-solid-color-tapes.png',
@@ -90,7 +90,7 @@ const HERO_LOOP_PRODUCTS = [
   },
   {
     src: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/adhesi-pro/lockpro-707-drum.png',
-    alt: 'Adhesi Pro Lockpro 707 Industrial Adhesive Drum',
+    alt: 'ADHHESI PRO Lockpro 707 Industrial Adhesive Drum',
   },
   {
     src: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/edge-banding-hardware/telescopic-drawer-channels.png',
@@ -106,7 +106,7 @@ const HERO_LOOP_PRODUCTS = [
   },
   {
     src: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/adhesi-pro/lockpro-wr3-bucket.png',
-    alt: 'Adhesi Pro Lockpro WR 3 Adhesive Bucket',
+    alt: 'ADHHESI PRO Lockpro WR 3 Adhesive Bucket',
   },
   {
     src: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/edge-banding-hardware/spring-flap-hinge.png',
@@ -114,7 +114,7 @@ const HERO_LOOP_PRODUCTS = [
   },
   {
     src: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/adhesi-pro/lockpro-808-pr-bucket.png',
-    alt: 'Adhesi Pro Lockpro 808 PR Adhesive Bucket',
+    alt: 'ADHHESI PRO Lockpro 808 PR Adhesive Bucket',
   },
 ];
 
@@ -171,7 +171,7 @@ const SPOTLIGHT_PRODUCTS = [
     images: [
       {
         url: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/adhesi-pro/lockpro-wr3-drum.png',
-        alt: 'Adhesi Pro Lockpro WR 3 Drum Packaging',
+        alt: 'ADHHESI PRO Lockpro WR 3 Drum Packaging',
       },
     ],
   },
@@ -406,17 +406,17 @@ export default function Home() {
           ...d,
           code: d.code || `0${idx + 1}`,
           displayName:
-            d.slug === 'adhesi-pro' && siteSettings?.adhesiBrandSpelling
+            (d.slug === 'adhesi-pro' || d.slug === 'adhhesi-pro') && siteSettings?.adhesiBrandSpelling
               ? siteSettings.adhesiBrandSpelling
               : d.name,
         }))
       : [
           {
             code: '01',
-            displayName: siteSettings?.adhesiBrandSpelling || 'Adhesi Pro',
+            displayName: siteSettings?.adhesiBrandSpelling || 'Adhhesi Pro',
             slug: 'adhesi-pro',
             shortDescription:
-              'Adhesi Pro is the adhesive brand associated with Modu Pro Innovation Pvt. Ltd. The product range supports furniture, modular-kitchen, door and woodworking applications.',
+              'Adhhesi Pro is the adhesive brand associated with Modu Pro Innovation Pvt. Ltd. The product range supports furniture, modular-kitchen, door and woodworking applications.',
             heroImage: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/adhesi-pro/lockpro-wr3-drum.png',
           },
           {
@@ -1126,7 +1126,7 @@ export default function Home() {
               <div className="lux-curve bg-[#0A1428] border border-[#D9C08B]/22 h-64 sm:h-72 p-6 flex items-center justify-center overflow-hidden">
                 <img
                   src="https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/adhesi-pro/lockpro-wr3-drum.png"
-                  alt="Adhesi Pro adhesive drum"
+                  alt="ADHHESI PRO adhesive drum"
                   loading="lazy"
                   className="max-h-52 w-auto object-contain"
                 />

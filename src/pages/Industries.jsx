@@ -13,7 +13,7 @@ const DEFAULT_SECTORS = [
     slug: 'modular-furniture-manufacturing',
     tagline: 'Wardrobe, Cabinet Carcass & Workstation Production',
     description:
-      'Modular furniture manufacturers rely on repeatable panel sizing, clean edge banding, dependable adhesive bonding, and accurate knock-down hardware assembly. Modu Pro Innovation Pvt. Ltd. connects all four requirements under one roof—helping manufacturers coordinate Adhesi Pro adhesives, TCT & PCD blades, panel-processing equipment, and PVC edge-banding tapes & fittings through a single point of contact.',
+      'Modular furniture manufacturers rely on repeatable panel sizing, clean edge banding, dependable adhesive bonding, and accurate knock-down hardware assembly. Modu Pro Innovation Pvt. Ltd. connects all four requirements under one roof—helping manufacturers coordinate Adhhesi Pro adhesives, TCT & PCD blades, panel-processing equipment, and PVC edge-banding tapes & fittings through a single point of contact.',
     image: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/panel-processing/edge-banding-machine.png',
     statusBadge: 'REPEATABLE SIZING & KD ASSEMBLY',
     cardFootnote: 'Complete line coordination: adhesives, tooling, machinery & KD fittings',
@@ -23,7 +23,7 @@ const DEFAULT_SECTORS = [
       'Knock-down (KD) panel assembly using Mini Fix, cam locks, nylon bushes, and hinges',
     ],
     relatedDivisions: [
-      { name: 'Adhesi Pro', slug: 'adhesi-pro' },
+      { name: 'Adhhesi Pro', slug: 'adhesi-pro' },
       { name: 'Wood Working & Modular Furniture Tools', slug: 'pcd-blades' },
       { name: 'Panel Processing Machines Division', slug: 'panel-processing' },
       { name: 'PVC Edge-Banding Tapes & Hardware', slug: 'edge-banding-hardware' },
@@ -46,7 +46,7 @@ const DEFAULT_SECTORS = [
       'Telescopic drawer channels, 2D/3D concealed hinges, and colour-matched PVC edge tapes',
     ],
     relatedDivisions: [
-      { name: 'Adhesi Pro', slug: 'adhesi-pro' },
+      { name: 'Adhhesi Pro', slug: 'adhesi-pro' },
       { name: 'Wood Working & Modular Furniture Tools', slug: 'pcd-blades' },
       { name: 'Panel Processing Machines Division', slug: 'panel-processing' },
       { name: 'PVC Edge-Banding Tapes & Hardware', slug: 'edge-banding-hardware' },
@@ -59,17 +59,17 @@ const DEFAULT_SECTORS = [
     slug: 'door-manufacturing',
     tagline: 'Flush Door, Decorative Laminate & Skin Pressing Lines',
     description:
-      'Door manufacturers require consistent platen pressing, reliable wood and skin bonding, and accurate perimeter sizing and surface routing. Modu Pro supports door production units with Adhesi Pro adhesives (including Lockpro WR 3, Lockpro 808, and 1K PUR), hydraulic cold/hot-press machines, dual-spindle CNC routers, and panel-saw blades.',
+      'Door manufacturers require consistent platen pressing, reliable wood and skin bonding, and accurate perimeter sizing and surface routing. Modu Pro supports door production units with Adhhesi Pro adhesives (including Lockpro WR 3, Lockpro 808, and 1K PUR), hydraulic cold/hot-press machines, dual-spindle CNC routers, and panel-saw blades.',
     image: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/panel-processing/hydraulic-cold-press.png',
     statusBadge: 'HYDRAULIC PRESSING & BONDING',
     cardFootnote: 'Platen cold/hot-press machines, 1K PUR structural bonding & CNC routers',
     keyApplications: [
       'Flush door and decorative laminate door pressing on hydraulic presses',
-      'Structural core, frame, and skin bonding with Adhesi Pro adhesives',
+      'Structural core, frame, and skin bonding with Adhhesi Pro adhesives',
       'Automated CNC door surface routing and precision edge sizing',
     ],
     relatedDivisions: [
-      { name: 'Adhesi Pro', slug: 'adhesi-pro' },
+      { name: 'Adhhesi Pro', slug: 'adhesi-pro' },
       { name: 'Wood Working & Modular Furniture Tools', slug: 'pcd-blades' },
       { name: 'Panel Processing Machines Division', slug: 'panel-processing' },
     ],
@@ -93,7 +93,7 @@ const DEFAULT_SECTORS = [
     relatedDivisions: [
       { name: 'Panel Processing Machines Division', slug: 'panel-processing' },
       { name: 'Wood Working & Modular Furniture Tools', slug: 'pcd-blades' },
-      { name: 'Adhesi Pro', slug: 'adhesi-pro' },
+      { name: 'Adhhesi Pro', slug: 'adhesi-pro' },
       { name: 'PVC Edge-Banding Tapes & Hardware', slug: 'edge-banding-hardware' },
     ],
   },

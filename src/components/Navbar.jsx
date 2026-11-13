@@ -20,7 +20,7 @@ import MagnificationDock from './MagnificationDock';
 const DEFAULT_DIVISION_LINKS = [
   {
     code: '01',
-    name: 'Adhesi Pro',
+    name: 'Adhhesi Pro',
     slug: 'adhesi-pro',
     subtitle: 'PVAC, D3/D2, PVC/Acrylic & PUR Adhesives',
     heroImage: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/adhesi-pro/lockpro-wr3-drum.png',
@@ -68,7 +68,7 @@ export default function Navbar() {
       ? divisions.map((d, idx) => ({
           code: d.code || `0${idx + 1}`,
           name:
-            d.slug === 'adhesi-pro' && siteSettings?.adhesiBrandSpelling
+            (d.slug === 'adhesi-pro' || d.slug === 'adhhesi-pro') && siteSettings?.adhesiBrandSpelling
               ? siteSettings.adhesiBrandSpelling
               : d.name,
           slug: d.slug,

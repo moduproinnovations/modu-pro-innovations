@@ -20,7 +20,7 @@ export default function Footer() {
     divisions && divisions.length > 0
       ? divisions
       : [
-          { name: siteSettings?.adhesiBrandSpelling || 'Adhesi Pro', slug: 'adhesi-pro' },
+          { name: siteSettings?.adhesiBrandSpelling || 'Adhhesi Pro', slug: 'adhesi-pro' },
           { name: 'Wood Working & Modular Furniture Tools', slug: 'pcd-blades' },
           { name: 'Panel Processing Machines Division', slug: 'panel-processing' },
           { name: 'PVC Edge-Banding Tapes & Hardware', slug: 'edge-banding-hardware' },

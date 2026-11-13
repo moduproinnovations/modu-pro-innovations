@@ -123,11 +123,11 @@ export default function AdminSettings() {
 
           <div>
             <label className="block text-xs uppercase tracking-wider text-[#F4EEDF] mb-1">
-              Adhesive Brand Spelling (Adhesi Pro / Adhhesi Pro)
+              Adhesive Brand Spelling (Default: Adhhesi Pro)
             </label>
             <input
               type="text"
-              value={settings.adhesiBrandSpelling || 'Adhesi Pro'}
+              value={settings.adhesiBrandSpelling || 'Adhhesi Pro'}
               onChange={(e) => setSettings({ ...settings, adhesiBrandSpelling: e.target.value })}
               className="w-full px-3 py-2.5 bg-[#0A1428] border border-[#3F5E8C]/60 text-sm text-[#F4EEDF]"
             />

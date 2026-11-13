@@ -37,17 +37,17 @@ export default function Divisions() {
           ...d,
           code: d.code || `0${idx + 1}`,
           displayName:
-            d.slug === 'adhesi-pro' && siteSettings?.adhesiBrandSpelling
+            (d.slug === 'adhesi-pro' || d.slug === 'adhhesi-pro') && siteSettings?.adhesiBrandSpelling
               ? siteSettings.adhesiBrandSpelling
               : d.name,
         }))
       : [
           {
             code: '01',
-            displayName: siteSettings?.adhesiBrandSpelling || 'Adhesi Pro',
+            displayName: siteSettings?.adhesiBrandSpelling || 'Adhhesi Pro',
             slug: 'adhesi-pro',
             shortDescription:
-              'Adhesi Pro is the adhesive brand associated with Modu Pro Innovation Pvt. Ltd. The product range supports furniture, modular-kitchen, door and woodworking applications.',
+              'Adhhesi Pro is the adhesive brand associated with Modu Pro Innovation Pvt. Ltd. The product range supports furniture, modular-kitchen, door and woodworking applications.',
             heroImage: 'https://oezygoabjdgrfxdgjosi.supabase.co/storage/v1/object/public/product/adhesi-pro/lockpro-wr3-drum.png',
           },
           {

@@ -35,13 +35,13 @@ export default function Contact() {
       ? divisions.map((d) => ({
           slug: d.slug,
           name:
-            d.slug === 'adhesi-pro' && siteSettings?.adhesiBrandSpelling
+            (d.slug === 'adhesi-pro' || d.slug === 'adhhesi-pro') && siteSettings?.adhesiBrandSpelling
               ? siteSettings.adhesiBrandSpelling
               : d.name,
           code: d.code,
         }))
       : [
-          { slug: 'adhesi-pro', name: siteSettings?.adhesiBrandSpelling || 'Adhesi Pro', code: '01' },
+          { slug: 'adhesi-pro', name: siteSettings?.adhesiBrandSpelling || 'Adhhesi Pro', code: '01' },
           { slug: 'pcd-blades', name: 'Wood Working & Modular Furniture Tools', code: '02' },
           { slug: 'panel-processing', name: 'Panel Processing Machines Division', code: '03' },
           { slug: 'edge-banding-hardware', name: 'PVC Edge-Banding Tapes & Hardware', code: '04' },
@@ -53,7 +53,7 @@ export default function Contact() {
     <>
       <SeoHead
         title="Contact Us"
-        description={`Contact Modu Pro Innovation Pvt. Ltd. at ${address}. Submit an enquiry for Adhesi Pro adhesives, PCD blades, panel-processing machinery, or PVC edge-banding tapes & hardware.`}
+        description={`Contact Modu Pro Innovation Pvt. Ltd. at ${address}. Submit an enquiry for Adhhesi Pro adhesives, PCD blades, panel-processing machinery, or PVC edge-banding tapes & hardware.`}
         canonicalPath="/contact"
       />
 

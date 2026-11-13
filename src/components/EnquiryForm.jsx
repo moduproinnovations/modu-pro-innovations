@@ -42,8 +42,8 @@ export default function EnquiryForm({
       email: '',
       divisionName:
         defaultDivisionName ||
-        (defaultDivisionSlug === 'adhesi-pro'
-          ? siteSettings?.adhesiBrandSpelling || 'Adhesi Pro'
+        ((defaultDivisionSlug === 'adhesi-pro' || defaultDivisionSlug === 'adhhesi-pro')
+          ? siteSettings?.adhesiBrandSpelling || 'Adhhesi Pro'
           : defaultDivisionSlug === 'pcd-blades'
           ? 'Wood Working & Modular Furniture Tools'
           : defaultDivisionSlug === 'panel-processing'
@@ -84,7 +84,7 @@ export default function EnquiryForm({
     divisions && divisions.length > 0
       ? divisions.map((d, idx) => ({
           name:
-            d.slug === 'adhesi-pro' && siteSettings?.adhesiBrandSpelling
+            (d.slug === 'adhesi-pro' || d.slug === 'adhhesi-pro') && siteSettings?.adhesiBrandSpelling
               ? siteSettings.adhesiBrandSpelling
               : d.name,
           slug: d.slug,
@@ -93,7 +93,7 @@ export default function EnquiryForm({
         }))
       : [
           {
-            name: siteSettings?.adhesiBrandSpelling || 'Adhesi Pro',
+            name: siteSettings?.adhesiBrandSpelling || 'Adhhesi Pro',
             slug: 'adhesi-pro',
             code: '01',
             subtitle: 'PVAC, D3/D2, PVC/Acrylic & PUR Adhesives',

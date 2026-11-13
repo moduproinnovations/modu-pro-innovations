@@ -4,7 +4,7 @@ import { publicApi } from '../services/api';
 const DEFAULT_SETTINGS = {
   companyName: 'Modu Pro Innovation Pvt. Ltd.',
   tagline: 'Faithfully Delivering Excellence',
-  adhesiBrandSpelling: 'Adhesi Pro',
+  adhesiBrandSpelling: 'Adhhesi Pro',
   logoUrl: '/assets/logo/modu-pro-logo.png',
   contact: {
     address: 'Plot No. 27, Hanuman Daal Mill Road, opposite Royal Touch, Nagpur – 440008',
@@ -31,7 +31,7 @@ const DEFAULT_SETTINGS = {
   },
   footer: {
     summaryText:
-      'Integrated industrial solutions across Adhesi Pro adhesives, PCD & TCT woodworking saw blades, panel-processing machinery, and PVC edge-banding tapes & furniture hardware.',
+      'Integrated industrial solutions across Adhhesi Pro adhesives, PCD & TCT woodworking saw blades, panel-processing machinery, and PVC edge-banding tapes & furniture hardware.',
     copyrightText: '© Modu Pro Innovation Pvt. Ltd. All rights reserved.',
   },
   privacyNotice:

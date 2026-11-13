@@ -902,7 +902,7 @@ export default function AdminEnquiries() {
                     type="text"
                     value={assigneeInput}
                     onChange={(e) => setAssigneeInput(e.target.value)}
-                    placeholder="e.g., Adhesi Pro Desk / Technical Lead"
+                    placeholder="e.g., Adhhesi Pro Desk / Technical Lead"
                     className="flex-1 px-3.5 py-2.5 bg-[#0A1428] border border-[#3F5E8C]/60 focus:border-[#D9C08B] rounded-xl text-xs text-[#F4EEDF] outline-none"
                   />
                   <button
