@@ -286,7 +286,7 @@ export default function AdminProducts() {
           <form
             onSubmit={handleSave}
             onClick={(e) => e.stopPropagation()}
-            className="bg-[#16294D] border border-[#D9C08B]/50 p-6 sm:p-8 space-y-6 shadow-2xl w-full max-w-5xl my-8"
+            className="bg-[#16294D] border border-[#D9C08B]/40 rounded-2xl p-6 sm:p-8 space-y-6 shadow-2xl w-full max-w-6xl my-8"
           >
           <div className="flex items-center justify-between pb-4 border-b border-[#3F5E8C]/40">
             <h2 className="font-display text-2xl font-semibold text-[#F4EEDF]">
@@ -536,18 +536,18 @@ export default function AdminProducts() {
             ))}
           </div>
 
-          <div className="flex justify-end gap-3 pt-4 border-t border-[#3F5E8C]/40">
+          <div className="sticky bottom-0 -mx-6 sm:-mx-8 -mb-6 sm:-mb-8 px-6 sm:px-8 py-4 bg-[#16294D] border-t border-[#3F5E8C]/40 flex justify-end gap-3">
             <button
               type="button"
               onClick={() => setShowForm(false)}
-              className="px-5 py-2.5 bg-[#0A1428] border border-[#3F5E8C]/60 text-xs uppercase tracking-wider text-[#F4EEDF]"
+              className="px-5 py-2.5 bg-[#0A1428] border border-[#3F5E8C]/60 rounded-lg text-xs uppercase tracking-wider text-[#F4EEDF] hover:border-[#D9C08B]"
             >
               Cancel
             </button>
             <button
               type="submit"
               disabled={saving}
-              className="inline-flex items-center gap-2 px-6 py-2.5 bg-[#D9C08B] text-[#0A1428] text-xs font-semibold uppercase tracking-wider cursor-pointer"
+              className="inline-flex items-center gap-2 px-6 py-2.5 bg-[#D9C08B] text-[#0A1428] rounded-lg text-xs font-semibold uppercase tracking-wider cursor-pointer hover:bg-[#E5CC9A]"
             >
               <Save aria-hidden="true" className="w-3.5 h-3.5" />
               <span>{saving ? 'Saving...' : 'Save Product'}</span>
