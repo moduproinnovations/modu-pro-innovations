@@ -3,6 +3,7 @@ import { Navigate, Link, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { ShieldCheck, Eye, EyeOff, ArrowLeft, AlertCircle } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
+import { ap } from '../adminPath';
 import { useSite } from '../../context/SiteContext';
 import { useToast } from '../../context/ToastContext';
 import SeoHead from '../../components/SeoHead';
@@ -30,7 +31,7 @@ export default function AdminLogin() {
   });
 
   if (!checkingAuth && admin) {
-    return <Navigate to="/admin/dashboard" replace />;
+    return <Navigate to={ap('/admin/dashboard')} replace />;
   }
 
   const onSubmit = async ({ email, password }) => {
@@ -42,7 +43,7 @@ export default function AdminLogin() {
         title: 'Administrator Authenticated',
         message: 'Welcome to the Modu Pro Innovation Management Console.',
       });
-      navigate('/admin/dashboard', { replace: true });
+      navigate(ap('/admin/dashboard'), { replace: true });
     } catch (err) {
       const msg =
         err.response?.data?.message ||

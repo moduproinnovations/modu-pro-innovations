@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { ap } from '../adminPath';
 import {
   BarChart,
   Bar,
@@ -58,28 +59,28 @@ export default function AdminDashboard() {
       value: metrics.totalEnquiries,
       sub: `${metrics.newEnquiries} new awaiting review`,
       Icon: Inbox,
-      link: '/admin/enquiries',
+      link: ap('/admin/enquiries'),
     },
     {
       label: 'New Enquiries',
       value: metrics.newEnquiries,
       sub: `${metrics.inProgressEnquiries} in progress`,
       Icon: Clock,
-      link: '/admin/enquiries?status=New',
+      link: ap('/admin/enquiries?status=New'),
     },
     {
       label: 'Published Products',
       value: metrics.publishedProducts,
       sub: `${metrics.draftProducts} draft / pending review`,
       Icon: Package,
-      link: '/admin/products',
+      link: ap('/admin/products'),
     },
     {
       label: 'Active Divisions',
       value: metrics.activeDivisions,
       sub: 'Core business verticals',
       Icon: Layers,
-      link: '/admin/divisions',
+      link: ap('/admin/divisions'),
     },
   ];
 
@@ -248,7 +249,7 @@ export default function AdminDashboard() {
             </h2>
           </div>
           <Link
-            to="/admin/enquiries"
+            to={ap('/admin/enquiries')}
             className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-widest text-[#D9C08B] hover:underline"
           >
             <span>Open Full CRM</span>

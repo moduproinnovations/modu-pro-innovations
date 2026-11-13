@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink, Outlet, Navigate, Link, useNavigate } from 'react-router-dom';
+import { ap } from '../adminPath';
 import { AnimatePresence, motion } from 'framer-motion';
 import {
   LayoutDashboard,
@@ -21,14 +22,14 @@ import { useSite } from '../../context/SiteContext';
 import { useToast } from '../../context/ToastContext';
 
 const ADMIN_NAV = [
-  { to: '/admin/dashboard', label: 'Dashboard', Icon: LayoutDashboard },
-  { to: '/admin/enquiries', label: 'Enquiries CRM', Icon: Inbox },
-  { to: '/admin/divisions', label: 'Divisions', Icon: Layers },
-  { to: '/admin/products', label: 'Products', Icon: Package },
-  { to: '/admin/services', label: 'Services & Support', Icon: Wrench },
-  { to: '/admin/industries', label: 'Industries', Icon: Factory },
-  { to: '/admin/media', label: 'Media Library', Icon: ImageIcon },
-  { to: '/admin/settings', label: 'Site Settings', Icon: Settings },
+  { to: ap('/admin/dashboard'), label: 'Dashboard', Icon: LayoutDashboard },
+  { to: ap('/admin/enquiries'), label: 'Enquiries CRM', Icon: Inbox },
+  { to: ap('/admin/divisions'), label: 'Divisions', Icon: Layers },
+  { to: ap('/admin/products'), label: 'Products', Icon: Package },
+  { to: ap('/admin/services'), label: 'Services & Support', Icon: Wrench },
+  { to: ap('/admin/industries'), label: 'Industries', Icon: Factory },
+  { to: ap('/admin/media'), label: 'Media Library', Icon: ImageIcon },
+  { to: ap('/admin/settings'), label: 'Site Settings', Icon: Settings },
 ];
 
 export default function AdminLayout() {
@@ -52,7 +53,7 @@ export default function AdminLayout() {
   }
 
   if (!admin) {
-    return <Navigate to="/admin/login" replace />;
+    return <Navigate to={ap('/admin/login')} replace />;
   }
 
   const handleLogout = async () => {
@@ -62,7 +63,7 @@ export default function AdminLayout() {
       title: 'Signed Out',
       message: 'Your administrator session has been closed.',
     });
-    navigate('/admin/login');
+    navigate(ap('/admin/login'));
   };
 
   return (
@@ -223,13 +224,15 @@ export default function AdminLayout() {
                 </div>
 
                 <div className="pt-4 border-t border-[#3F5E8C]/35 space-y-3">
-                  <Link
-                    to="/"
+                  <a
+                    href="https://www.moduproinnovations.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-full flex items-center justify-center gap-2 py-2 px-3 bg-[#0A1428] border border-[#3F5E8C]/50 text-xs text-[#F4EEDF]"
                   >
                     <span>View Public Website</span>
                     <ExternalLink aria-hidden="true" className="w-3.5 h-3.5 text-[#D9C08B]" />
-                  </Link>
+                  </a>
                   <button
                     type="button"
                     onClick={() => {
