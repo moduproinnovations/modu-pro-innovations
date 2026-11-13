@@ -440,7 +440,6 @@ export default function AdminProducts() {
                   label: m.title || m.originalName || m.url,
                 }))}
                 placeholder="Select existing asset..."
-                searchable
               />
             </div>
 
