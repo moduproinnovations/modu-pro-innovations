@@ -69,7 +69,7 @@ export default function AdminLayout() {
   return (
     <div className="min-h-screen bg-[#0A1428] text-[#F4EEDF] flex">
       {/* Desktop Sidebar */}
-      <aside className="hidden lg:flex lg:flex-col lg:w-68 bg-[#16294D] border-r border-[#D9C08B]/25 shrink-0 justify-between">
+      <aside className="hidden lg:flex lg:flex-col lg:w-68 bg-[#16294D] border-r border-[#D9C08B]/25 shrink-0 justify-between sticky top-0 h-screen">
         <div>
           {/* Brand Header */}
           <div className="p-6 border-b border-[#3F5E8C]/40 flex items-center gap-3">
